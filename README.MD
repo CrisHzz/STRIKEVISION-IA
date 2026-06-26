@@ -97,3 +97,60 @@ Azure ML / MLflow -> tracking y model registry futuro.
 ```
 
 El entorno local queda preparado para empezar con DVC/MLflow en la maquina y migrar despues a Azure sin cambiar la arquitectura base.
+
+## Versionado local de datos con DVC
+
+Los videos de `data/splits` estan versionados con DVC por categoria de pelea:
+
+```text
+data/splits/aggressive_men.dvc
+data/splits/aggressive_women.dvc
+data/splits/low_kicks_men.dvc
+data/splits/low_kicks_women.dvc
+data/splits/normal_men.dvc
+data/splits/passive_men.dvc
+data/splits/passive_women.dvc
+data/splits/striking_light_grappling_men.dvc
+```
+
+El remote local temporal esta en:
+
+```text
+C:\Users\Cristian\Documents\dvc-remotes\strikevision
+```
+
+La metadata del dataset se genera con:
+
+```powershell
+conda activate strikevision
+python scripts/data/build_splits_manifest.py
+```
+
+Archivos generados:
+
+```text
+data/metadata/splits_manifest.csv
+data/metadata/splits_manifest.json
+data/metadata/splits_summary_by_category.csv
+```
+
+Estos archivos registran categoria, etiqueta, pelea, round, duracion, FPS, resolucion, codec, tamano, ruta y bandera de calidad de duracion.
+
+Para actualizar DVC despues de agregar o cambiar videos:
+
+```powershell
+conda activate strikevision
+python scripts/data/build_splits_manifest.py
+
+dvc add data/splits/aggressive_men data/splits/aggressive_women data/splits/low_kicks_men data/splits/low_kicks_women data/splits/normal_men data/splits/passive_men data/splits/passive_women data/splits/striking_light_grappling_men
+dvc push
+```
+
+Luego guardar en Git solo los punteros y metadata:
+
+```powershell
+git add .dvc .dvcignore .gitignore data/splits/*.dvc data/splits/.gitignore data/metadata scripts/data/build_splits_manifest.py
+git commit -m "Version dataset splits with DVC"
+```
+
+Los `.mp4` no deben entrar a Git. Git guarda punteros `.dvc`; DVC guarda los archivos pesados en el remote local y mas adelante en Azure Blob Storage.

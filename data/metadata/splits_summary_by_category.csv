@@ -1,0 +1,9 @@
+category,label,round_count,fight_count,fights,total_duration_sec,total_duration_min,total_size_mb,avg_duration_sec
+aggressive_men,aggressive_striking,13,3,"adesanya_pereira_1, holloway_gaethje, topuria_holloway",3609.51,60.158,984.604,277.655
+aggressive_women,aggressive_striking,5,1,zhang_joanna_1,1507.705,25.128,549.998,301.541
+low_kicks_men,low_kick_heavy,5,2,"fiziev_green, omalley_zahabi",1497.358,24.956,1013.933,299.472
+low_kicks_women,low_kick_heavy,5,1,joanna_andrade,1502.233,25.037,343.521,300.447
+normal_men,normal_technical_striking,13,3,"aldo_font, fiziev_bahamondes, yan_sandhagen",3920.979,65.35,1143.061,301.614
+passive_men,passive_feints_defensive,5,1,romero_adesanya,1587.733,26.462,226.439,317.547
+passive_women,technical_defensive_striking,5,1,nunes_shevchenko_2,1511.843,25.197,350.224,302.369
+striking_light_grappling_men,striking_with_light_grappling,4,1,topuria_gaethje,1204.332,20.072,291.764,301.083
