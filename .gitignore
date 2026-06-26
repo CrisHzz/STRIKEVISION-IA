@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Large local data artifacts
+data/raw/**
+data/interim/**
+data/processed/**
+data/splits/**
+outputs/**
+
+# Keep folder placeholders
+!**/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/
+
+# ML artifacts
+mlruns/
+mlartifacts/
+models/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+fights-selection.md

@@ -1,0 +1,2 @@
+"""Person detection components."""
+

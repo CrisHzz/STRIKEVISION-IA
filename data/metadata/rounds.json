@@ -1,0 +1,151 @@
+{
+  "description": "Mapea cada video de pelea en data/raw/full_fights con los timestamps de inicio/fin de cada round. El campo source_prefix se usa para localizar el archivo real (sin depender de caracteres especiales) y output_base define el nombre en ingles de los clips generados.",
+  "fights": [
+    {
+      "id": "adesanya_pereira_1",
+      "source_prefix": "adesanya_pereira_1",
+      "output_base": "adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:04:10", "end": "0:09:10" },
+        { "round": 2, "start": "0:10:20", "end": "0:15:20" },
+        { "round": 3, "start": "0:16:34", "end": "0:21:34" },
+        { "round": 4, "start": "0:22:50", "end": "0:27:50" },
+        { "round": 5, "start": "0:29:10", "end": "0:31:14" }
+      ]
+    },
+    {
+      "id": "aldo_font",
+      "source_prefix": "aldo_font",
+      "output_base": "aldo_font__jose_aldo_vs_rob_font__normal_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:02:46", "end": "0:07:47" },
+        { "round": 2, "start": "0:09:00", "end": "0:14:00" },
+        { "round": 3, "start": "0:15:14", "end": "0:20:14" },
+        { "round": 4, "start": "0:21:31", "end": "0:26:33" },
+        { "round": 5, "start": "0:27:45", "end": "0:32:50" }
+      ]
+    },
+    {
+      "id": "fiziev_bahamondes",
+      "source_prefix": "fiziev_bahamondes",
+      "output_base": "fiziev_bahamondes__rafael_fiziev_vs_ignacio_bahamondes__normal_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:15", "end": "0:05:12" },
+        { "round": 2, "start": "0:05:22", "end": "0:10:17" },
+        { "round": 3, "start": "0:10:23", "end": "0:15:20" }
+      ]
+    },
+    {
+      "id": "fiziev_green",
+      "source_prefix": "fiziev_green",
+      "output_base": "fiziev_green__rafael_fiziev_vs_bobby_green__lowkicks_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:07", "end": "0:05:04" },
+        { "round": 2, "start": "0:05:17", "end": "0:10:20" },
+        { "round": 3, "start": "0:10:26", "end": "0:15:23" }
+      ]
+    },
+    {
+      "id": "holloway_gaethje",
+      "source_prefix": "holloway_gaethje",
+      "output_base": "holloway_gaethje__holloway_vs_gaethje__aggressive_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:22", "end": "0:05:20" },
+        { "round": 2, "start": "0:05:30", "end": "0:11:42" },
+        { "round": 3, "start": "0:11:48", "end": "0:16:46" },
+        { "round": 4, "start": "0:16:56", "end": "0:21:56" },
+        { "round": 5, "start": "0:22:10", "end": "0:27:04" }
+      ]
+    },
+    {
+      "id": "joanna_andrade",
+      "source_prefix": "joanna_andrade",
+      "output_base": "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__lowkicks_women_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:12", "end": "0:05:10" },
+        { "round": 2, "start": "0:05:16", "end": "0:10:11" },
+        { "round": 3, "start": "0:10:15", "end": "0:15:12" },
+        { "round": 4, "start": "0:15:20", "end": "0:20:15" },
+        { "round": 5, "start": "0:20:21", "end": "0:25:20" }
+      ]
+    },
+    {
+      "id": "nunes_shevchenko_2",
+      "source_prefix": "nunes_shevchenko_2",
+      "output_base": "nunes_shevchenko_2__nunes_vs_shevchenko_2__massive_women_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:48", "end": "0:05:45" },
+        { "round": 2, "start": "0:06:04", "end": "0:11:04" },
+        { "round": 3, "start": "0:11:15", "end": "0:16:14" },
+        { "round": 4, "start": "0:16:38", "end": "0:21:37" },
+        { "round": 5, "start": "0:22:41", "end": "0:27:40" }
+      ]
+    },
+    {
+      "id": "omalley_zahabi",
+      "source_prefix": "omalley_zahabi",
+      "output_base": "omalley_zahabi__sean_omalley_vs_aieman_zahabi__lowkicks_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:02:21", "end": "0:07:48" },
+        { "round": 2, "start": "0:09:02", "end": "0:13:25" }
+      ]
+    },
+    {
+      "id": "romero_adesanya",
+      "source_prefix": "romero_adesanya",
+      "output_base": "romero_adesanya__yoel_romero_vs_israel_adesanya__passive_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:03:53", "end": "0:08:52" },
+        { "round": 2, "start": "0:10:04", "end": "0:15:02" },
+        { "round": 3, "start": "0:16:09", "end": "0:21:10" },
+        { "round": 4, "start": "0:22:21", "end": "0:28:40" },
+        { "round": 5, "start": "0:29:52", "end": "0:34:50" }
+      ]
+    },
+    {
+      "id": "topuria_gaethje",
+      "source_prefix": "topuria_gaethje",
+      "output_base": "topuria_gaethje__topuria_vs_gaethje__striking_light_grappling_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:22:02", "end": "0:27:04" },
+        { "round": 2, "start": "0:28:17", "end": "0:33:14" },
+        { "round": 3, "start": "0:34:30", "end": "0:39:27" },
+        { "round": 4, "start": "0:41:40", "end": "0:46:43" }
+      ]
+    },
+    {
+      "id": "topuria_holloway",
+      "source_prefix": "topuria_holloway",
+      "output_base": "topuria_holloway__ilia_topuria_vs_max_holloway__aggressive_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:45", "end": "0:05:43" },
+        { "round": 2, "start": "0:05:50", "end": "0:10:50" },
+        { "round": 3, "start": "0:10:53", "end": "0:12:30" }
+      ]
+    },
+    {
+      "id": "yan_sandhagen",
+      "source_prefix": "yan_sandhagen",
+      "output_base": "yan_sandhagen__petr_yan_vs_cory_sandhagen__normal_men_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:02:46", "end": "0:07:45" },
+        { "round": 2, "start": "0:08:59", "end": "0:13:57" },
+        { "round": 3, "start": "0:15:10", "end": "0:20:11" },
+        { "round": 4, "start": "0:21:21", "end": "0:26:18" },
+        { "round": 5, "start": "0:27:30", "end": "0:32:34" }
+      ]
+    },
+    {
+      "id": "zhang_joanna_1",
+      "source_prefix": "zhang_joanna_1",
+      "output_base": "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_s_fight",
+      "rounds": [
+        { "round": 1, "start": "0:00:23", "end": "0:05:22" },
+        { "round": 2, "start": "0:05:40", "end": "0:10:38" },
+        { "round": 3, "start": "0:11:13", "end": "0:16:13" },
+        { "round": 4, "start": "0:16:26", "end": "0:21:24" },
+        { "round": 5, "start": "0:22:20", "end": "0:27:18" }
+      ]
+    }
+  ]
+}

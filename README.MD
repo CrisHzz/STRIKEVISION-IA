@@ -1,0 +1,99 @@
+# StrikeVision
+
+StrikeVision es un proyecto preliminar de computer vision y machine learning enfocado en analizar rounds de peleas de MMA/UFC desde el striking.
+
+La idea principal es permitir cargar un video de un round y devolver el mismo video anotado con tracking de los dos peleadores, el referee y eventos de golpe como jabs, crosses, hooks, uppercuts, low kicks, body kicks y head kicks.
+
+El proyecto busca construir un sistema modular que combine deteccion de personas, tracking, pose estimation, clasificacion temporal de acciones y MLOps para versionar datos, experimentos y modelos.
+
+Por ahora el alcance esta cerrado a striking. Grappling, clinch prolongado, control en piso y analisis completo de peleas quedan fuera de la primera version.
+
+## Entorno de desarrollo
+
+El entorno principal del proyecto esta definido con Conda + pip:
+
+- `environment.yml`: crea el entorno `strikevision` con Python 3.11, pip, ffmpeg, git y graphviz.
+- `requirements.txt`: instala librerias de computer vision, ML, FastAPI, MLflow, DVC, Azure, notebooks y testing.
+- `requirements-airflow.txt`: dependencias opcionales de Airflow.
+- `requirements-gpu-wsl.txt`: dependencias opcionales para TensorFlow con GPU en WSL2.
+
+### Crear el entorno Conda
+
+Primero instala Miniconda, Anaconda o Miniforge. Luego, desde la raiz del proyecto:
+
+```powershell
+conda env create -f environment.yml
+conda activate strikevision
+python -m pip check
+```
+
+Si ya existe el entorno y quieres actualizarlo:
+
+```powershell
+conda env update -f environment.yml --prune
+conda activate strikevision
+python -m pip check
+```
+
+### Verificar librerias principales
+
+```powershell
+python -c "import cv2; print('OpenCV:', cv2.__version__)"
+python -c "import tensorflow as tf; print('TensorFlow:', tf.__version__)"
+python -c "import mlflow; print('MLflow:', mlflow.__version__)"
+python -c "import dvc.version; print('DVC:', dvc.version.__version__)"
+```
+
+### TensorFlow y GPU RTX 3060
+
+En Windows nativo, TensorFlow moderno corre en CPU. TensorFlow 2.10 fue la ultima version con soporte GPU en Windows nativo; desde TensorFlow 2.11 la ruta recomendada para GPU NVIDIA en Windows es usar WSL2.
+
+Para entrenar con la RTX 3060 de forma moderna:
+
+1. Instalar WSL2 con Ubuntu.
+2. Instalar drivers NVIDIA compatibles con WSL2.
+3. Crear este mismo entorno dentro de WSL2.
+4. Instalar las dependencias GPU:
+
+```bash
+pip install --upgrade -r requirements-gpu-wsl.txt
+python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+```
+
+Si la lista devuelve una GPU, TensorFlow ya esta usando la RTX dentro de WSL2.
+
+### Instalar Airflow
+
+Airflow se instala aparte porque requiere constraints oficiales para ser reproducible.
+
+Despues de activar el entorno:
+
+```powershell
+$AIRFLOW_VERSION = "3.2.2"
+$PYTHON_VERSION = python -c "import sys; print(str(sys.version_info.major)+'.'+str(sys.version_info.minor))"
+$CONSTRAINT_URL = "https://raw.githubusercontent.com/apache/airflow/constraints-$AIRFLOW_VERSION/constraints-$PYTHON_VERSION.txt"
+
+python -m pip install -r requirements-airflow.txt --constraint $CONSTRAINT_URL
+python -m pip check
+```
+
+Para desarrollo local rapido:
+
+```powershell
+airflow standalone
+```
+
+En Windows nativo, Airflow puede ser problematico. Para usarlo de forma mas cercana a produccion, conviene correrlo en WSL2, Docker o un servicio gestionado. Airflow no debe ser parte del proceso principal de la API.
+
+### Relacion con DVC, MLflow y Azure
+
+Uso esperado:
+
+```text
+DVC -> versionar videos, rounds, features y datasets.
+MLflow -> registrar experimentos, metricas, parametros y modelos.
+Azure Blob Storage -> remote futuro de DVC.
+Azure ML / MLflow -> tracking y model registry futuro.
+```
+
+El entorno local queda preparado para empezar con DVC/MLflow en la maquina y migrar despues a Azure sin cambiar la arquitectura base.

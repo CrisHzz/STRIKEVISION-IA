@@ -1,0 +1,5 @@
+# Optional Airflow dependencies.
+# Install these inside the strikevision environment using the Airflow constraints command in README.MD.
+apache-airflow[async,celery,postgres]==3.2.2
+apache-airflow-providers-microsoft-azure
+

@@ -1,0 +1,12 @@
+name: strikevision
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip>=24
+  - ffmpeg
+  - git
+  - graphviz
+  - pip:
+      - -r requirements.txt
+

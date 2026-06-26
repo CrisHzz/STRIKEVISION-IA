@@ -1,0 +1,4 @@
+# Optional TensorFlow GPU dependencies for Windows + WSL2 + NVIDIA RTX.
+# Use this only inside WSL2/Linux, not in native Windows PowerShell.
+tensorflow[and-cuda]==2.16.1
+
