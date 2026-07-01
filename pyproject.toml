@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ufc-tracker"
+version = "0.1.0"
+description = "StrikeVision: computer vision y ML para analizar rounds de peleas de MMA/UFC desde el striking."
+readme = "README.MD"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Cristian" }]
+
+# Las dependencias se gestionan con environment.yml + requirements.txt (Conda + pip).
+# Este paquete se instala con `pip install -e .` sin arrastrar dependencias.
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "scripts", "tests"]

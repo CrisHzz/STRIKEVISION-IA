@@ -1,3 +1,12 @@
+Metadata-Version: 2.4
+Name: ufc-tracker
+Version: 0.1.0
+Summary: StrikeVision: computer vision y ML para analizar rounds de peleas de MMA/UFC desde el striking.
+Author: Cristian
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
 # StrikeVision
 
 StrikeVision es un proyecto preliminar de computer vision y machine learning enfocado en analizar rounds de peleas de MMA/UFC desde el striking.
@@ -34,16 +43,6 @@ conda env update -f environment.yml --prune
 conda activate strikevision
 python -m pip check
 ```
-
-### Instalar el paquete del proyecto
-
-El codigo fuente vive en `src/ufc_tracker` y se instala en modo editable para que los imports (`from ufc_tracker... import ...`) funcionen desde scripts, notebooks y tests:
-
-```powershell
-python -m pip install -e .
-```
-
-Esto se hace una sola vez por entorno. Si creas el entorno Conda de nuevo, vuelve a ejecutarlo.
 
 ### Verificar librerias principales
 
