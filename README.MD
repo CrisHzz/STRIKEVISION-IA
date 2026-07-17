@@ -8,6 +8,33 @@ El proyecto busca construir un sistema modular que combine deteccion de personas
 
 Por ahora el alcance esta cerrado a striking. Grappling, clinch prolongado, control en piso y analisis completo de peleas quedan fuera de la primera version.
 
+## Laboratorio web local
+
+El proyecto incluye dos páginas locales para subir un round y probar progresivamente el pipeline:
+
+- **Gradio**: interfaz principal para experimentación con video y modelos ML.
+- **Streamlit**: alternativa para dashboards, métricas y exploración de resultados.
+
+Actualmente implementan inspección de metadata y el Pipeline visual V0, que lee, anota y reconstruye
+el video. Detection, tracking, pose y clasificación se conectarán progresivamente al mismo servicio
+compartido.
+
+Ejecutar Gradio:
+
+```powershell
+conda activate strikevision
+python -m ufc_tracker.ui.gradio_app
+```
+
+Ejecutar Streamlit:
+
+```powershell
+conda activate strikevision
+streamlit run src/ufc_tracker/ui/streamlit_app.py
+```
+
+Consulta la guía completa en [`docs/INTERFACES-WEB.md`](docs/INTERFACES-WEB.md).
+
 ## Entorno de desarrollo
 
 El entorno principal del proyecto esta definido con Conda + pip:

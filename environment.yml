@@ -8,5 +8,5 @@ dependencies:
   - git
   - graphviz
   - pip:
+      # Includes Gradio and Streamlit for the local StrikeVision web interfaces.
       - -r requirements.txt
-

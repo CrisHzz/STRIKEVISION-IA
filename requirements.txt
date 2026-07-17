@@ -23,6 +23,8 @@ attrs>=23.2,<27.0
 certifi>=2024.2.2
 charset-normalizer>=3.3,<4.0
 colorama>=0.4.6,<1.0
+click>=8.0,<8.3
+cachetools>=5.0,<6.0
 fsspec>=2024.2.0
 idna>=3.7,<4.0
 packaging>=23.2,<25.0
@@ -99,6 +101,7 @@ ipykernel>=6.29,<7.0
 comm>=0.2,<1.0
 debugpy>=1.8,<2.0
 ipython>=8.24,<10.0
+pygments>=2.17,<3.0
 jupyter-client>=8.6,<9.0
 jupyter-core>=5.7,<6.0
 matplotlib-inline>=0.1,<1.0
@@ -109,6 +112,10 @@ traitlets>=5.14,<6.0
 matplotlib>=3.8,<4.0
 seaborn>=0.13,<1.0
 plotly>=5.22,<6.0
+
+# Local web interfaces for ML experimentation
+gradio>=5.49,<6.0
+streamlit>=1.40,<2.0
 
 # Quality and testing
 pytest>=8.2,<9.0
