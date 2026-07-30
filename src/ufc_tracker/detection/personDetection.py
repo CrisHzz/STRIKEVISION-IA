@@ -4,7 +4,8 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 
-from ufc_tracker.detection import project_root, resolve_pretrained_weight
+from ufc_tracker.detection import project_root
+from ufc_tracker.ml.registry import resolve_person_detector_weight
 
 # Person class id (COCO dataset)
 PERSON_CLASS_ID = 0
@@ -28,8 +29,8 @@ FIGHTER_MIN_PERSISTENCE = 0.05
 FIGHTER_MIN_AREA = 0.01
 TRACKER_CFG = "bytetrack.yaml"
 
-# Load the YOLOv8 segmentation model (detects persons)
-MODEL_PATH = resolve_pretrained_weight("yolo11n-seg.pt")
+# Load Production weights from MLflow Model Registry (fallback: models/weights/)
+MODEL_PATH = resolve_person_detector_weight()
 model_person = YOLO(str(MODEL_PATH))
 
 # ------------------- #
