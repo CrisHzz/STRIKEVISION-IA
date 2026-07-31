@@ -24,7 +24,7 @@ data/interim/**
 data/processed/**
 data/splits/**/*.mp4
 outputs/**
-
+tests/womens.py
 # Keep folder placeholders
 !**/.gitkeep
 

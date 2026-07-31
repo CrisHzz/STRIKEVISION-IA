@@ -35,6 +35,73 @@ streamlit run src/ufc_tracker/ui/streamlit_app.py
 
 Consulta la guía completa en [`docs/INTERFACES-WEB.md`](docs/INTERFACES-WEB.md).
 
+## Pose estimation
+
+La etapa de pose usa **MediaPipe Pose Landmarker** sobre los crops generados por el
+`PersonDetector@production` existente. El detector YOLO-seg + ByteTrack identifica los
+peleadores y excluye al referee; MediaPipe agrega hombros, codos, muñecas, caderas,
+rodillas y tobillos en coordenadas del frame original.
+
+Flujo:
+
+```text
+Round de video
+  -> PersonDetector UFC + ByteTrack
+  -> fragmentos fighter_track_<id>
+  -> MediaPipe Pose Landmarker
+  -> tracking.jsonl + pose.jsonl + pose_preview.mp4 + métricas
+```
+
+El notebook de desarrollo es
+[`notebooks/pose-estimation/pose-estimation.ipynb`](notebooks/pose-estimation/pose-estimation.ipynb).
+Permite seleccionar cualquier round desde `splits_manifest.csv`, ejecutar primero 300 frames,
+inspeccionar métricas y después procesar el round completo.
+
+Ejecutar el pipeline genérico desde PowerShell:
+
+```powershell
+conda activate strikevision
+python -m pip install -e .
+
+# Prueba corta
+python scripts/ml/run_pose_pipeline.py `
+  --video "data/splits/<categoria>/<round>.mp4" `
+  --max-frames 300
+
+# Round completo
+python scripts/ml/run_pose_pipeline.py `
+  --video "data/splits/<categoria>/<round>.mp4"
+```
+
+Por defecto los artefactos se guardan en:
+
+```text
+data/processed/poses/<video_stem>/
+  tracking.jsonl
+  pose.jsonl
+  pose_preview.mp4
+  pose_metrics.json
+  run_metadata.json
+```
+
+Interpretación de métricas:
+
+- `pose_coverage`: proporción de observaciones visibles con al menos cuatro keypoints esenciales.
+- `required_keypoint_availability`: disponibilidad individual de muñecas, codos, rodillas y tobillos.
+- `required_keypoint_temporal_continuity`: continuidad de cada articulación entre frames consecutivos.
+- `mean_inference_ms_per_visible_frame`: latencia media de pose por peleador visible.
+
+Después de revisar el preview, el resultado puede versionarse directamente con DVC:
+
+```powershell
+python scripts/ml/run_pose_pipeline.py `
+  --video "data/splits/<categoria>/<round>.mp4" `
+  --dvc-add
+```
+
+El script crea un puntero en `data/metadata/pose_<video_stem>.dvc`. Git guarda el puntero,
+la configuración y el código; DVC guarda los JSONL, métricas y video derivados.
+
 ## Entorno de desarrollo
 
 El entorno principal del proyecto esta definido con Conda + pip:

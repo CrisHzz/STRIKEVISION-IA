@@ -6,6 +6,7 @@ from ultralytics import YOLO
 
 from ufc_tracker.detection import project_root
 from ufc_tracker.ml.registry import resolve_person_detector_weight
+from ufc_tracker.tracking.contracts import TrackObservation
 
 # Person class id (COCO dataset)
 PERSON_CLASS_ID = 0
@@ -378,7 +379,11 @@ def track_video(video_path, max_frames=None, conf=0.5, tracker=TRACKER_CFG):
                 _, skin = torso_appearance(frame, b[k], poly)
                 area = (b[k, 2] - b[k, 0]) * (b[k, 3] - b[k, 1]) / (h * w)
                 cx = (b[k, 0] + b[k, 2]) * 0.5 / w
-                frame_map[int(tid)] = (b[k].astype(np.float32), poly)
+                frame_map[int(tid)] = TrackObservation(
+                    bbox_xyxy=b[k].astype(np.float32),
+                    silhouette=poly,
+                    confidence=float(s[k]),
+                )
                 d = stats.setdefault(int(tid), {"n": 0, "skin": 0.0, "area": 0.0, "cx": 0.0})
                 d["n"] += 1
                 d["skin"] += skin
@@ -390,19 +395,20 @@ def track_video(video_path, max_frames=None, conf=0.5, tracker=TRACKER_CFG):
     return per_frame, stats, n
 
 # After tracking, select which tracks correspond to the actual "fighters"
-def select_fighter_tracks(stats, n_frames):
+def select_fighter_tracks(stats, n_frames, min_track_frames=None):
     """Role assignment: return set of track_ids deemed fighters."""
     fighters = set()
+    if min_track_frames is None:
+        min_track_frames = max(1, int(np.ceil(FIGHTER_MIN_PERSISTENCE * n_frames)))
     for tid, d in stats.items():
         cnt = d["n"]
         if cnt == 0:
             continue
-        pers = cnt / max(1, n_frames)
         skin = d["skin"] / cnt
         area = d["area"] / cnt
         if (
             skin >= FIGHTER_SKIN_MIN
-            and pers >= FIGHTER_MIN_PERSISTENCE
+            and cnt >= min_track_frames
             and area >= FIGHTER_MIN_AREA
         ):
             fighters.add(tid)
@@ -431,7 +437,11 @@ def render_fighters(video_path, per_frame, fighter_tids, out_path, max_frames=No
         if not ok:
             break
         fm = per_frame[i] if i < len(per_frame) else {}
-        items = [(tid, box, poly) for tid, (box, poly) in fm.items() if tid in fighter_tids]
+        items = [
+            (tid, observation.bbox_xyxy, observation.silhouette)
+            for tid, observation in fm.items()
+            if tid in fighter_tids
+        ]
         # Sort by horizontal position for coloring
         items.sort(key=lambda it: (it[1][0] + it[1][2]) * 0.5)
         boxes = (

@@ -1,0 +1,4 @@
+output_root: data/processed/poses
+tracking_confidence: 0.5
+min_track_frames: 15
+max_frames: null
