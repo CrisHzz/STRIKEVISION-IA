@@ -93,18 +93,10 @@ def _with_offset(
     }
 
 
-def resolve_mediapipe_pose_model(
-    model_path: str | Path | None = None,
-) -> Path:
-    """Resolve the official MediaPipe Tasks pose bundle under ``models/weights``."""
-    if model_path is not None:
-        path = Path(model_path).resolve()
-        if not path.is_file():
-            raise FileNotFoundError(f"MediaPipe pose model not found: {path}")
-        return path
-
-    root = project_root(Path(__file__).resolve())
-    destination = weights_dir(root) / MEDIAPIPE_POSE_MODEL_FILENAME
+def _download_mediapipe_pose_model(root: Path | None = None) -> Path:
+    """Download the official MediaPipe Tasks pose bundle into ``models/weights``."""
+    base = project_root(root or Path(__file__).resolve())
+    destination = weights_dir(base) / MEDIAPIPE_POSE_MODEL_FILENAME
     if destination.is_file() and destination.stat().st_size > 0:
         return destination
 
@@ -120,6 +112,28 @@ def resolve_mediapipe_pose_model(
     finally:
         partial.unlink(missing_ok=True)
     return destination
+
+
+def resolve_mediapipe_pose_model(
+    model_path: str | Path | None = None,
+) -> Path:
+    """Resolve MediaPipe pose weights from the Model Registry, then local cache.
+
+    Order:
+    1. Explicit ``model_path`` if provided.
+    2. ``PoseEstimator@production`` from the local MLflow Model Registry.
+    3. Local ``models/weights/pose_landmarker_lite.task`` (download if missing).
+    """
+    if model_path is not None:
+        path = Path(model_path).resolve()
+        if not path.is_file():
+            raise FileNotFoundError(f"MediaPipe pose model not found: {path}")
+        return path
+
+    # Lazy import avoids a cycle: registry falls back to `_download_mediapipe_pose_model`.
+    from ufc_tracker.ml.registry import resolve_pose_estimator_weight
+
+    return resolve_pose_estimator_weight()
 
 
 class MediaPipePoseEstimator:
