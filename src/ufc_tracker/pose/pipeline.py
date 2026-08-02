@@ -27,6 +27,11 @@ from ufc_tracker.pose.estimator import (
 )
 from ufc_tracker.tracking.contracts import TrackingRecord
 from ufc_tracker.tracking.export import extract_fighter_tracking
+from ufc_tracker.tracking.merge import (
+    MAX_MERGE_DISTANCE,
+    MAX_MERGE_GAP_FRAMES,
+    extract_merged_fighter_tracking,
+)
 
 SKELETON_EDGES = (
     ("left_shoulder", "right_shoulder"),
@@ -373,21 +378,55 @@ def run_pose_pipeline(
     tracking_confidence: float = 0.5,
     min_track_frames: int = 15,
     max_frames: int | None = None,
+    merge_track_fragments: bool = False,
+    max_merge_gap_frames: int = MAX_MERGE_GAP_FRAMES,
+    max_merge_distance: float = MAX_MERGE_DISTANCE,
     estimator_factory: EstimatorFactory = _default_factory,
 ) -> PosePipelineResult:
-    """Generate DVC-ready fighter tracks, MediaPipe poses, metrics and preview."""
+    """Generate DVC-ready fighter tracks, MediaPipe poses, metrics and preview.
+
+    With `merge_track_fragments` the ByteTrack fragments are chained into two
+    stable identities instead of requiring the detector to select exactly two
+    tracks, which makes `min_track_frames` irrelevant.
+    """
     source = Path(video_path).resolve()
     if not source.is_file():
         raise FileNotFoundError(f"Could not find input video: {source}")
     destination = Path(output_dir).resolve()
     destination.mkdir(parents=True, exist_ok=True)
 
-    tracking_records, fps, frame_count = extract_fighter_tracking(
-        source,
-        confidence=tracking_confidence,
-        max_frames=max_frames,
-        min_track_frames=min_track_frames,
-    )
+    if merge_track_fragments:
+        merged = extract_merged_fighter_tracking(
+            source,
+            confidence=tracking_confidence,
+            max_frames=max_frames,
+            max_gap_frames=max_merge_gap_frames,
+            max_distance=max_merge_distance,
+        )
+        tracking_records = merged.records
+        fps = merged.fps
+        frame_count = merged.frame_count
+        tracking_metadata: dict[str, Any] = merged.metadata()
+    else:
+        tracking_records, fps, frame_count = extract_fighter_tracking(
+            source,
+            confidence=tracking_confidence,
+            max_frames=max_frames,
+            min_track_frames=min_track_frames,
+        )
+        tracking_metadata = {
+            "component": "registered_person_detector",
+            "model": "PersonDetector@production",
+            "tracker": "bytetrack.yaml",
+            "confidence": tracking_confidence,
+            "configured_minimum_track_frames": min_track_frames,
+            "effective_minimum_track_frames": min(
+                min_track_frames,
+                max(1, math.ceil(frame_count * 0.05)),
+            ),
+            "fighter_id_policy": "fighter_track_<bytetrack_fragment_id>",
+            "track_fragment_count": len({record.track_id for record in tracking_records}),
+        }
     tracking_path = destination / "tracking.jsonl"
     _write_jsonl(tracking_path, (record.to_dict() for record in tracking_records))
 
@@ -428,19 +467,7 @@ def run_pose_pipeline(
         "video": relative_source,
         "input_dvc_path": str(Path(relative_source).parent).replace("\\", "/"),
         "git_commit": _git_commit(root),
-        "tracking": {
-            "component": "registered_person_detector",
-            "model": "PersonDetector@production",
-            "tracker": "bytetrack.yaml",
-            "confidence": tracking_confidence,
-            "configured_minimum_track_frames": min_track_frames,
-            "effective_minimum_track_frames": min(
-                min_track_frames,
-                max(1, math.ceil(frame_count * 0.05)),
-            ),
-            "fighter_id_policy": "fighter_track_<bytetrack_fragment_id>",
-            "track_fragment_count": len({record.track_id for record in tracking_records}),
-        },
+        "tracking": tracking_metadata,
         "pose_model": backend_metadata,
         "packages": {
             "ultralytics": _package_version("ultralytics"),
