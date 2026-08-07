@@ -54,6 +54,8 @@ class FighterSlot:
 
     track_ids: list[int]
     frames: set[int]
+    first_frame: int
+    first_centroid: tuple[float, float]
     last_frame: int
     last_centroid: tuple[float, float]
     diagonal: float
@@ -64,6 +66,8 @@ class FighterSlot:
         return cls(
             track_ids=[fragment.track_id],
             frames=set(fragment.frames),
+            first_frame=fragment.first_frame,
+            first_centroid=fragment.first_centroid,
             last_frame=fragment.last_frame,
             last_centroid=fragment.last_centroid,
             diagonal=fragment.diagonal,
@@ -72,12 +76,44 @@ class FighterSlot:
 
     def absorb(self, fragment: TrackFragment) -> None:
         """Extend the chain with a fragment that starts after the current tail."""
+        previous_frames = len(self.frames)
         self.track_ids.append(fragment.track_id)
         self.frames |= fragment.frames
         self.last_frame = fragment.last_frame
         self.last_centroid = fragment.last_centroid
         self.diagonal = fragment.diagonal
-        self.mean_cx = float(np.mean([self.mean_cx, fragment.mean_cx]))
+        self.mean_cx = float(
+            (
+                (self.mean_cx * previous_frames)
+                + (fragment.mean_cx * len(fragment.frames))
+            )
+            / len(self.frames)
+        )
+
+    def absorb_slot(self, other: FighterSlot) -> None:
+        """Combine a disjoint slot while preserving chronological endpoints."""
+        if self.frames & other.frames:
+            raise ValueError("Cannot combine fighter slots that overlap in time.")
+
+        own_frames = len(self.frames)
+        other_frames = len(other.frames)
+        if other.first_frame < self.first_frame:
+            self.track_ids = [*other.track_ids, *self.track_ids]
+            self.first_frame = other.first_frame
+            self.first_centroid = other.first_centroid
+        else:
+            self.track_ids.extend(other.track_ids)
+
+        if other.last_frame > self.last_frame:
+            self.last_frame = other.last_frame
+            self.last_centroid = other.last_centroid
+            self.diagonal = other.diagonal
+
+        self.frames |= other.frames
+        self.mean_cx = float(
+            ((self.mean_cx * own_frames) + (other.mean_cx * other_frames))
+            / len(self.frames)
+        )
 
 
 @dataclass(frozen=True)
@@ -92,6 +128,8 @@ class MergedTracking:
     min_fragment_frames: int
     max_gap_frames: int
     max_distance: float
+    candidate_track_ids: tuple[int, ...]
+    unassigned_track_ids: tuple[int, ...]
 
     def metadata(self) -> dict[str, object]:
         """Tracking block for run_metadata.json, including the merge audit trail."""
@@ -107,10 +145,12 @@ class MergedTracking:
             },
             "fighter_id_policy": "merged_slot_<left|right>",
             "track_fragment_count": sum(len(slot.track_ids) for slot in self.slots),
+            "candidate_fragment_count": len(self.candidate_track_ids),
             "merged_fragments": {
                 label: list(slot.track_ids)
                 for label, slot in zip(FIGHTER_LABELS, self.slots)
             },
+            "unassigned_fragments": list(self.unassigned_track_ids),
         }
 
 
@@ -208,10 +248,76 @@ def merge_fragments(
     return slots
 
 
-def select_fighter_slots(slots: list[FighterSlot]) -> list[FighterSlot]:
-    """Keep the two longest slots, ordered left to right for stable colors."""
-    fighters = sorted(slots, key=lambda slot: -len(slot.frames))[:2]
+def _select_anchor_slots(slots: list[FighterSlot]) -> list[FighterSlot]:
+    """Choose two strong identities that are proven to be different people.
+
+    Prefer a pair that appears simultaneously. Two slots sharing a frame cannot
+    describe the same fighter, which is stronger evidence than screen position.
+    """
+    overlapping_pairs = [
+        (first, second)
+        for index, first in enumerate(slots)
+        for second in slots[index + 1 :]
+        if first.frames & second.frames
+    ]
+    if overlapping_pairs:
+        first, second = max(
+            overlapping_pairs,
+            key=lambda pair: (
+                len(pair[0].frames) + len(pair[1].frames),
+                len(pair[0].frames & pair[1].frames),
+            ),
+        )
+        return [first, second]
+    return sorted(slots, key=lambda slot: -len(slot.frames))[:2]
+
+
+def resolve_fighter_slots(
+    slots: list[FighterSlot],
+) -> tuple[list[FighterSlot], list[FighterSlot]]:
+    """Resolve all compatible fragment chains into two fighter identities.
+
+    The previous implementation kept only the two longest chains. A camera cut
+    could therefore split one real fighter into a third chain and make that
+    fighter disappear for an entire shot. Here, temporal overlap acts as a hard
+    identity constraint: a leftover chain overlapping exactly one fighter must
+    belong to the other one.
+
+    Chains overlapping both identities are left unassigned because they are
+    likely a referee/false positive. Chains overlapping neither identity remain
+    unassigned until appearance-based re-identification is available; guessing
+    from horizontal position alone can swap fighters after a camera cut.
+    """
+    if len(slots) <= 2:
+        fighters = list(slots)
+        fighters.sort(key=lambda slot: slot.mean_cx)
+        return fighters, []
+
+    fighters = _select_anchor_slots(slots)
+    anchor_ids = {id(slot) for slot in fighters}
+    remaining = sorted(
+        (slot for slot in slots if id(slot) not in anchor_ids),
+        key=lambda slot: -len(slot.frames),
+    )
+    unassigned: list[FighterSlot] = []
+
+    for slot in remaining:
+        overlaps_first = bool(slot.frames & fighters[0].frames)
+        overlaps_second = bool(slot.frames & fighters[1].frames)
+        if overlaps_first and not overlaps_second:
+            fighters[1].absorb_slot(slot)
+        elif overlaps_second and not overlaps_first:
+            fighters[0].absorb_slot(slot)
+        else:
+            unassigned.append(slot)
+
     fighters.sort(key=lambda slot: slot.mean_cx)
+    return fighters, unassigned
+
+
+def select_fighter_slots(slots: list[FighterSlot]) -> list[FighterSlot]:
+    """Compatibility wrapper returning the two resolved fighter identities."""
+    fighters, _ = resolve_fighter_slots(slots)
     return fighters
 
 
@@ -301,7 +407,7 @@ def extract_merged_fighter_tracking(
     slots = merge_fragments(
         candidates, max_gap_frames=max_gap_frames, max_distance=max_distance
     )
-    fighters = select_fighter_slots(slots)
+    fighters, unassigned = resolve_fighter_slots(slots)
     if len(fighters) < 2:
         raise RuntimeError(
             "Fragment merging must yield at least two fighter slots; produced "
@@ -319,4 +425,8 @@ def extract_merged_fighter_tracking(
         min_fragment_frames=min_fragment_frames,
         max_gap_frames=max_gap_frames,
         max_distance=max_distance,
+        candidate_track_ids=tuple(sorted(candidates)),
+        unassigned_track_ids=tuple(
+            track_id for slot in unassigned for track_id in slot.track_ids
+        ),
     )

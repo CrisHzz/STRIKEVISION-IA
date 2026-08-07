@@ -23,21 +23,51 @@ PREDICTIONS_DIRNAME = "predictions"
 # Helper/util functions
 # ------------------------------------- #
 
-# Resolve a video path that may be absolute or relative to the project root
+# Resolve a video path that may be absolute, project-relative, or under data/
 def _resolve_video_path(path: Path | str, root: Path) -> Path:
-    video_path = Path(path)
-    if not video_path.is_absolute():
-        video_path = root / video_path
-    video_path = video_path.resolve()
-    if not video_path.is_file():
-        raise FileNotFoundError(f"Could not find video: {video_path}")
-    return video_path
+    raw = str(path).strip().replace("\\", "/")
+    candidates = [Path(raw)]
+    if not candidates[0].is_absolute():
+        candidates.append(root / raw)
+        # Allow "splits/..." without repeating "data/"
+        if not raw.startswith("data/"):
+            candidates.append(root / "data" / raw)
+        # Allow "data/splits/..." written without the project root
+        if raw.startswith("data/"):
+            candidates.append(root / raw)
+
+    seen: set[Path] = set()
+    for candidate in candidates:
+        resolved = candidate.resolve()
+        if resolved in seen:
+            continue
+        seen.add(resolved)
+        if resolved.is_file():
+            return resolved
+
+    raise FileNotFoundError(
+        "Could not find video. Tried:\n  - "
+        + "\n  - ".join(str(path.resolve()) for path in seen)
+        + "\nPass a path relative to data/, e.g. "
+        "'splits/category/fight_round.mp4'."
+    )
 
 
 # Build the artifact directory for one prediction run
-def _resolve_output_dir(video_path: Path, frames: int, root: Path) -> Path:
-    out_dir = root / "outputs" / PREDICTIONS_DIRNAME
-    out_dir = out_dir / f"{video_path.stem}__first_{frames}_pose_merged"
+def _resolve_output_dir(
+    video_path: Path,
+    frames: int,
+    root: Path,
+    output_dir: Path | str | None = None,
+) -> Path:
+    if output_dir is not None:
+        out_dir = Path(output_dir)
+        if not out_dir.is_absolute():
+            out_dir = root / out_dir
+    else:
+        out_dir = root / "outputs" / PREDICTIONS_DIRNAME
+        out_dir = out_dir / f"{video_path.stem}__first_{frames}_pose_merged"
+    out_dir = out_dir.resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
     return out_dir
 
@@ -51,6 +81,7 @@ def send_prediction(
     tracking_confidence: float = TRACKING_CONFIDENCE,
     merge_gap_frames: int = MERGE_GAP_FRAMES,
     merge_distance: float = MERGE_DISTANCE,
+    output_dir: Path | str | None = None,
 ) -> PosePipelineResult:
     """
     Run the pose pipeline with fragment merging on the first `frames` frames of
@@ -68,6 +99,8 @@ def send_prediction(
         tracking_confidence (float): detection score threshold before ByteTrack
         merge_gap_frames (int): longest gap two fragments may span and still merge
         merge_distance (float): largest on-screen jump, in box diagonals
+        output_dir (Path | str | None): optional artifact directory; defaults to
+            outputs/predictions/{video_stem}__first_{frames}_pose_merged
 
     Returns:
         PosePipelineResult with the paths of the five generated artifacts.
@@ -87,7 +120,7 @@ def send_prediction(
 
     root = project_root()
     video_path = _resolve_video_path(path, root)
-    out_dir = _resolve_output_dir(video_path, frames, root)
+    out_dir = _resolve_output_dir(video_path, frames, root, output_dir=output_dir)
 
     print(f"Tracking video: {video_path}")
     print(
@@ -116,11 +149,14 @@ def send_prediction(
     return result
 
 
-# -------------
-# Try function (uncomment to run example)
-# -------------
-# fiziev_bahamondes = send_prediction(
-#     Path("data/splits/normal_men/fiziev_bahamondes__rafael_fiziev_vs_ignacio_bahamondes__normal_men_round1.mp4"),
-#     1000
-# )
-# print(fiziev_bahamondes)
+# Try function (run only as a script, not on package import).
+# Edit only VIDEO (relative to data/) and optionally FRAMES / SAVE_DIR.
+# if __name__ == "__main__":
+#     PROJECT_ROOT = project_root(Path.cwd())
+
+#     VIDEO = "splits/striking_light_grappling_men/topuria_gaethje__topuria_vs_gaethje__striking_light_grappling_men_round2.mp4"
+#     FRAMES = 1000
+#     SAVE_DIR = PROJECT_ROOT / "outputs/generic-pose-smoke/TEST-POSES-MERGE"
+
+#     result = send_prediction(VIDEO, FRAMES, output_dir=SAVE_DIR)
+#     print(result)
