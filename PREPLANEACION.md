@@ -295,7 +295,7 @@ Tecnologias posibles:
 
 - MediaPipe Pose
 - MoveNet
-- modelos pose compatibles con TensorFlow
+- modelos pose preentrenados compatibles con Python
 
 Lo que debo aprender:
 
@@ -371,11 +371,14 @@ Lo que debo aprender:
 - Clasificacion multiclase.
 - Desbalance de clases.
 - Evaluacion por evento, no solo por frame.
-- TensorFlow/Keras.
+- Modelos temporales y ML clasico para secuencias.
 
 Nota tecnica:
 
-Para el primer modelo serio conviene empezar con 1D CNN o Temporal Convolutional Network sobre keypoints/features. No conviene empezar con clasificacion directa sobre video RGB completo porque requiere mas datos, mas GPU y es menos explicable.
+Para el primer modelo serio conviene empezar con un baseline de ML clasico sobre
+keypoints/features y luego comparar con una red temporal si el dataset lo justifica.
+No conviene empezar con clasificacion directa sobre video RGB completo porque requiere
+muchos mas datos y es menos explicable.
 
 ### 9. Render del video anotado
 
@@ -440,21 +443,6 @@ Ejemplos de datos a registrar:
 - matriz de confusion
 - ejemplos fallidos
 
-### Airflow
-
-Usar para orquestar pipelines:
-
-```text
-ingest_dataset
- -> validate_annotations
- -> preprocess_keypoints
- -> train_model
- -> evaluate_model
- -> register_model
-```
-
-Airflow no debe usarse para procesar cada request de usuario en tiempo real. Para eso conviene usar workers o jobs asincronos.
-
 ### Docker
 
 Usar para:
@@ -462,7 +450,6 @@ Usar para:
 - reproducibilidad
 - levantar API
 - levantar MLflow
-- levantar Airflow
 - levantar base de datos
 - facilitar despliegue
 
@@ -482,7 +469,7 @@ Evitar al inicio:
 
 - AKS
 - arquitecturas demasiado complejas
-- entrenamientos GPU costosos sin dataset listo
+- entrenamientos complejos sin dataset listo
 
 ## Roadmap personal
 
@@ -624,7 +611,7 @@ Meta:
 Resultado esperado:
 
 ```text
-modelo TensorFlow versionado en MLflow
+modelo temporal versionado en MLflow
 ```
 
 ### Etapa 8 - Evaluacion seria
@@ -671,7 +658,7 @@ Orden recomendado:
 5. Crear contador basico.
 6. Crear dataset etiquetado.
 7. Entrenar modelo.
-8. Integrar MLflow y Airflow.
+8. Integrar MLflow y automatizar el pipeline cuando sea necesario.
 9. Desplegar en Azure.
 
 ## Decisiones de alcance tomadas

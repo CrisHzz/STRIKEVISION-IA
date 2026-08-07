@@ -1,2 +1,0 @@
-"""Annotated video rendering."""
-

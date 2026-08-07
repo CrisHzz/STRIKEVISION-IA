@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *.pyo
+*.egg-info/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
@@ -25,8 +26,6 @@ data/processed/**
 data/splits/**/*.mp4
 outputs/**
 tests/womens.py
-# Keep folder placeholders
-!**/.gitkeep
 
 # Notebooks
 .ipynb_checkpoints/

@@ -1,0 +1,7 @@
+# Optional dependencies for the future Azure deployment.
+# Install only when configuring Azure Blob Storage or Azure Machine Learning.
+dvc[azure]>=3.50,<4.0
+azure-identity>=1.17,<2.0
+azure-storage-blob>=12.20,<13.0
+azure-ai-ml>=1.17,<2.0
+azureml-mlflow>=1.56,<2.0

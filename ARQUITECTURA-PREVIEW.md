@@ -34,7 +34,7 @@ video completo -> modelo unico -> eventos de golpes
 Problemas de ese enfoque:
 
 - Requiere muchisimos datos etiquetados.
-- Es costoso en GPU.
+- Es costoso de entrenar y operar.
 - Es dificil de explicar.
 - Es dificil saber donde falla.
 - Es mas complejo de evaluar por partes.
@@ -121,8 +121,7 @@ Salida:
 Opciones tecnicas:
 
 - YOLO como opcion practica.
-- TensorFlow Object Detection API si quiero mantener el stack mas cercano a TensorFlow.
-- EfficientDet si quiero trabajar dentro del ecosistema TensorFlow.
+- Detectores preentrenados alternativos si YOLO no cubre el caso.
 
 Decision inicial:
 
@@ -257,7 +256,7 @@ Opciones tecnicas:
 - MediaPipe Pose.
 - MoveNet.
 - YOLO Pose.
-- modelo compatible con TensorFlow.
+- modelo de pose compatible con Python.
 
 Decision inicial:
 
@@ -682,7 +681,7 @@ video anotado con conteos iniciales
 Objetivo:
 
 - Crear dataset etiquetado.
-- Entrenar modelo TensorFlow.
+- Entrenar el primer clasificador temporal.
 - Registrar experimentos en MLflow.
 - Comparar contra baseline.
 
@@ -700,7 +699,7 @@ Objetivo:
 - Evaluar por evento.
 - Evaluar conteo final.
 - Registrar modelo en MLflow Model Registry.
-- Automatizar pipeline con Airflow.
+- Automatizar el pipeline con jobs administrados cuando el volumen lo requiera.
 
 Resultado:
 

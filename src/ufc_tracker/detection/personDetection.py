@@ -361,7 +361,13 @@ def track_video(video_path, max_frames=None, conf=0.5, tracker=TRACKER_CFG):
         if not ok:
             break
         h, w = frame.shape[:2]
-        res = model_person.track(frame, persist=True, tracker=tracker, verbose=False)[0]
+        res = model_person.track(
+            frame,
+            persist=True,
+            tracker=tracker,
+            verbose=False,
+            device="cpu",
+        )[0]
         frame_map = {}
         if res.boxes is not None and res.boxes.id is not None:
             ids = res.boxes.id.cpu().numpy().astype(int)
