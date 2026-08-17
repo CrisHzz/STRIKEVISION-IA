@@ -1,7 +1,8 @@
 schema_version: strike_annotations_v1
 pose_version: pose_dataset_v1
 window_frames: 24
-stride_frames: 6
+# 0.4 seconds at 30 fps: preserves temporal overlap without quadrupling manual labels.
+stride_frames: 12
 expected_fighters: 2
 quality_thresholds:
   min_two_fighter_frame_ratio: 0.75
@@ -22,4 +23,3 @@ required_keypoints:
   - right_knee
   - left_ankle
   - right_ankle
-

@@ -6,7 +6,15 @@ import cv2
 import numpy as np
 
 from ufc_tracker.pose.estimator import KEYPOINT_NAMES, PoseEstimate
-from ufc_tracker.pose.pipeline import calculate_metrics, estimate_pose_records, render_pose_preview
+from ufc_tracker.pose.pipeline import (
+    calculate_metrics,
+    display_fighter_id,
+    estimate_pose_records,
+    load_pose_records,
+    preview_uses_legacy_fighter_labels,
+    refresh_pose_preview_if_legacy_labels,
+    render_pose_preview,
+)
 from ufc_tracker.tracking.contracts import TrackingRecord
 
 
@@ -81,3 +89,55 @@ def test_metrics_and_preview_tolerate_missing_pose(tmp_path: Path) -> None:
     assert metrics["fighters"]["fighter_track_7"]["tracking_visible_frames"] == 1
     assert preview_path.exists()
     assert preview_path.stat().st_size > 0
+
+
+def test_display_fighter_id_maps_legacy_side_labels() -> None:
+    assert display_fighter_id("fighter_left") == "1"
+    assert display_fighter_id("fighter_right") == "2"
+    assert display_fighter_id("1") == "1"
+    assert display_fighter_id("fighter_track_7") == "fighter_track_7"
+
+
+def test_load_pose_records_and_legacy_preview_refresh(tmp_path: Path) -> None:
+    video_path = tmp_path / "round.mp4"
+    pose_dir = tmp_path / "pose"
+    pose_dir.mkdir()
+    _make_video(video_path)
+    pose_path = pose_dir / "pose.jsonl"
+    pose_path.write_text(
+        '{"frame_index": 0, "timestamp_seconds": 0.0, "fighter_id": "fighter_left",'
+        ' "track_id": 1, "bbox_xyxy": [2, 2, 20, 20], "visible": true,'
+        ' "pose_valid": false, "keypoints": {}, "inference_ms": null}\n'
+        '{"frame_index": 0, "timestamp_seconds": 0.0, "fighter_id": "fighter_right",'
+        ' "track_id": 2, "bbox_xyxy": [12, 2, 30, 20], "visible": true,'
+        ' "pose_valid": false, "keypoints": {}, "inference_ms": null}\n',
+        encoding="utf-8",
+    )
+    (pose_dir / "pose_metrics.json").write_text(
+        '{"frame_count": 2}',
+        encoding="utf-8",
+    )
+    (pose_dir / "pose_preview.mp4").write_bytes(b"old")
+
+    records = load_pose_records(pose_path)
+    assert [record.fighter_id for record in records] == ["fighter_left", "fighter_right"]
+    assert preview_uses_legacy_fighter_labels(records) is True
+    assert refresh_pose_preview_if_legacy_labels(video_path, pose_dir) is True
+    assert (pose_dir / "pose_preview.mp4").stat().st_size > 3
+    assert load_pose_records(pose_path)[0].fighter_id == "fighter_left"
+
+
+def test_refresh_skips_preview_when_ids_are_already_numeric(tmp_path: Path) -> None:
+    pose_dir = tmp_path / "pose"
+    pose_dir.mkdir()
+    pose_path = pose_dir / "pose.jsonl"
+    pose_path.write_text(
+        '{"frame_index": 0, "fighter_id": "1", "track_id": 1, "bbox_xyxy": null,'
+        ' "visible": false, "pose_valid": false, "keypoints": {}, "inference_ms": null}\n',
+        encoding="utf-8",
+    )
+    preview = pose_dir / "pose_preview.mp4"
+    preview.write_bytes(b"keep")
+
+    assert refresh_pose_preview_if_legacy_labels(tmp_path / "missing.mp4", pose_dir) is False
+    assert preview.read_bytes() == b"keep"

@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import json
 import math
+import shutil
 import subprocess
+import sys
 from collections import defaultdict
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
@@ -48,6 +50,12 @@ SKELETON_EDGES = (
     ("right_knee", "right_ankle"),
 )
 FIGHTER_COLORS = ((69, 3, 252), (255, 51, 109))
+LEGACY_FIGHTER_DISPLAY_IDS = {
+    "fighter_left": "1",
+    "fighter_right": "2",
+    "fighter_1": "1",
+    "fighter_2": "2",
+}
 
 
 @dataclass(frozen=True)
@@ -90,6 +98,88 @@ class PosePipelineResult:
 
 
 EstimatorFactory = Callable[[], PoseEstimator]
+PipelineProgressCallback = Callable[[str, int, int], None]
+PREVIEW_MAX_HEIGHT = 540
+
+
+def _ffmpeg_executable() -> str:
+    executable = shutil.which("ffmpeg")
+    if executable is not None:
+        return executable
+    environment_root = Path(sys.executable).resolve().parent
+    candidates = (
+        environment_root / "Library" / "bin" / "ffmpeg.exe",
+        environment_root / "bin" / "ffmpeg",
+    )
+    for candidate in candidates:
+        if candidate.is_file():
+            return str(candidate)
+    raise RuntimeError("ffmpeg is required to create browser-compatible pose previews")
+
+
+def _scaled_dimensions(width: int, height: int) -> tuple[int, int]:
+    if width <= 0 or height <= 0:
+        raise ValueError(f"Invalid video dimensions: {width}x{height}")
+    scale = min(1.0, PREVIEW_MAX_HEIGHT / height)
+    scaled_width = max(2, int(round((width * scale) / 2)) * 2)
+    scaled_height = max(2, int(round((height * scale) / 2)) * 2)
+    return scaled_width, scaled_height
+
+
+def _replace_with_browser_preview(source: Path) -> bool:
+    """Transcode an old MP4V/full-resolution preview once and replace it safely."""
+    capture = cv2.VideoCapture(str(source))
+    if not capture.isOpened():
+        raise ValueError(f"Could not open pose preview: {source}")
+    try:
+        fourcc_value = int(capture.get(cv2.CAP_PROP_FOURCC))
+        codec = "".join(chr((fourcc_value >> (8 * index)) & 0xFF) for index in range(4))
+        height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    finally:
+        capture.release()
+    if codec.lower() in {"avc1", "h264"} and height <= PREVIEW_MAX_HEIGHT:
+        return False
+
+    temporary = source.with_name(f".{source.stem}.browser{source.suffix}")
+    temporary.unlink(missing_ok=True)
+    command = [
+        _ffmpeg_executable(),
+        "-y",
+        "-loglevel",
+        "error",
+        "-i",
+        str(source),
+        "-vf",
+        f"scale=-2:{PREVIEW_MAX_HEIGHT}",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "26",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        str(temporary),
+    ]
+    try:
+        completed = subprocess.run(command, capture_output=True, text=True, check=False)
+        if completed.returncode != 0:
+            raise RuntimeError(f"Could not optimize pose preview: {completed.stderr.strip()}")
+        temporary.replace(source)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return True
+
+
+def ensure_browser_compatible_preview(path: str | Path) -> bool:
+    """Ensure a generated pose preview is small and directly playable by browsers."""
+    preview = Path(path).resolve()
+    if not preview.is_file():
+        raise FileNotFoundError(f"Pose preview does not exist: {preview}")
+    return _replace_with_browser_preview(preview)
 
 
 def _write_jsonl(path: Path, rows: Iterable[dict[str, object]]) -> None:
@@ -148,6 +238,7 @@ def estimate_pose_records(
     estimator: PoseEstimator,
     *,
     frame_count: int | None = None,
+    progress_callback: Callable[[int, int], None] | None = None,
 ) -> list[PoseRecord]:
     """Run one pose backend over all stable fighter tracks in source-frame order."""
     path = Path(video_path)
@@ -201,6 +292,12 @@ def estimate_pose_records(
                     )
                 )
             frame_index += 1
+            if progress_callback is not None and (
+                frame_index == 1
+                or frame_index % 30 == 0
+                or frame_index == expected_frames
+            ):
+                progress_callback(frame_index, expected_frames)
     finally:
         capture.release()
         estimator.close()
@@ -299,13 +396,88 @@ def calculate_metrics(records: list[PoseRecord]) -> dict[str, object]:
     }
 
 
+def display_fighter_id(fighter_id: str) -> str:
+    """Map stored track names to the short IDs shown on the Gradio preview."""
+    return LEGACY_FIGHTER_DISPLAY_IDS.get(fighter_id, fighter_id)
+
+
+def pose_record_from_dict(row: dict[str, Any]) -> PoseRecord:
+    bbox = row.get("bbox_xyxy")
+    bbox_xyxy = None
+    if bbox is not None:
+        bbox_xyxy = (float(bbox[0]), float(bbox[1]), float(bbox[2]), float(bbox[3]))
+    raw_keypoints = row.get("keypoints") or {}
+    keypoints: dict[str, tuple[float, float, float] | None] = {}
+    for name in KEYPOINT_NAMES:
+        point = raw_keypoints.get(name)
+        if point is None:
+            keypoints[name] = None
+        else:
+            keypoints[name] = (float(point[0]), float(point[1]), float(point[2]))
+    inference = row.get("inference_ms")
+    return PoseRecord(
+        frame_index=int(row["frame_index"]),
+        timestamp_seconds=float(row.get("timestamp_seconds", 0.0)),
+        fighter_id=str(row["fighter_id"]),
+        track_id=int(row.get("track_id", 0)),
+        bbox_xyxy=bbox_xyxy,
+        visible=bool(row.get("visible", False)),
+        pose_valid=bool(row.get("pose_valid", False)),
+        keypoints=keypoints,
+        inference_ms=None if inference is None else float(inference),
+    )
+
+
+def load_pose_records(path: str | Path) -> list[PoseRecord]:
+    records: list[PoseRecord] = []
+    with Path(path).open(encoding="utf-8") as file:
+        for line in file:
+            if line.strip():
+                records.append(pose_record_from_dict(json.loads(line)))
+    return records
+
+
+def preview_uses_legacy_fighter_labels(records: Iterable[PoseRecord]) -> bool:
+    return any(record.fighter_id in LEGACY_FIGHTER_DISPLAY_IDS for record in records)
+
+
+def refresh_pose_preview_if_legacy_labels(
+    video_path: str | Path,
+    pose_dir: str | Path,
+    *,
+    progress_callback: Callable[[int, int], None] | None = None,
+) -> bool:
+    """Re-render pose_preview.mp4 when stored IDs still use fighter_left/right.
+
+    Existing pose.jsonl and annotation JSONL files are left untouched.
+    Returns True if the preview was rewritten.
+    """
+    destination = Path(pose_dir)
+    records = load_pose_records(destination / "pose.jsonl")
+    if not preview_uses_legacy_fighter_labels(records):
+        return False
+    metrics_path = destination / "pose_metrics.json"
+    frame_count = None
+    if metrics_path.is_file():
+        metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+        frame_count = int(metrics.get("frame_count") or 0) or None
+    render_pose_preview(
+        video_path,
+        records,
+        destination / "pose_preview.mp4",
+        frame_count=frame_count,
+        progress_callback=progress_callback,
+    )
+    return True
+
+
 def _draw_pose(frame: np.ndarray, record: PoseRecord, color: tuple[int, int, int]) -> None:
     if record.bbox_xyxy is not None:
         x1, y1, x2, y2 = (int(value) for value in record.bbox_xyxy)
         cv2.rectangle(frame, (x1, y1), (x2, y2), color, 2)
         cv2.putText(
             frame,
-            record.fighter_id,
+            display_fighter_id(record.fighter_id),
             (x1, max(24, y1 - 8)),
             cv2.FONT_HERSHEY_SIMPLEX,
             0.55,
@@ -328,18 +500,51 @@ def render_pose_preview(
     output_path: Path,
     *,
     frame_count: int | None = None,
+    progress_callback: Callable[[int, int], None] | None = None,
 ) -> None:
-    """Render stable track IDs and a skeleton, including frames with missing pose."""
+    """Render a compact H.264 browser preview with IDs and pose skeletons."""
     capture = cv2.VideoCapture(str(video_path))
     if not capture.isOpened():
         raise ValueError(f"Could not open video: {video_path}")
     fps = float(capture.get(cv2.CAP_PROP_FPS)) or 30.0
     width = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    writer = cv2.VideoWriter(str(output_path), cv2.VideoWriter_fourcc(*"mp4v"), fps, (width, height))
-    if not writer.isOpened():
-        capture.release()
-        raise RuntimeError(f"Could not open preview writer: {output_path}")
+    preview_width, preview_height = _scaled_dimensions(width, height)
+    temporary = output_path.with_name(f".{output_path.stem}.rendering{output_path.suffix}")
+    temporary.unlink(missing_ok=True)
+    command = [
+        _ffmpeg_executable(),
+        "-y",
+        "-loglevel",
+        "error",
+        "-f",
+        "rawvideo",
+        "-pix_fmt",
+        "bgr24",
+        "-s",
+        f"{preview_width}x{preview_height}",
+        "-r",
+        str(fps),
+        "-i",
+        "-",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "veryfast",
+        "-crf",
+        "26",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        str(temporary),
+    ]
+    encoder = subprocess.Popen(
+        command,
+        stdin=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
 
     by_frame: dict[int, list[PoseRecord]] = defaultdict(list)
     fighter_order: dict[str, int] = {}
@@ -360,11 +565,42 @@ def render_pose_preview(
             for record in by_frame.get(frame_index, []):
                 color = FIGHTER_COLORS[fighter_order[record.fighter_id] % len(FIGHTER_COLORS)]
                 _draw_pose(frame, record, color)
-            writer.write(frame)
+            if (preview_width, preview_height) != (width, height):
+                frame = cv2.resize(
+                    frame,
+                    (preview_width, preview_height),
+                    interpolation=cv2.INTER_AREA,
+                )
+            if encoder.stdin is None:
+                raise RuntimeError("ffmpeg preview encoder stdin is unavailable")
+            encoder.stdin.write(frame.tobytes())
             frame_index += 1
+            if progress_callback is not None and (
+                frame_index == 1
+                or frame_index % 30 == 0
+                or frame_index == expected_frames
+            ):
+                progress_callback(frame_index, expected_frames)
+    except Exception:
+        if encoder.stdin is not None:
+            encoder.stdin.close()
+        if encoder.poll() is None:
+            encoder.kill()
+        encoder.wait()
+        temporary.unlink(missing_ok=True)
+        raise
     finally:
         capture.release()
-        writer.release()
+        if encoder.poll() is None and encoder.stdin is not None:
+            encoder.stdin.close()
+
+    stderr = b"" if encoder.stderr is None else encoder.stderr.read()
+    return_code = encoder.wait()
+    if return_code != 0:
+        temporary.unlink(missing_ok=True)
+        message = stderr.decode("utf-8", errors="replace").strip()
+        raise RuntimeError(f"Could not render pose preview: {message}")
+    temporary.replace(output_path)
 
 
 def _default_factory() -> PoseEstimator:
@@ -382,6 +618,7 @@ def run_pose_pipeline(
     max_merge_gap_frames: int = MAX_MERGE_GAP_FRAMES,
     max_merge_distance: float = MAX_MERGE_DISTANCE,
     estimator_factory: EstimatorFactory = _default_factory,
+    progress_callback: PipelineProgressCallback | None = None,
 ) -> PosePipelineResult:
     """Generate DVC-ready fighter tracks, MediaPipe poses, metrics and preview.
 
@@ -402,6 +639,11 @@ def run_pose_pipeline(
             max_frames=max_frames,
             max_gap_frames=max_merge_gap_frames,
             max_distance=max_merge_distance,
+            progress_callback=(
+                None
+                if progress_callback is None
+                else lambda current, total: progress_callback("tracking", current, total)
+            ),
         )
         tracking_records = merged.records
         fps = merged.fps
@@ -438,12 +680,30 @@ def run_pose_pipeline(
         "implementation": type(estimator).__name__,
     }
     records = estimate_pose_records(
-        source, tracking_records, estimator, frame_count=frame_count
+        source,
+        tracking_records,
+        estimator,
+        frame_count=frame_count,
+        progress_callback=(
+            None
+            if progress_callback is None
+            else lambda current, total: progress_callback("pose", current, total)
+        ),
     )
     pose_path = destination / "pose.jsonl"
     preview_path = destination / "pose_preview.mp4"
     _write_jsonl(pose_path, (record.to_dict() for record in records))
-    render_pose_preview(source, records, preview_path, frame_count=frame_count)
+    render_pose_preview(
+        source,
+        records,
+        preview_path,
+        frame_count=frame_count,
+        progress_callback=(
+            None
+            if progress_callback is None
+            else lambda current, total: progress_callback("render", current, total)
+        ),
+    )
     pose_metrics = calculate_metrics(records)
 
     root = project_root(source)

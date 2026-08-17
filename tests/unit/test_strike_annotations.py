@@ -52,8 +52,8 @@ def _pose_record(frame: int, fighter: str, *, visible: bool = True) -> dict[str,
 def test_generate_windows_marks_low_tracking_coverage_for_review() -> None:
     records = []
     for frame in range(30):
-        records.append(_pose_record(frame, "fighter_left"))
-        records.append(_pose_record(frame, "fighter_right", visible=frame >= 12))
+        records.append(_pose_record(frame, "1"))
+        records.append(_pose_record(frame, "2", visible=frame >= 12))
 
     windows = generate_annotation_windows(
         records,
@@ -79,7 +79,7 @@ def test_validator_accepts_generated_unlabeled_windows() -> None:
     records = [
         _pose_record(frame, fighter)
         for frame in range(24)
-        for fighter in ("fighter_left", "fighter_right")
+        for fighter in ("1", "2")
     ]
     windows = generate_annotation_windows(
         records,
@@ -100,7 +100,7 @@ def test_validator_rejects_duplicates_and_invalid_labels() -> None:
     records = [
         _pose_record(frame, fighter)
         for frame in range(24)
-        for fighter in ("fighter_left", "fighter_right")
+        for fighter in ("1", "2")
     ]
     window = generate_annotation_windows(
         records,
@@ -127,4 +127,4 @@ def test_repository_config_is_valid() -> None:
     config = load_annotation_config(root / "configs/data/strike_annotations_v1.yaml")
 
     assert config.window_frames == 24
-    assert config.stride_frames == 6
+    assert config.stride_frames == 12

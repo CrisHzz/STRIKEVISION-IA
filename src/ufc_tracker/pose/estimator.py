@@ -227,6 +227,11 @@ class MediaPipePoseEstimator:
         self._models.clear()
 
     def mark_missing(self, fighter_id: str) -> None:
-        model = self._models.pop(fighter_id, None)
-        if model is not None:
-            model.close()
+        """Keep the per-fighter task warm across detector gaps.
+
+        Video-mode timestamps remain monotonic and the next crop makes the
+        landmarker redetect when its previous pose is no longer present. Closing
+        here used to rebuild a TFLite graph after every missing frame, which was
+        both noisy and needlessly expensive on fragmented fight tracking.
+        """
+        del fighter_id

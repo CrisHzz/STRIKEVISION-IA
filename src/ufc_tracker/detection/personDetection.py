@@ -1,3 +1,4 @@
+from collections.abc import Callable
 from pathlib import Path
 
 import cv2
@@ -344,13 +345,23 @@ def reset_tracker(model):
         pass
 
 # Track all persons through a video (ByteTrack), compute running stats per track_id
-def track_video(video_path, max_frames=None, conf=0.5, tracker=TRACKER_CFG):
+def track_video(
+    video_path,
+    max_frames=None,
+    conf=0.5,
+    tracker=TRACKER_CFG,
+    progress_callback: Callable[[int, int], None] | None = None,
+):
     """Pass 1: ByteTrack tracking and accumulate stats per track."""
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
         raise FileNotFoundError(f"Could not open video: {video_path}")
 
     reset_tracker(model_person)
+    source_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    expected_frames = source_frames
+    if max_frames is not None:
+        expected_frames = min(source_frames, max_frames) if source_frames > 0 else max_frames
     per_frame = []
     stats = {}
     n = 0
@@ -397,6 +408,10 @@ def track_video(video_path, max_frames=None, conf=0.5, tracker=TRACKER_CFG):
                 d["cx"] += cx
         per_frame.append(frame_map)
         n += 1
+        if progress_callback is not None and (
+            n == 1 or n % 30 == 0 or n == expected_frames
+        ):
+            progress_callback(n, expected_frames)
     cap.release()
     return per_frame, stats, n
 

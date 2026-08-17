@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import math
 from collections import defaultdict
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -16,6 +18,12 @@ from ufc_tracker.tracking.contracts import TrackObservation, TrackingRecord
 FIGHTER_SKIN_MIN = 0.50
 FIGHTER_MIN_AREA = 0.01
 
+# The strict skin gate above keeps referees and crowd members out of the stable
+# identity anchors. Gap recovery is intentionally more permissive because it is
+# only used when an anchor fighter is already missing in that frame.
+RECOVERY_SKIN_MIN = 0.15
+RECOVERY_LARGE_AREA = 0.05
+
 # Below this length a fragment is detection noise rather than a camera cut.
 MIN_FRAGMENT_FRAMES = 5
 
@@ -25,8 +33,9 @@ MIN_FRAGMENT_FRAMES = 5
 MAX_MERGE_GAP_FRAMES = 60
 MAX_MERGE_DISTANCE = 0.5
 
-# Stable identities, ordered left to right so preview colors stay consistent.
-FIGHTER_LABELS = ("fighter_left", "fighter_right")
+# Stable identities. The number is assigned once and stays with that person
+# even when they switch sides of the cage.
+FIGHTER_LABELS = ("1", "2")
 
 # Track id written on frames where a fighter has no box.
 MISSING_TRACK_ID = -1
@@ -130,6 +139,8 @@ class MergedTracking:
     max_distance: float
     candidate_track_ids: tuple[int, ...]
     unassigned_track_ids: tuple[int, ...]
+    recovered_observation_count: int
+    two_fighter_frame_count: int
 
     def metadata(self) -> dict[str, object]:
         """Tracking block for run_metadata.json, including the merge audit trail."""
@@ -143,7 +154,7 @@ class MergedTracking:
                 "max_gap_frames": self.max_gap_frames,
                 "max_normalized_distance": self.max_distance,
             },
-            "fighter_id_policy": "merged_slot_<left|right>",
+            "fighter_id_policy": "merged_slot_<1|2>",
             "track_fragment_count": sum(len(slot.track_ids) for slot in self.slots),
             "candidate_fragment_count": len(self.candidate_track_ids),
             "merged_fragments": {
@@ -151,6 +162,12 @@ class MergedTracking:
                 for label, slot in zip(FIGHTER_LABELS, self.slots)
             },
             "unassigned_fragments": list(self.unassigned_track_ids),
+            "gap_recovery": {
+                "recovered_observations": self.recovered_observation_count,
+                "two_fighter_frames": self.two_fighter_frame_count,
+                "skin_min": RECOVERY_SKIN_MIN,
+                "large_area_override": RECOVERY_LARGE_AREA,
+            },
         }
 
 
@@ -272,6 +289,50 @@ def _select_anchor_slots(slots: list[FighterSlot]) -> list[FighterSlot]:
     return sorted(slots, key=lambda slot: -len(slot.frames))[:2]
 
 
+def _slot_link_score(fighter: FighterSlot, candidate: FighterSlot) -> float:
+    """Score a disjoint camera-shot chain against an existing fighter slot."""
+    if candidate.last_frame < fighter.first_frame:
+        gap = fighter.first_frame - candidate.last_frame
+        first = candidate.last_centroid
+        second = fighter.first_centroid
+    elif candidate.first_frame > fighter.last_frame:
+        gap = candidate.first_frame - fighter.last_frame
+        first = fighter.last_centroid
+        second = candidate.first_centroid
+    else:
+        # Their spans cross but their actually observed frames do not. Mean
+        # horizontal position is the least surprising tie-breaker in this case.
+        gap = 0
+        first = (fighter.mean_cx, 0.0)
+        second = (candidate.mean_cx, 0.0)
+
+    scale = max(1.0, (fighter.diagonal + candidate.diagonal) * 0.5)
+    spatial_distance = float(np.hypot(second[0] - first[0], second[1] - first[1])) / scale
+    temporal_distance = math.log1p(max(0, gap) / 30.0)
+    return temporal_distance + spatial_distance
+
+
+def _assign_forced_slots(
+    fighters: list[FighterSlot],
+    pending: list[FighterSlot],
+) -> tuple[list[FighterSlot], bool]:
+    """Propagate the rule that simultaneous chains are different fighters."""
+    remaining: list[FighterSlot] = []
+    changed = False
+    for slot in pending:
+        overlaps_first = bool(slot.frames & fighters[0].frames)
+        overlaps_second = bool(slot.frames & fighters[1].frames)
+        if overlaps_first and not overlaps_second:
+            fighters[1].absorb_slot(slot)
+            changed = True
+        elif overlaps_second and not overlaps_first:
+            fighters[0].absorb_slot(slot)
+            changed = True
+        else:
+            remaining.append(slot)
+    return remaining, changed
+
+
 def resolve_fighter_slots(
     slots: list[FighterSlot],
 ) -> tuple[list[FighterSlot], list[FighterSlot]]:
@@ -284,9 +345,10 @@ def resolve_fighter_slots(
     belong to the other one.
 
     Chains overlapping both identities are left unassigned because they are
-    likely a referee/false positive. Chains overlapping neither identity remain
-    unassigned until appearance-based re-identification is available; guessing
-    from horizontal position alone can swap fighters after a camera cut.
+    likely a referee/false positive. A disconnected camera shot has no overlap
+    with either anchor, so its strongest chain seeds the closest fighter and
+    overlap propagation assigns the opponent. This retains full-round coverage
+    while keeping the simultaneous-person constraint as the hard safety rule.
     """
     if len(slots) <= 2:
         fighters = list(slots)
@@ -295,24 +357,34 @@ def resolve_fighter_slots(
 
     fighters = _select_anchor_slots(slots)
     anchor_ids = {id(slot) for slot in fighters}
-    remaining = sorted(
+    pending = sorted(
         (slot for slot in slots if id(slot) not in anchor_ids),
         key=lambda slot: -len(slot.frames),
     )
-    unassigned: list[FighterSlot] = []
+    while pending:
+        pending, changed = _assign_forced_slots(fighters, pending)
+        if changed:
+            continue
 
-    for slot in remaining:
-        overlaps_first = bool(slot.frames & fighters[0].frames)
-        overlaps_second = bool(slot.frames & fighters[1].frames)
-        if overlaps_first and not overlaps_second:
-            fighters[1].absorb_slot(slot)
-        elif overlaps_second and not overlaps_first:
-            fighters[0].absorb_slot(slot)
-        else:
-            unassigned.append(slot)
+        # Start another disconnected camera-shot component. A slot colliding
+        # with both fighters is a third simultaneous person and stays excluded.
+        seed = next(
+            (
+                slot
+                for slot in pending
+                if not (slot.frames & fighters[0].frames)
+                and not (slot.frames & fighters[1].frames)
+            ),
+            None,
+        )
+        if seed is None:
+            break
+        destination = min(fighters, key=lambda fighter: _slot_link_score(fighter, seed))
+        destination.absorb_slot(seed)
+        pending.remove(seed)
 
     fighters.sort(key=lambda slot: slot.mean_cx)
-    return fighters, unassigned
+    return fighters, pending
 
 
 def select_fighter_slots(slots: list[FighterSlot]) -> list[FighterSlot]:
@@ -368,6 +440,83 @@ def build_tracking_records(
     return records
 
 
+def recover_missing_fighter_records(
+    records: list[TrackingRecord],
+    per_frame: list[dict[int, TrackObservation]],
+    stats: dict[int, dict[str, float]],
+    *,
+    min_fragment_frames: int = MIN_FRAGMENT_FRAMES,
+) -> tuple[list[TrackingRecord], int]:
+    """Fill missing slots with the strongest unused YOLO observation.
+
+    Stable merged identities remain untouched. Recovery only acts on an empty
+    slot, using a looser appearance gate plus box size to handle lighting and
+    side/back camera angles without allowing small crowd detections to win.
+    """
+    by_frame: dict[int, dict[str, TrackingRecord]] = defaultdict(dict)
+    for record in records:
+        by_frame[record.frame_index][record.fighter_id] = record
+
+    recovered = 0
+    for frame_index, frame_map in enumerate(per_frame):
+        frame_records = by_frame[frame_index]
+        missing_labels = [
+            label for label in FIGHTER_LABELS if not frame_records[label].visible
+        ]
+        if not missing_labels:
+            continue
+        used_ids = {
+            record.track_id for record in frame_records.values() if record.visible
+        }
+        candidates: list[tuple[float, int, TrackObservation]] = []
+        for track_id, observation in frame_map.items():
+            if track_id in used_ids:
+                continue
+            track_stats = stats.get(track_id)
+            if track_stats is None or track_stats["n"] < min_fragment_frames:
+                continue
+            count = track_stats["n"]
+            mean_skin = track_stats["skin"] / count
+            mean_area = track_stats["area"] / count
+            if mean_area < FIGHTER_MIN_AREA:
+                continue
+            if mean_skin < RECOVERY_SKIN_MIN and mean_area < RECOVERY_LARGE_AREA:
+                continue
+            x1, y1, x2, y2 = observation.bbox_xyxy
+            current_area = max(0.0, float((x2 - x1) * (y2 - y1)))
+            score = current_area * (0.20 + mean_skin) * observation.confidence
+            candidates.append((score, track_id, observation))
+
+        selected = sorted(candidates, key=lambda item: item[0], reverse=True)[
+            : len(missing_labels)
+        ]
+        if len(missing_labels) == 2:
+            selected.sort(
+                key=lambda item: float(
+                    item[2].bbox_xyxy[0] + item[2].bbox_xyxy[2]
+                )
+            )
+        for label, (_, track_id, observation) in zip(missing_labels, selected):
+            previous = frame_records[label]
+            frame_records[label] = TrackingRecord(
+                frame_index=previous.frame_index,
+                timestamp_seconds=previous.timestamp_seconds,
+                fighter_id=label,
+                track_id=track_id,
+                bbox_xyxy=tuple(float(value) for value in observation.bbox_xyxy.tolist()),
+                confidence=float(observation.confidence),
+                visible=True,
+            )
+            recovered += 1
+
+    output = [
+        by_frame[frame_index][label]
+        for frame_index in range(len(per_frame))
+        for label in FIGHTER_LABELS
+    ]
+    return output, recovered
+
+
 def extract_merged_fighter_tracking(
     video_path: str | Path,
     *,
@@ -376,6 +525,7 @@ def extract_merged_fighter_tracking(
     min_fragment_frames: int = MIN_FRAGMENT_FRAMES,
     max_gap_frames: int = MAX_MERGE_GAP_FRAMES,
     max_distance: float = MAX_MERGE_DISTANCE,
+    progress_callback: Callable[[int, int], None] | None = None,
 ) -> MergedTracking:
     """Run detection and ByteTrack, then rebuild two fighters from the fragments.
 
@@ -398,7 +548,10 @@ def extract_merged_fighter_tracking(
         raise ValueError(f"Video has invalid FPS: {path}")
 
     per_frame, stats, frame_count = track_video(
-        path, max_frames=max_frames, conf=confidence
+        path,
+        max_frames=max_frames,
+        conf=confidence,
+        progress_callback=progress_callback,
     )
     fragments = describe_fragments(per_frame, stats)
     candidates = select_fragment_candidates(
@@ -416,6 +569,15 @@ def extract_merged_fighter_tracking(
         )
 
     records = build_tracking_records(per_frame, fighters, fps)
+    records, recovered = recover_missing_fighter_records(
+        records,
+        per_frame,
+        stats,
+        min_fragment_frames=min_fragment_frames,
+    )
+    visible_by_frame: dict[int, int] = defaultdict(int)
+    for record in records:
+        visible_by_frame[record.frame_index] += int(record.visible)
     return MergedTracking(
         records=records,
         fps=fps,
@@ -429,4 +591,6 @@ def extract_merged_fighter_tracking(
         unassigned_track_ids=tuple(
             track_id for slot in unassigned for track_id in slot.track_ids
         ),
+        recovered_observation_count=recovered,
+        two_fighter_frame_count=sum(count == 2 for count in visible_by_frame.values()),
     )

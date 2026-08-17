@@ -90,7 +90,7 @@ def send_prediction(
 
     ByteTrack splits a fighter into several track ids on camera cuts and
     occlusions. This variant chains those fragments into two stable identities
-    (fighter_left / fighter_right) before estimating pose, so no per-video
+    (1 / 2) before estimating pose, so no per-video
     min_track_frames tuning is required.
 
     Args:

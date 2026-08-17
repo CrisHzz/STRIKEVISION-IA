@@ -124,7 +124,7 @@ POSE_ESTIMATOR_MERGE_DESCRIPTION = textwrap.dedent(
     Same MediaPipe pose backend as PoseEstimator, but fighter identities are
     rebuilt before keypoint estimation. Camera cuts and occlusions split one
     fighter into several ByteTrack IDs; this model chains those fragments into
-    two stable labels (fighter_left / fighter_right) using temporal gap and
+    two stable labels (1 / 2) using temporal gap and
     normalized centroid distance. That removes the need to tune min_track_frames
     per video and keeps at most two fighters per frame by construction.
 

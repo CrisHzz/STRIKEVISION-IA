@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 from ufc_tracker.annotations.contracts import AnnotationConfig, QualityThresholds
-from ufc_tracker.annotations.session import AnnotationMediaCache, AnnotationStore
+from ufc_tracker.annotations.session import AnnotationMediaResolver, AnnotationStore
 from ufc_tracker.annotations.windows import write_jsonl
 
 
@@ -81,17 +81,18 @@ def test_store_saves_a_label_and_advances_to_next_unlabeled(tmp_path: Path) -> N
     assert reloaded.row(0)["label"] == "strike"
 
 
-def test_media_cache_creates_original_and_pose_preview_clips(tmp_path: Path) -> None:
+def test_media_resolver_returns_full_original_and_pose_preview(tmp_path: Path) -> None:
     project_root = tmp_path / "project"
     original = project_root / "data" / "round_1.mp4"
     preview = project_root / "outputs" / "round_1" / "pose_preview.mp4"
     _write_video(original)
     _write_video(preview)
-    cache = AnnotationMediaCache(project_root, project_root / "outputs" / "clips")
+    media = AnnotationMediaResolver(project_root)
     row = _row()
 
-    original_clip = cache.clip_for(row, "original")
-    preview_clip = cache.clip_for(row, "pose_preview")
+    original_source = media.source_for(row, "original")
+    preview_source = media.source_for(row, "pose_preview")
 
-    assert original_clip.is_file() and original_clip.stat().st_size > 0
-    assert preview_clip.is_file() and preview_clip.stat().st_size > 0
+    assert original_source == original.resolve()
+    assert preview_source == preview.resolve()
+    assert not (project_root / "outputs" / "clips").exists()
