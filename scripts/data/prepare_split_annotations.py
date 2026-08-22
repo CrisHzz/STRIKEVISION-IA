@@ -84,6 +84,7 @@ def _launch_annotator(
         server_name="127.0.0.1",
         server_port=port,
         inbrowser=inbrowser,
+        allowed_paths=[str(root)],
     )
 
 

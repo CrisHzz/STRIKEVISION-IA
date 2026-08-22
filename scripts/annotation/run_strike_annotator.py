@@ -101,6 +101,7 @@ def main() -> None:
         server_name=args.host,
         server_port=args.port,
         inbrowser=not args.no_browser,
+        allowed_paths=[str(root)],
     )
 
 
