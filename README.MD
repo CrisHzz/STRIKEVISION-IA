@@ -33,7 +33,8 @@ conda activate strikevision
 streamlit run src/ufc_tracker/ui/streamlit_app.py
 ```
 
-Consulta la guía completa en [`docs/INTERFACES-WEB.md`](docs/INTERFACES-WEB.md).
+Para probar el clasificador actual, consulta
+[`docs/STRIKE-GRADIO-TESTER.md`](docs/STRIKE-GRADIO-TESTER.md).
 
 ## Pose estimation
 

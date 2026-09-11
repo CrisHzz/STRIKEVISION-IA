@@ -1,0 +1,19 @@
+# Independent CPU baseline; do not install into the pose/annotation environment.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+pytorchvideo==0.1.5
+av==14.2.0
+numpy==1.26.4
+opencv-python-headless==4.10.0.84
+pandas==2.2.3
+scikit-learn==1.6.1
+pyyaml==6.0.2
+matplotlib==3.10.1
+psutil==7.0.0
+filelock==3.32.3
+gradio==5.50.0
+ipykernel==6.29.5
+nbformat==5.10.4
+nbclient==0.10.2
+pytest==8.3.5

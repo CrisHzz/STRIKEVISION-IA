@@ -92,7 +92,7 @@ class PosePipelineResult:
     output_dir: Path
     tracking_path: Path
     pose_path: Path
-    preview_path: Path
+    preview_path: Path | None
     metrics_path: Path
     metadata_path: Path
 
@@ -447,14 +447,16 @@ def refresh_pose_preview_if_legacy_labels(
     *,
     progress_callback: Callable[[int, int], None] | None = None,
 ) -> bool:
-    """Re-render pose_preview.mp4 when stored IDs still use fighter_left/right.
+    """Render a missing preview on demand, or refresh legacy fighter labels.
 
     Existing pose.jsonl and annotation JSONL files are left untouched.
     Returns True if the preview was rewritten.
     """
     destination = Path(pose_dir)
     records = load_pose_records(destination / "pose.jsonl")
-    if not preview_uses_legacy_fighter_labels(records):
+    if (destination / "pose_preview.mp4").is_file() and not preview_uses_legacy_fighter_labels(
+        records
+    ):
         return False
     metrics_path = destination / "pose_metrics.json"
     frame_count = None
@@ -468,6 +470,11 @@ def refresh_pose_preview_if_legacy_labels(
         frame_count=frame_count,
         progress_callback=progress_callback,
     )
+    metadata_path = destination / "run_metadata.json"
+    if metadata_path.is_file():
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        metadata["preview"] = {"generated": True}
+        metadata_path.write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     return True
 
 
@@ -619,6 +626,7 @@ def run_pose_pipeline(
     max_merge_distance: float = MAX_MERGE_DISTANCE,
     estimator_factory: EstimatorFactory = _default_factory,
     progress_callback: PipelineProgressCallback | None = None,
+    generate_preview: bool = True,
 ) -> PosePipelineResult:
     """Generate DVC-ready fighter tracks, MediaPipe poses, metrics and preview.
 
@@ -631,6 +639,8 @@ def run_pose_pipeline(
         raise FileNotFoundError(f"Could not find input video: {source}")
     destination = Path(output_dir).resolve()
     destination.mkdir(parents=True, exist_ok=True)
+    if not generate_preview and (destination / "pose_preview.mp4").exists():
+        raise ValueError("Use a fresh output directory when omitting preview generation")
 
     if merge_track_fragments:
         merged = extract_merged_fighter_tracking(
@@ -693,17 +703,18 @@ def run_pose_pipeline(
     pose_path = destination / "pose.jsonl"
     preview_path = destination / "pose_preview.mp4"
     _write_jsonl(pose_path, (record.to_dict() for record in records))
-    render_pose_preview(
-        source,
-        records,
-        preview_path,
-        frame_count=frame_count,
-        progress_callback=(
-            None
-            if progress_callback is None
-            else lambda current, total: progress_callback("render", current, total)
-        ),
-    )
+    if generate_preview:
+        render_pose_preview(
+            source,
+            records,
+            preview_path,
+            frame_count=frame_count,
+            progress_callback=(
+                None
+                if progress_callback is None
+                else lambda current, total: progress_callback("render", current, total)
+            ),
+        )
     pose_metrics = calculate_metrics(records)
 
     root = project_root(source)
@@ -736,13 +747,14 @@ def run_pose_pipeline(
         },
         "keypoint_contract": list(KEYPOINT_NAMES),
         "required_keypoints": list(REQUIRED_KEYPOINTS),
+        "preview": {"generated": generate_preview},
     }
     metadata_path.write_text(json.dumps(metadata_payload, indent=2, ensure_ascii=False), encoding="utf-8")
     return PosePipelineResult(
         output_dir=destination,
         tracking_path=tracking_path,
         pose_path=pose_path,
-        preview_path=preview_path,
+        preview_path=preview_path if generate_preview else None,
         metrics_path=metrics_path,
         metadata_path=metadata_path,
     )

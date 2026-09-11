@@ -141,3 +141,45 @@ def test_refresh_skips_preview_when_ids_are_already_numeric(tmp_path: Path) -> N
 
     assert refresh_pose_preview_if_legacy_labels(tmp_path / "missing.mp4", pose_dir) is False
     assert preview.read_bytes() == b"keep"
+
+
+def test_pipeline_can_skip_preview_without_losing_pose_artifacts(tmp_path, monkeypatch):
+    import json
+
+    import ufc_tracker.pose.pipeline as pipeline
+
+    video = tmp_path / "round.mp4"
+    _make_video(video)
+    tracks = [
+        TrackingRecord(i, i / 10, "1", 1, (2., 2., 20., 20.), .9, True)
+        for i in range(2)
+    ]
+    monkeypatch.setattr(pipeline, "extract_fighter_tracking", lambda *a, **k: (tracks, 10., 2))
+    monkeypatch.setattr(pipeline, "project_root", lambda _: tmp_path)
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Preview rendering must not run")
+
+    monkeypatch.setattr(pipeline, "render_pose_preview", forbidden)
+    result = pipeline.run_pose_pipeline(
+        video, tmp_path / "pose", generate_preview=False, estimator_factory=FakePoseEstimator,
+    )
+    assert result.preview_path is None
+    assert result.pose_path.is_file()
+    assert result.tracking_path.is_file()
+    assert not (result.output_dir / "pose_preview.mp4").exists()
+    assert json.loads(result.metadata_path.read_text())["preview"]["generated"] is False
+
+
+def test_missing_numeric_preview_can_be_rendered_from_saved_pose(tmp_path):
+    import json
+
+    video = tmp_path / "round.mp4"
+    _make_video(video)
+    (tmp_path / "pose.jsonl").write_text(json.dumps({
+        "frame_index": 0, "timestamp_seconds": 0., "fighter_id": "1", "track_id": 1,
+        "bbox_xyxy": None, "visible": False, "pose_valid": False, "keypoints": {},
+    }) + "\n")
+    (tmp_path / "pose_metrics.json").write_text('{"frame_count": 2}')
+    assert refresh_pose_preview_if_legacy_labels(video, tmp_path) is True
+    assert (tmp_path / "pose_preview.mp4").is_file()

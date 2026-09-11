@@ -1,0 +1,33 @@
+{
+  "schema_version": "strike_split_v1",
+  "status": "approved_by_user",
+  "execution_policy": "manual_user_only_no_agent_extraction_or_training",
+  "manifest_sha256": "62bc4ec7ad7574df3f9942dd209060413e26797ed29acbfa3baaae7a7aaab2e0",
+  "assignment_sha256": "6c4681893013140048384460c9ed3d6c8ff711048a03ba5f9354acb65d6bcb69",
+  "seed": 20260906,
+  "method": "explicit_fight_assignment_no_model_results",
+  "assignments": {
+    "train": [
+      "adesanya_pereira_1",
+      "fiziev_bahamondes",
+      "fiziev_green",
+      "nunes_shevchenko_2",
+      "omalley_zahabi",
+      "romero_adesanya",
+      "topuria_gaethje",
+      "topuria_holloway",
+      "yan_sandhagen"
+    ],
+    "validation": [
+      "aldo_font",
+      "zhang_joanna_1"
+    ],
+    "test": [
+      "holloway_gaethje",
+      "joanna_andrade"
+    ]
+  },
+  "source_proposal": "outputs/strike-detection/phase12-20260906/split_proposal.json",
+  "note": "Approval records the unchanged 9/2/2 assignment. Phase 3 supports manual resumable train/validation extraction and head training; the agent must not launch full runs. The phase 1/2 configuration and report remain historical benchmark records.",
+  "label_review": "outputs/annotation-review-v1/changes.json"
+}

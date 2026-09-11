@@ -108,7 +108,6 @@ class SplitAnnotationApp:
                 "pose.jsonl",
                 "pose_metrics.json",
                 "run_metadata.json",
-                "pose_preview.mp4",
             )
         )
 
@@ -191,7 +190,7 @@ class SplitAnnotationApp:
                     progress, "render", current, total
                 ),
             ):
-                progress(0.95, desc="Actualizando etiquetas del preview a 1 y 2")
+                progress(0.95, desc="Actualizando preview desde las poses existentes")
 
         preview_path = pose_dir / "pose_preview.mp4"
         if ensure_browser_compatible_preview(preview_path):

@@ -33,7 +33,7 @@ tests/womens.py
 # ML artifacts
 mlruns/
 mlartifacts/
-models/
+/models/
 .dvc/cache/
 .dvc/tmp/
 .dvc/site-cache/

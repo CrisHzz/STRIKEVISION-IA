@@ -1,0 +1,29 @@
+schema_version: strike_x3d_s_v1
+seed: 20260906
+device: cpu
+threads: 4
+class_map: {no_strike: 0, strike: 1}
+input:
+  frames: 13
+  size: 182
+  sampling: uniform_round_inclusive
+  spatial: aspect_ratio_letterbox_black
+  mean: [0.45, 0.45, 0.45]
+  std: [0.225, 0.225, 0.225]
+  timestamp_tolerance_seconds: 0.001
+extractor:
+  implementation: pytorchvideo==0.1.5
+  architecture: x3d_s
+  pretrained: kinetics400
+  weights_path: models/strike_x3d_s/X3D_S.pyth
+  weights_sha256: 26b95f1605d49650b54049db40ba3a56e023b86b58c3b3e0e10e0992a9c8682f
+  frozen: true
+split:
+  status: proposed_pending_user_decision
+  method: explicit_fight_assignment_no_model_results
+  train: [adesanya_pereira_1, fiziev_bahamondes, fiziev_green, nunes_shevchenko_2, omalley_zahabi, romero_adesanya, topuria_gaethje, topuria_holloway, yan_sandhagen]
+  validation: [aldo_font, zhang_joanna_1]
+  test: [holloway_gaethje, joanna_andrade]
+benchmark:
+  windows_per_training_fight: 12
+  batch_size: 2

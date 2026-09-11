@@ -1,0 +1,10 @@
+name: strikevision_ML
+channels:
+  - defaults
+dependencies:
+  - python=3.11.15
+  - pip
+  - pip:
+      - -r requirements-strike-ml.txt
+variables:
+  PYTHONNOUSERSITE: '1'
