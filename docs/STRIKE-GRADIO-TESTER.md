@@ -2,7 +2,8 @@
 
 La interfaz permite probar el baseline X3D-S `head-v1` con un video local sin
 procesar el round completo. Elige el número de frames iniciales que se desea
-analizar; el límite es 3.600 frames y el valor inicial es 240.
+analizar; el límite es 9.000 frames (cinco minutos a 30 FPS) y el valor inicial
+es 240.
 
 ```powershell
 conda activate strikevision_ML
@@ -13,6 +14,10 @@ Abre `http://127.0.0.1:7862`, carga el video e indica los frames. El modelo
 analiza ventanas de 24 frames con salto de 12 frames, igual que el dataset. En
 cada ventana toma 13 muestras uniformes, preserva el aspect ratio y aplica el
 preprocesamiento usado en entrenamiento.
+
+Los videos de este proyecto se procesan a 30 FPS: 9.000 frames cubren
+exactamente un round de cinco minutos. La aplicación conserva esa cadencia en
+el MP4 de vista previa; no duplica frames ni convierte el video a 60 FPS.
 
 La tabla muestra `p(strike)` y la clase con el umbral fijo de validación 0,33.
 La vista previa sólo contiene el prefijo solicitado y dibuja la predicción de

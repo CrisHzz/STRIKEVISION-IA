@@ -20,7 +20,8 @@ from ufc_tracker.strike.model import build_model
 WINDOW_FRAMES = 24
 WINDOW_STRIDE = 12
 SAMPLED_FRAMES = 13
-MAX_ANALYSIS_FRAMES = 3_600
+# Five minutes of a standard 30 FPS UFC broadcast round.
+MAX_ANALYSIS_FRAMES = 9_000
 
 
 def window_starts(frame_count: int) -> list[int]:

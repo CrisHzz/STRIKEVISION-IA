@@ -85,6 +85,23 @@ def build_app() -> gr.Blocks:
                     precision=0,
                     label="Frames iniciales a analizar",
                 )
+                gr.Markdown("Atajos para video a 30 FPS")
+                presets = [
+                    ("30 s", 900),
+                    ("1:00", 1_800),
+                    ("1:30", 2_700),
+                    ("2:00", 3_600),
+                    ("2:30", 4_500),
+                    ("3:00", 5_400),
+                ]
+                with gr.Row():
+                    preset_buttons = [gr.Button(label) for label, _ in presets]
+                for button, (_, preset_frames) in zip(preset_buttons, presets):
+                    button.click(
+                        lambda value=preset_frames: value,
+                        outputs=frame_count,
+                        queue=False,
+                    )
                 analyze = gr.Button("Analizar strike / no_strike", variant="primary")
                 status = gr.Markdown("Listo para recibir un video.")
         preview = gr.Video(label="Vista previa con predicción por ventana")
