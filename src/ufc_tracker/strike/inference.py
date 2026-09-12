@@ -160,6 +160,7 @@ class StrikeInferenceEngine:
         requested_frames: int,
         *,
         progress=lambda _value, _description: None,
+        generate_preview: bool = True,
     ) -> dict[str, object]:
         if isinstance(requested_frames, bool) or int(requested_frames) != requested_frames:
             raise ValueError("La cantidad de frames debe ser un número entero.")
@@ -215,9 +216,11 @@ class StrikeInferenceEngine:
         frame_labels = frame_predictions(windows, len(frames))
         job_id = uuid.uuid4().hex[:12]
         output_dir = self.root / "outputs" / "strike-detection" / "gradio-inference"
+        output_dir.mkdir(parents=True, exist_ok=True)
         preview_path = output_dir / f"{job_id}_first_{len(frames)}_frames.mp4"
         progress(0.84, "Generando vista previa anotada…")
-        self._write_preview(source, preview_path, len(frames), fps, frame_labels)
+        if generate_preview:
+            self._write_preview(source, preview_path, len(frames), fps, frame_labels)
         result = {
             "schema": "strike_gradio_inference_v1",
             "model_run": candidate.run_name,
@@ -232,4 +235,4 @@ class StrikeInferenceEngine:
         json_path = output_dir / f"{job_id}_results.json"
         json_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         progress(1.0, "Análisis terminado.")
-        return {**result, "preview_path": str(preview_path), "json_path": str(json_path)}
+        return {**result, "preview_path": str(preview_path) if generate_preview else None, "json_path": str(json_path)}

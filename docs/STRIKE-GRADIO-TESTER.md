@@ -1,5 +1,20 @@
 # Probador local de `strike/no_strike`
 
+Para visualizar también cajas, IDs unidos por merge tracking y poses de los
+peleadores, usa el probador combinado (mismos controles y atajos a 30 FPS):
+
+```powershell
+conda activate strikevision_ML
+python -s -m pip install -r requirements-pose-strike.txt
+python -s scripts/ml/run_pose_strike_inference_app.py
+```
+
+Abre `http://127.0.0.1:7863`. Combina YOLO11n-seg, ByteTrack con unión de
+fragmentos, MediaPipe Pose y el clasificador `head-v1`. Strike/no strike describe
+la escena completa; no asigna golpes a los IDs. Ambos modelos reciben el video
+original. Los resultados combinados se guardan en
+`outputs/strike-detection/gradio-pose-strike/`, incluyendo MP4, JSON, poses y tracks.
+
 La interfaz permite probar el baseline X3D-S `head-v1` con un video local sin
 procesar el round completo. Elige el número de frames iniciales que se desea
 analizar; el límite es 9.000 frames (cinco minutos a 30 FPS) y el valor inicial

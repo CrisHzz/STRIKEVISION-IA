@@ -1,0 +1,8 @@
+# Additional dependencies for the combined Gradio tester in strikevision_ML.
+-r requirements-strike-ml.txt
+mediapipe==0.10.35
+ultralytics==8.4.79
+lap==0.5.12
+opencv-python==4.10.0.84
+opencv-contrib-python==4.10.0.84
+imageio-ffmpeg==0.6.0

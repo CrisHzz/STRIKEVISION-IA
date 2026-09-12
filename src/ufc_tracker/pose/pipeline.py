@@ -114,6 +114,11 @@ def _ffmpeg_executable() -> str:
     for candidate in candidates:
         if candidate.is_file():
             return str(candidate)
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except ImportError:
+        pass
     raise RuntimeError("ffmpeg is required to create browser-compatible pose previews")
 
 
@@ -508,6 +513,7 @@ def render_pose_preview(
     *,
     frame_count: int | None = None,
     progress_callback: Callable[[int, int], None] | None = None,
+    frame_overlay: Callable[[np.ndarray, int], None] | None = None,
 ) -> None:
     """Render a compact H.264 browser preview with IDs and pose skeletons."""
     capture = cv2.VideoCapture(str(video_path))
@@ -572,6 +578,8 @@ def render_pose_preview(
             for record in by_frame.get(frame_index, []):
                 color = FIGHTER_COLORS[fighter_order[record.fighter_id] % len(FIGHTER_COLORS)]
                 _draw_pose(frame, record, color)
+            if frame_overlay is not None:
+                frame_overlay(frame, frame_index)
             if (preview_width, preview_height) != (width, height):
                 frame = cv2.resize(
                     frame,
@@ -717,7 +725,7 @@ def run_pose_pipeline(
         )
     pose_metrics = calculate_metrics(records)
 
-    root = project_root(source)
+    root = project_root(Path(__file__).resolve())
     try:
         relative_source = source.relative_to(root).as_posix()
     except ValueError:

@@ -63,11 +63,12 @@ def analyze_video(
     return str(result["preview_path"]), rows, metadata, status, str(result["json_path"])
 
 
-def build_app() -> gr.Blocks:
-    with gr.Blocks(title="StrikeVision · Probador strike/no_strike") as app:
+def build_app(*, handler=analyze_video, combined: bool = False) -> gr.Blocks:
+    title = "StrikeVision · Pose + strike/no_strike" if combined else "StrikeVision · Probador strike/no_strike"
+    with gr.Blocks(title=title) as app:
         gr.Markdown(
             f"""
-            # StrikeVision · Probador `strike/no_strike`
+            # {title}
 
             Carga un video e indica cuántos frames iniciales analizar. Se procesan
             únicamente esos frames; cada predicción cubre 24 frames y las ventanas
@@ -75,6 +76,8 @@ def build_app() -> gr.Blocks:
             Los resultados son una revisión del baseline, no un conteo final de golpes.
             """
         )
+        if combined:
+            gr.Markdown("Visualiza las cajas, IDs y poses de los peleadores junto al estado strike/no strike de la escena.")
         with gr.Row():
             input_video = gr.Video(label="Video de la pelea", sources=["upload"])
             with gr.Column():
@@ -114,7 +117,7 @@ def build_app() -> gr.Blocks:
             metadata = gr.JSON(label="Resumen")
             download = gr.File(label="Descargar resultados JSON")
         analyze.click(
-            analyze_video,
+            handler,
             inputs=[input_video, frame_count],
             outputs=[preview, results, metadata, status, download],
             show_progress="full",
