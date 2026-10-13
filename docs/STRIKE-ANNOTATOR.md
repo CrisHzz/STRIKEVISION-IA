@@ -1,5 +1,58 @@
 # Anotador visual `strike/no_strike`
 
+## Segunda etapa: clasificar acciones dentro de los strikes
+
+```powershell
+conda activate strikevision_ML
+python -s scripts/annotation/run_action_annotator.py
+```
+
+La app abre normalmente en `http://127.0.0.1:7864`. Si ya está ocupado, muestra
+en la terminal el siguiente puerto local disponible. Selecciona categoría y round,
+y pulsa **Cargar strikes**. Se reutilizan las anotaciones humanas positivas y las poses con merge
+existentes. El visor recibe solo el fragmento actual, renderizado y cacheado por
+demanda; no carga el video completo. Las ventanas positivas solapadas se unen.
+
+Elige atacante ID 1 (**rojo**), ID 2 (**morado**) o desconocido y pulsa numpad **7** punch_head, **9**
+punch_body, **4** kick_leg, **5** kick_body, **6** kick_head, **1** other_strike
+o **3** ambiguous. Cada pulsación agrega una acción y mantiene abierto el mismo
+fragmento. **Terminar fragmento** es la única forma normal de cerrarlo y avanzar. Los
+atajos también funcionan con la fila superior de números, pero se desactivan
+mientras escribes en un campo de texto o editas frames.
+
+Pulsa numpad **0** para **Terminar fragmento** sin usar el mouse.
+
+Pulsa la categoría cuando veas el ataque. La app pausa inmediatamente el video y,
+si los límites todavía cubren todo el fragmento, guarda automáticamente una ventana
+de 24 frames (0,8 s) centrada alrededor del punto visible. El reproductor permanece
+detenido en ese mismo punto para que puedas verificar la postura o registrar un ataque
+simultáneo. Para reemplazar el cálculo, cambia los frames inicial/final o usa los
+botones del frame visible antes de anotar. Los límites son inclusivos y usan los
+índices originales del round.
+
+Una combinación se guarda como varias filas. Si ambos peleadores atacan a la vez,
+guarda una fila por ataque seleccionando el ID correspondiente; los intervalos pueden
+solaparse. El atacante seleccionado se conserva hasta terminar el fragmento. Cuando
+ya no quede ningún ataque por registrar, pulsa **Terminar fragmento**.
+
+**Deshacer** revierte la última decisión, incluso después de cerrar y abrir la
+app. Se retoma el primer fragmento pendiente al cargar el round. Las nuevas
+etiquetas se guardan por round en `data/annotations/strike_actions_v1/*.json`,
+con atacante, intervalo, categoría y referencias a las ventanas originales.
+Las anotaciones binarias originales se conservan. Si estas cambian, el anotador
+detiene la escritura para evitar mezclar versiones.
+
+Si la primera anotación marcó un fragmento como `strike` pero al revisarlo no
+hay ningún intento ofensivo, pulsa **No strike · anotación previa errónea**. La
+app guarda una corrección trazable de ese fragmento y avanza. No uses
+`ambiguous` para un falso positivo claro; `ambiguous` se reserva para un ataque
+que no puede clasificarse con certeza.
+
+La guía de la derecha recuerda inclusiones y exclusiones. Los rounds con poses
+marcadas como poco fiables muestran un aviso: usa atacante desconocido si los
+IDs no son correctos. Para probar la interfaz sin introducir etiquetas de prueba
+en el dataset, usa `--annotation-dir outputs/action-annotation/ui-test`.
+
 La app local permite etiquetar las ventanas de `strike_annotations_v1` sin editar
 JSONL manualmente. Cada decisión se guarda inmediatamente y de forma atómica en
 el mismo archivo de anotaciones.

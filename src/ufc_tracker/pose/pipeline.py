@@ -50,6 +50,10 @@ SKELETON_EDGES = (
     ("right_knee", "right_ankle"),
 )
 FIGHTER_COLORS = ((69, 3, 252), (255, 51, 109))
+FIGHTER_COLORS_BY_ID = {
+    "1": FIGHTER_COLORS[0],  # Red in BGR, the color OpenCV expects.
+    "2": FIGHTER_COLORS[1],  # Purple in BGR.
+}
 LEGACY_FIGHTER_DISPLAY_IDS = {
     "fighter_left": "1",
     "fighter_right": "2",
@@ -514,8 +518,9 @@ def render_pose_preview(
     frame_count: int | None = None,
     progress_callback: Callable[[int, int], None] | None = None,
     frame_overlay: Callable[[np.ndarray, int], None] | None = None,
+    start_frame: int = 0,
 ) -> None:
-    """Render a compact H.264 browser preview with IDs and pose skeletons."""
+    """Render H.264 frames in [start_frame, frame_count), using absolute indices."""
     capture = cv2.VideoCapture(str(video_path))
     if not capture.isOpened():
         raise ValueError(f"Could not open video: {video_path}")
@@ -564,7 +569,9 @@ def render_pose_preview(
     for record in records:
         by_frame[record.frame_index].append(record)
         fighter_order.setdefault(record.fighter_id, len(fighter_order))
-    frame_index = 0
+    frame_index = start_frame
+    if start_frame:
+        capture.set(cv2.CAP_PROP_POS_FRAMES, start_frame)
     expected_frames = frame_count
     if expected_frames is None:
         expected_frames = max(by_frame, default=-1) + 1
@@ -576,7 +583,10 @@ def render_pose_preview(
             if not ok:
                 break
             for record in by_frame.get(frame_index, []):
-                color = FIGHTER_COLORS[fighter_order[record.fighter_id] % len(FIGHTER_COLORS)]
+                color = FIGHTER_COLORS_BY_ID.get(
+                    record.fighter_id,
+                    FIGHTER_COLORS[fighter_order[record.fighter_id] % len(FIGHTER_COLORS)],
+                )
                 _draw_pose(frame, record, color)
             if frame_overlay is not None:
                 frame_overlay(frame, frame_index)

@@ -7,6 +7,8 @@ import numpy as np
 
 from ufc_tracker.pose.estimator import KEYPOINT_NAMES, PoseEstimate
 from ufc_tracker.pose.pipeline import (
+    FIGHTER_COLORS,
+    FIGHTER_COLORS_BY_ID,
     calculate_metrics,
     display_fighter_id,
     estimate_pose_records,
@@ -96,6 +98,11 @@ def test_display_fighter_id_maps_legacy_side_labels() -> None:
     assert display_fighter_id("fighter_right") == "2"
     assert display_fighter_id("1") == "1"
     assert display_fighter_id("fighter_track_7") == "fighter_track_7"
+
+
+def test_numeric_fighter_colors_are_fixed_to_annotation_ids() -> None:
+    assert FIGHTER_COLORS_BY_ID["1"] == FIGHTER_COLORS[0]
+    assert FIGHTER_COLORS_BY_ID["2"] == FIGHTER_COLORS[1]
 
 
 def test_load_pose_records_and_legacy_preview_refresh(tmp_path: Path) -> None:

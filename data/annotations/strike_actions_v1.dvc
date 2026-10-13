@@ -1,0 +1,6 @@
+outs:
+- md5: 9444bf6f9b6ae55f83bc49e80b0fd44b.dir
+  size: 2711570
+  nfiles: 34
+  hash: md5
+  path: strike_actions_v1
