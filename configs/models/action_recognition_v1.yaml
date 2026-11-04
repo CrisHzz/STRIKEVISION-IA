@@ -1,0 +1,16 @@
+schema_version: strikevision_action_recognition_v1
+action_annotations_dir: data/annotations/strike_actions_v1
+binary_annotations_dir: data/annotations/strike_annotations_v1
+splits_manifest: data/metadata/splits_manifest.csv
+classes:
+  - punch_head
+  - punch_body
+  - kick_leg
+  - kick_body
+  - kick_head
+  - other_strike
+# Preserve the same visual-QA policy used for pose annotations. The associated
+# human records remain in audit; pose-only models must mask these inputs.
+untrusted_pose_videos:
+  adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_round3: referee_and_spectator_identity_errors_in_visual_review
+  adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_round4: referee_and_spectator_identity_errors_in_visual_review

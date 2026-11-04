@@ -1,0 +1,3169 @@
+{
+  "schema_version": "strike_actions_v1",
+  "source_sha256": "64c294bb4cc26e97fe96b6a9f2b11d2ea41e1cc7a7b62d0ca8e260893fd71440",
+  "video_id": "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3",
+  "video_path": "data/splits/aggressive_women/zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3.mp4",
+  "fps": 29.97002997002997,
+  "revision": 117,
+  "actions": [
+    {
+      "action_id": "4ed45f304d7949d594368ca35a99c92e",
+      "event_id": "f132-179",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000132-f000155",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000144-f000167",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000156-f000179"
+      ],
+      "start_frame": 145,
+      "end_frame": 159,
+      "attacker": "unknown",
+      "label": "ambiguous",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "e30028d179cf40e790ff86920ee662f5",
+      "event_id": "f228-275",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000228-f000251",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000240-f000263",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000252-f000275"
+      ],
+      "start_frame": 238,
+      "end_frame": 252,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "079e67f8b1c3475582d5c38289535a6d",
+      "event_id": "f228-275",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000228-f000251",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000240-f000263",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000252-f000275"
+      ],
+      "start_frame": 246,
+      "end_frame": 258,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "0d028fea77dd460fa4da82e3bb6f0411",
+      "event_id": "f360-407",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000360-f000383",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000372-f000395",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000384-f000407"
+      ],
+      "start_frame": 378,
+      "end_frame": 391,
+      "attacker": "unknown",
+      "label": "ambiguous",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "da1df376aac04c608b03a7c9c0b59b7c",
+      "event_id": "f420-587",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000420-f000443",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000432-f000455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000444-f000467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000456-f000479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000480-f000503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000492-f000515",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000504-f000527",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000528-f000551",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000540-f000563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000552-f000575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000564-f000587"
+      ],
+      "start_frame": 420,
+      "end_frame": 435,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "886d63e6eb4b40b6a386c2d4abcfbe5c",
+      "event_id": "f420-587",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000420-f000443",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000432-f000455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000444-f000467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000456-f000479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000480-f000503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000492-f000515",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000504-f000527",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000528-f000551",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000540-f000563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000552-f000575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000564-f000587"
+      ],
+      "start_frame": 438,
+      "end_frame": 452,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "5cc3fc5a9b2046aeab312eacf2cb756c",
+      "event_id": "f420-587",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000420-f000443",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000432-f000455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000444-f000467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000456-f000479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000480-f000503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000492-f000515",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000504-f000527",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000528-f000551",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000540-f000563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000552-f000575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000564-f000587"
+      ],
+      "start_frame": 450,
+      "end_frame": 464,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "c3e16ff709e94eb1868e57b6fc6f61fd",
+      "event_id": "f420-587",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000420-f000443",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000432-f000455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000444-f000467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000456-f000479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000480-f000503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000492-f000515",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000504-f000527",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000528-f000551",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000540-f000563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000552-f000575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000564-f000587"
+      ],
+      "start_frame": 495,
+      "end_frame": 509,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "b58162d7d8d747e39c23b0667e254a61",
+      "event_id": "f420-587",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000420-f000443",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000432-f000455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000444-f000467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000456-f000479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000480-f000503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000492-f000515",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000504-f000527",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000528-f000551",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000540-f000563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000552-f000575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000564-f000587"
+      ],
+      "start_frame": 550,
+      "end_frame": 566,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "95941218232442849e3df6c972ff2e02",
+      "event_id": "f828-875",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000828-f000851",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000840-f000863",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000852-f000875"
+      ],
+      "start_frame": 851,
+      "end_frame": 861,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "26171ac18ca04b1c90b6ef11a1b88763",
+      "event_id": "f828-875",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000828-f000851",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000840-f000863",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000852-f000875"
+      ],
+      "start_frame": 857,
+      "end_frame": 866,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "cfa31604334c40b3954ad9ea8f15c613",
+      "event_id": "f936-983",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000936-f000959",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000948-f000971",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000960-f000983"
+      ],
+      "start_frame": 960,
+      "end_frame": 974,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "2740c5b55b3447519babf924d6ec53a9",
+      "event_id": "f936-983",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000936-f000959",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000948-f000971",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000960-f000983"
+      ],
+      "start_frame": 968,
+      "end_frame": 982,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "1acf34bf3aa445ac8356d3bc812e1cd6",
+      "event_id": "f1068-1091",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001068-f001091"
+      ],
+      "start_frame": 1068,
+      "end_frame": 1082,
+      "attacker": "unknown",
+      "label": "ambiguous",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "e0335af3ba1e4daba509c4225c9d2e12",
+      "event_id": "f1104-1163",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001104-f001127",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001116-f001139",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001128-f001151",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001140-f001163"
+      ],
+      "start_frame": 1104,
+      "end_frame": 1118,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "47e58689494046948e22c00a3357e84a",
+      "event_id": "f1104-1163",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001104-f001127",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001116-f001139",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001128-f001151",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001140-f001163"
+      ],
+      "start_frame": 1138,
+      "end_frame": 1152,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "937d2e7a879949bebc7b6e65de8a2e5b",
+      "event_id": "f1188-1235",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001188-f001211",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001200-f001223",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001212-f001235"
+      ],
+      "start_frame": 1198,
+      "end_frame": 1210,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "7ccbe8891a2f49b8bd63ad34b8fa1045",
+      "event_id": "f1188-1235",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001188-f001211",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001200-f001223",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001212-f001235"
+      ],
+      "start_frame": 1206,
+      "end_frame": 1223,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "5278940f3c8f40eb96be18e248ecd883",
+      "event_id": "f1260-1283",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001260-f001283"
+      ],
+      "start_frame": 1269,
+      "end_frame": 1280,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "dc99964581964f5ea0d49e2ec1925e55",
+      "event_id": "f1320-1343",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001320-f001343"
+      ],
+      "start_frame": 1330,
+      "end_frame": 1343,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "4c815df89bfa4c7cac0d7f41525192e0",
+      "event_id": "f1356-1415",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001356-f001379",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001368-f001391",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001380-f001403",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001392-f001415"
+      ],
+      "start_frame": 1376,
+      "end_frame": 1390,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "32cd954167c2481385aac18f7311e80e",
+      "event_id": "f1356-1415",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001356-f001379",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001368-f001391",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001380-f001403",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001392-f001415"
+      ],
+      "start_frame": 1385,
+      "end_frame": 1403,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "73c44befe4c14f18bbdd4e9a2cf6e1dd",
+      "event_id": "f1428-1475",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001428-f001451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001440-f001463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001452-f001475"
+      ],
+      "start_frame": 1438,
+      "end_frame": 1452,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "9ae02b1c8d474d78af27a71c4cadfde5",
+      "event_id": "f1428-1475",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001428-f001451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001440-f001463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001452-f001475"
+      ],
+      "start_frame": 1456,
+      "end_frame": 1467,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "0e6614f8b38b4da3baa8275a1914f8a0",
+      "event_id": "f1524-1559",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001524-f001547",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001536-f001559"
+      ],
+      "start_frame": 1538,
+      "end_frame": 1552,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "67f434f4ace04d10a8db7f42a34d6123",
+      "event_id": "f1668-1715",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001668-f001691",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001680-f001703",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001692-f001715"
+      ],
+      "start_frame": 1681,
+      "end_frame": 1693,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "5c55f20b306645798ee5c88c700c838f",
+      "event_id": "f1668-1715",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001668-f001691",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001680-f001703",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001692-f001715"
+      ],
+      "start_frame": 1692,
+      "end_frame": 1704,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "4891adf32b414478a896ca7ca68b4bbd",
+      "event_id": "f1800-1883",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001800-f001823",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001812-f001835",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001824-f001847",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001836-f001859",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001848-f001871",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001860-f001883"
+      ],
+      "start_frame": 1812,
+      "end_frame": 1826,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "b909038e7ede43b99a0a171dbe755780",
+      "event_id": "f1800-1883",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001800-f001823",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001812-f001835",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001824-f001847",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001836-f001859",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001848-f001871",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001860-f001883"
+      ],
+      "start_frame": 1845,
+      "end_frame": 1858,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "29968f963e4e45e6a1fcd3dca1a0673b",
+      "event_id": "f1968-2039",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001968-f001991",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001980-f002003",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001992-f002015",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002004-f002027",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002016-f002039"
+      ],
+      "start_frame": 1990,
+      "end_frame": 2000,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "db379baba21f4ccab7dae97209d0fc45",
+      "event_id": "f1968-2039",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001968-f001991",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001980-f002003",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001992-f002015",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002004-f002027",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002016-f002039"
+      ],
+      "start_frame": 1998,
+      "end_frame": 2012,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "558a7160a0f64775b4f1d0e33fb5bb43",
+      "event_id": "f1968-2039",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001968-f001991",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001980-f002003",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001992-f002015",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002004-f002027",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002016-f002039"
+      ],
+      "start_frame": 2013,
+      "end_frame": 2026,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "157511b5b442415fb257052fd7ce4a36",
+      "event_id": "f2052-2099",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002052-f002075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002064-f002087",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002076-f002099"
+      ],
+      "start_frame": 2074,
+      "end_frame": 2088,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "2fc1472e44c44de0830e749e71faea18",
+      "event_id": "f2052-2099",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002052-f002075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002064-f002087",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002076-f002099"
+      ],
+      "start_frame": 2090,
+      "end_frame": 2099,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "e21d420bf7b74c0486eca8cda5e6b99c",
+      "event_id": "f2124-2183",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002124-f002147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002136-f002159",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002148-f002171",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002160-f002183"
+      ],
+      "start_frame": 2150,
+      "end_frame": 2164,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "1f6db387c56a419e86e1e9a3993af23b",
+      "event_id": "f2124-2183",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002124-f002147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002136-f002159",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002148-f002171",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002160-f002183"
+      ],
+      "start_frame": 2152,
+      "end_frame": 2167,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "cb4f0b3b5b35471c83c6b7f8c4c65688",
+      "event_id": "f2208-2243",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002208-f002231",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002220-f002243"
+      ],
+      "start_frame": 2237,
+      "end_frame": 2243,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "5c5d4c9380ba4f999b5c99dbb7cb937f",
+      "event_id": "f2316-2423",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002316-f002339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002328-f002351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002340-f002363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002364-f002387",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002376-f002399",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002388-f002411",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002400-f002423"
+      ],
+      "start_frame": 2337,
+      "end_frame": 2352,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "d42c5015687b4db2ad069de6c71437b8",
+      "event_id": "f2316-2423",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002316-f002339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002328-f002351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002340-f002363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002364-f002387",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002376-f002399",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002388-f002411",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002400-f002423"
+      ],
+      "start_frame": 2373,
+      "end_frame": 2389,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "23be6cd72acc466488f9d56ade8cf6ed",
+      "event_id": "f2316-2423",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002316-f002339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002328-f002351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002340-f002363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002364-f002387",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002376-f002399",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002388-f002411",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002400-f002423"
+      ],
+      "start_frame": 2391,
+      "end_frame": 2405,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "857b369fd928484296c5b544378ea3a8",
+      "event_id": "f2316-2423",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002316-f002339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002328-f002351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002340-f002363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002364-f002387",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002376-f002399",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002388-f002411",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002400-f002423"
+      ],
+      "start_frame": 2410,
+      "end_frame": 2423,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "317bd645994746bd926a53f96b82855d",
+      "event_id": "f2448-2483",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002448-f002471",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002460-f002483"
+      ],
+      "start_frame": 2448,
+      "end_frame": 2459,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "e9eee8cfe11d4122b0c6771fb9a27139",
+      "event_id": "f2448-2483",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002448-f002471",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002460-f002483"
+      ],
+      "start_frame": 2449,
+      "end_frame": 2459,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "b09b67ae7922468bbf88ceed009b394b",
+      "event_id": "f2544-2603",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002544-f002567",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002556-f002579",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002568-f002591",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002580-f002603"
+      ],
+      "start_frame": 2572,
+      "end_frame": 2589,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "654441d59fb24b16b87889bf4ad193d2",
+      "event_id": "f2652-2759",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002652-f002675",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002676-f002699",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002688-f002711",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002700-f002723",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002724-f002747",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002736-f002759"
+      ],
+      "start_frame": 2701,
+      "end_frame": 2715,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "0cc46ac0fdce4f9db7ef411cb04fd636",
+      "event_id": "f2652-2759",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002652-f002675",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002676-f002699",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002688-f002711",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002700-f002723",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002724-f002747",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002736-f002759"
+      ],
+      "start_frame": 2703,
+      "end_frame": 2720,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "574a801948254578891ed9bb4cdbe4a9",
+      "event_id": "f2652-2759",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002652-f002675",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002676-f002699",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002688-f002711",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002700-f002723",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002724-f002747",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002736-f002759"
+      ],
+      "start_frame": 2739,
+      "end_frame": 2753,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "bdb21ba8073542fab839320e05f1abac",
+      "event_id": "f2796-2843",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002796-f002819",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002808-f002831",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002820-f002843"
+      ],
+      "start_frame": 2804,
+      "end_frame": 2818,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "ef93b7f450884dbaa6d9d2c8bca98a9c",
+      "event_id": "f2796-2843",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002796-f002819",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002808-f002831",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002820-f002843"
+      ],
+      "start_frame": 2809,
+      "end_frame": 2820,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "3713bc0fe7f847959f0c61a33576bab9",
+      "event_id": "f2868-2915",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002868-f002891",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002880-f002903",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002892-f002915"
+      ],
+      "start_frame": 2898,
+      "end_frame": 2912,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "c25f224414324124a061a0e2ce6a22b1",
+      "event_id": "f2940-2987",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002940-f002963",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002952-f002975",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002964-f002987"
+      ],
+      "start_frame": 2948,
+      "end_frame": 2960,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "3f28f24a7e574e36842fda59a40a31b5",
+      "event_id": "f2940-2987",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002940-f002963",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002952-f002975",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002964-f002987"
+      ],
+      "start_frame": 2956,
+      "end_frame": 2972,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "5ae9bc9113914ad08c8caba09bbe55cc",
+      "event_id": "f2940-2987",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002940-f002963",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002952-f002975",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002964-f002987"
+      ],
+      "start_frame": 2968,
+      "end_frame": 2978,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "06b31f29ecf743edab1316bffc1a7cee",
+      "event_id": "f3000-3047",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003000-f003023",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003012-f003035",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003024-f003047"
+      ],
+      "start_frame": 3018,
+      "end_frame": 3032,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "f8f0640f9eb74b6eb428c7be9d6d5836",
+      "event_id": "f3000-3047",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003000-f003023",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003012-f003035",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003024-f003047"
+      ],
+      "start_frame": 3025,
+      "end_frame": 3036,
+      "attacker": "2",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "f3f89669f7a04fdaac85191ac5aa30da",
+      "event_id": "f3060-3107",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003060-f003083",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003084-f003107"
+      ],
+      "start_frame": 3068,
+      "end_frame": 3082,
+      "attacker": "1",
+      "label": "kick_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "35a5b1135530437798314d220f25aa7d",
+      "event_id": "f3120-3239",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003120-f003143",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003144-f003167",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003156-f003179",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003168-f003191",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003180-f003203",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003192-f003215",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003216-f003239"
+      ],
+      "start_frame": 3168,
+      "end_frame": 3182,
+      "attacker": "1",
+      "label": "kick_head",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "dad75380909a49e49997b7fd0a177fbc",
+      "event_id": "f3348-3407",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003348-f003371",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003360-f003383",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003372-f003395",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003384-f003407"
+      ],
+      "start_frame": 3382,
+      "end_frame": 3396,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "action_id": "7e08c9e672a249049a190032f8eeae27",
+      "event_id": "f3720-3767",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003720-f003743",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003732-f003755",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003744-f003767"
+      ],
+      "start_frame": 3734,
+      "end_frame": 3744,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:05:27.746400+00:00"
+    },
+    {
+      "action_id": "7a5dc9040e54494fac43e819d7169ecb",
+      "event_id": "f3720-3767",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003720-f003743",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003732-f003755",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003744-f003767"
+      ],
+      "start_frame": 3736,
+      "end_frame": 3747,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:05:27.756433+00:00"
+    },
+    {
+      "action_id": "b236b44633564e28876b3a8668a7e5aa",
+      "event_id": "f3804-3851",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003804-f003827",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003816-f003839",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003828-f003851"
+      ],
+      "start_frame": 3820,
+      "end_frame": 3830,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:05:27.766296+00:00"
+    },
+    {
+      "action_id": "6173504160794047b784b19ff4c1a951",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3576,
+      "end_frame": 3580,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:07:07.322792+00:00"
+    },
+    {
+      "action_id": "b0b77fccfb6a441db21d5718a4677681",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3582,
+      "end_frame": 3590,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:07:07.333794+00:00"
+    },
+    {
+      "action_id": "3f11ab1e005e49b69dbec0839ac8ed9c",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3593,
+      "end_frame": 3604,
+      "attacker": "2",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-27T19:07:07.343794+00:00"
+    },
+    {
+      "action_id": "ce43ca8dde7b42c8a5b126dd26c25f2d",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3615,
+      "end_frame": 3628,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-27T19:07:07.352761+00:00"
+    },
+    {
+      "action_id": "514e4aa7787b441c85fd1d0cd112b01a",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3630,
+      "end_frame": 3640,
+      "attacker": "unknown",
+      "label": "ambiguous",
+      "annotated_at": "2026-10-27T19:07:07.364039+00:00"
+    },
+    {
+      "action_id": "f90b4cf8a79b437bb23005fa43671f5f",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3641,
+      "end_frame": 3649,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:07:07.374039+00:00"
+    },
+    {
+      "action_id": "1271148b4dee41719c99e49f39f4341e",
+      "event_id": "f3576-3683",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003576-f003599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003588-f003611",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003600-f003623",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003612-f003635",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003624-f003647",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003636-f003659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003648-f003671",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003660-f003683"
+      ],
+      "start_frame": 3651,
+      "end_frame": 3660,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:07:07.384038+00:00"
+    },
+    {
+      "action_id": "be9ea350fa5f49e9808414475764b0f2",
+      "event_id": "f3924-4007",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003924-f003947",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003936-f003959",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003948-f003971",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003960-f003983",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003984-f004007"
+      ],
+      "start_frame": 3940,
+      "end_frame": 3949,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:07:07.394775+00:00"
+    },
+    {
+      "action_id": "a839cab4007e43d0912646c3ffd17d97",
+      "event_id": "f3924-4007",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003924-f003947",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003936-f003959",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003948-f003971",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003960-f003983",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003984-f004007"
+      ],
+      "start_frame": 3982,
+      "end_frame": 3994,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T19:07:07.404775+00:00"
+    },
+    {
+      "action_id": "a1e4ffdc87524e7ca5e1be66cb4847a1",
+      "event_id": "f4248-4391",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004248-f004271",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004260-f004283",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004284-f004307",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004296-f004319",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004308-f004331",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004320-f004343",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004332-f004355",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004344-f004367",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004368-f004391"
+      ],
+      "start_frame": 4252,
+      "end_frame": 4267,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-27T19:12:03.760334+00:00"
+    },
+    {
+      "action_id": "e1b70fe8a4f9462c8b504345f11ee12f",
+      "event_id": "f4248-4391",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004248-f004271",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004260-f004283",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004284-f004307",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004296-f004319",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004308-f004331",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004320-f004343",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004332-f004355",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004344-f004367",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004368-f004391"
+      ],
+      "start_frame": 4307,
+      "end_frame": 4321,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:03.771845+00:00"
+    },
+    {
+      "action_id": "f329ace52df7447b98794626f516182e",
+      "event_id": "f4248-4391",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004248-f004271",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004260-f004283",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004284-f004307",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004296-f004319",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004308-f004331",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004320-f004343",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004332-f004355",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004344-f004367",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004368-f004391"
+      ],
+      "start_frame": 4320,
+      "end_frame": 4333,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:03.780837+00:00"
+    },
+    {
+      "action_id": "80106f574301437293a6a31f7547345f",
+      "event_id": "f4248-4391",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004248-f004271",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004260-f004283",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004284-f004307",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004296-f004319",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004308-f004331",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004320-f004343",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004332-f004355",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004344-f004367",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004368-f004391"
+      ],
+      "start_frame": 4329,
+      "end_frame": 4343,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-27T19:12:03.792569+00:00"
+    },
+    {
+      "action_id": "2239828fa5be4a079aa072ea64db0e9f",
+      "event_id": "f4416-4523",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004416-f004439",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004428-f004451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004440-f004463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004452-f004475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004476-f004499",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004488-f004511",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004500-f004523"
+      ],
+      "start_frame": 4416,
+      "end_frame": 4430,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:40.521709+00:00"
+    },
+    {
+      "action_id": "e2eb96768c964f5a906846a6fe473976",
+      "event_id": "f4416-4523",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004416-f004439",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004428-f004451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004440-f004463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004452-f004475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004476-f004499",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004488-f004511",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004500-f004523"
+      ],
+      "start_frame": 4417,
+      "end_frame": 4425,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:40.530899+00:00"
+    },
+    {
+      "action_id": "5ba7d32ab5a0470e99064fd7ef61dcc0",
+      "event_id": "f4416-4523",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004416-f004439",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004428-f004451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004440-f004463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004452-f004475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004476-f004499",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004488-f004511",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004500-f004523"
+      ],
+      "start_frame": 4440,
+      "end_frame": 4453,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:40.540556+00:00"
+    },
+    {
+      "action_id": "fa84bc5dde0e455eb118277fe41c2181",
+      "event_id": "f4416-4523",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004416-f004439",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004428-f004451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004440-f004463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004452-f004475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004476-f004499",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004488-f004511",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004500-f004523"
+      ],
+      "start_frame": 4458,
+      "end_frame": 4467,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:40.548175+00:00"
+    },
+    {
+      "action_id": "1cbed5354915456c9eae929c32071791",
+      "event_id": "f4416-4523",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004416-f004439",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004428-f004451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004440-f004463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004452-f004475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004476-f004499",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004488-f004511",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004500-f004523"
+      ],
+      "start_frame": 4471,
+      "end_frame": 4479,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-27T19:12:40.561619+00:00"
+    },
+    {
+      "action_id": "fc322a09799d498caba9effe40f05d89",
+      "event_id": "f4416-4523",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004416-f004439",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004428-f004451",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004440-f004463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004452-f004475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004476-f004499",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004488-f004511",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004500-f004523"
+      ],
+      "start_frame": 4496,
+      "end_frame": 4507,
+      "attacker": "unknown",
+      "label": "ambiguous",
+      "annotated_at": "2026-10-27T19:12:40.571949+00:00"
+    },
+    {
+      "action_id": "e8834cd9e4ec48959806747525dc491d",
+      "event_id": "f4536-4691",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004536-f004559",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004548-f004571",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004572-f004595",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004584-f004607",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004596-f004619",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004620-f004643",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004632-f004655",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004644-f004667",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004656-f004679",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004668-f004691"
+      ],
+      "start_frame": 4579,
+      "end_frame": 4598,
+      "attacker": "2",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-28T04:00:40.687511+00:00"
+    },
+    {
+      "action_id": "9d17c86328094e76a315639c68681c76",
+      "event_id": "f4536-4691",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004536-f004559",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004548-f004571",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004572-f004595",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004584-f004607",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004596-f004619",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004620-f004643",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004632-f004655",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004644-f004667",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004656-f004679",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004668-f004691"
+      ],
+      "start_frame": 4636,
+      "end_frame": 4645,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:00:45.021048+00:00"
+    },
+    {
+      "action_id": "1b67036bd1424c26aaa71bde9cc1f95b",
+      "event_id": "f4536-4691",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004536-f004559",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004548-f004571",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004572-f004595",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004584-f004607",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004596-f004619",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004620-f004643",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004632-f004655",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004644-f004667",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004656-f004679",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004668-f004691"
+      ],
+      "start_frame": 4641,
+      "end_frame": 4654,
+      "attacker": "1",
+      "label": "ambiguous",
+      "annotated_at": "2026-10-28T04:00:47.443791+00:00"
+    },
+    {
+      "action_id": "ff5fad2c137e447abe68ddd061b6e7b6",
+      "event_id": "f4704-4835",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004704-f004727",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004716-f004739",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004740-f004763",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004752-f004775",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004764-f004787",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004776-f004799",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004800-f004823",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004812-f004835"
+      ],
+      "start_frame": 4797,
+      "end_frame": 4810,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:33.482819+00:00"
+    },
+    {
+      "action_id": "16a6d3cdd37c4161a4f48c76cef017d9",
+      "event_id": "f4704-4835",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004704-f004727",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004716-f004739",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004740-f004763",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004752-f004775",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004764-f004787",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004776-f004799",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004800-f004823",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004812-f004835"
+      ],
+      "start_frame": 4807,
+      "end_frame": 4823,
+      "attacker": "1",
+      "label": "punch_body",
+      "annotated_at": "2026-10-28T04:07:33.492892+00:00"
+    },
+    {
+      "action_id": "76d396ad2475476389a4d03c8171c567",
+      "event_id": "f4896-4931",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004896-f004919",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004908-f004931"
+      ],
+      "start_frame": 4909,
+      "end_frame": 4921,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:33.518503+00:00"
+    },
+    {
+      "action_id": "663e1e972a144133a515d866179000bf",
+      "event_id": "f4980-5015",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004980-f005003",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004992-f005015"
+      ],
+      "start_frame": 4999,
+      "end_frame": 5015,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.246851+00:00"
+    },
+    {
+      "action_id": "2dee0d7b55ae4f5586286e22a6499a4d",
+      "event_id": "f5052-5159",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005052-f005075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005076-f005099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005088-f005111",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005100-f005123",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005112-f005135",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005124-f005147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005136-f005159"
+      ],
+      "start_frame": 5094,
+      "end_frame": 5106,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.270886+00:00"
+    },
+    {
+      "action_id": "42771589b59847f482561e016f036ac2",
+      "event_id": "f5052-5159",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005052-f005075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005076-f005099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005088-f005111",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005100-f005123",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005112-f005135",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005124-f005147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005136-f005159"
+      ],
+      "start_frame": 5117,
+      "end_frame": 5129,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.280903+00:00"
+    },
+    {
+      "action_id": "3b07f96433f3472d9aecc6eb830ebcf4",
+      "event_id": "f5052-5159",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005052-f005075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005076-f005099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005088-f005111",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005100-f005123",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005112-f005135",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005124-f005147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005136-f005159"
+      ],
+      "start_frame": 5125,
+      "end_frame": 5140,
+      "attacker": "2",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-28T04:07:59.292962+00:00"
+    },
+    {
+      "action_id": "9d1aa74af62d47ebaf6696f07f498aa0",
+      "event_id": "f5184-5219",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005184-f005207",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005196-f005219"
+      ],
+      "start_frame": 5188,
+      "end_frame": 5207,
+      "attacker": "1",
+      "label": "other_strike",
+      "annotated_at": "2026-10-28T04:07:59.315919+00:00"
+    },
+    {
+      "action_id": "2cb8fad83eea4d47a99e06ba627e69dc",
+      "event_id": "f5484-5507",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f005484-f005507"
+      ],
+      "start_frame": 5484,
+      "end_frame": 5496,
+      "attacker": "2",
+      "label": "other_strike",
+      "annotated_at": "2026-10-28T04:07:59.339232+00:00"
+    },
+    {
+      "action_id": "aa8c51c70ce2484f963ea34ce9e7e5a2",
+      "event_id": "f6324-6407",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006324-f006347",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006348-f006371",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006360-f006383",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006372-f006395",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006384-f006407"
+      ],
+      "start_frame": 6387,
+      "end_frame": 6405,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:07:59.365650+00:00"
+    },
+    {
+      "action_id": "464453874fd2432b989e86580855d96f",
+      "event_id": "f6432-6515",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006432-f006455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006444-f006467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006456-f006479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006468-f006491",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006480-f006503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006492-f006515"
+      ],
+      "start_frame": 6463,
+      "end_frame": 6487,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.387753+00:00"
+    },
+    {
+      "action_id": "34a779a4e56a4c479c074b03dbaded3b",
+      "event_id": "f6432-6515",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006432-f006455",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006444-f006467",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006456-f006479",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006468-f006491",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006480-f006503",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006492-f006515"
+      ],
+      "start_frame": 6477,
+      "end_frame": 6496,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.397904+00:00"
+    },
+    {
+      "action_id": "c90afca9401e4235a2d7448e4755d77d",
+      "event_id": "f6540-6611",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006540-f006563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006552-f006575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006564-f006587",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006576-f006599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006588-f006611"
+      ],
+      "start_frame": 6547,
+      "end_frame": 6561,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:07:59.421668+00:00"
+    },
+    {
+      "action_id": "29f1aa2e8c1f4e218156b26ae59db37f",
+      "event_id": "f6540-6611",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006540-f006563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006552-f006575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006564-f006587",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006576-f006599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006588-f006611"
+      ],
+      "start_frame": 6556,
+      "end_frame": 6574,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.432226+00:00"
+    },
+    {
+      "action_id": "927fc30fcfa64e8bb9e525c6f1139771",
+      "event_id": "f6540-6611",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006540-f006563",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006552-f006575",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006564-f006587",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006576-f006599",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006588-f006611"
+      ],
+      "start_frame": 6560,
+      "end_frame": 6577,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:07:59.442118+00:00"
+    },
+    {
+      "action_id": "94b07dab6c29470f8e17bdd2100433d3",
+      "event_id": "f6744-6779",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006744-f006767",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006756-f006779"
+      ],
+      "start_frame": 6744,
+      "end_frame": 6753,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.608762+00:00"
+    },
+    {
+      "action_id": "7e83605032a24388a466e69e00356f0a",
+      "event_id": "f6744-6779",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006744-f006767",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006756-f006779"
+      ],
+      "start_frame": 6744,
+      "end_frame": 6754,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.620786+00:00"
+    },
+    {
+      "action_id": "1d88cf82a3264d42951fe6cf5f434769",
+      "event_id": "f6960-7031",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006960-f006983",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006972-f006995",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006984-f007007",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006996-f007019",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007008-f007031"
+      ],
+      "start_frame": 7002,
+      "end_frame": 7024,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:08:20.644522+00:00"
+    },
+    {
+      "action_id": "20176251c1a048118372799187a33028",
+      "event_id": "f7080-7139",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007080-f007103",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007092-f007115",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007104-f007127",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007116-f007139"
+      ],
+      "start_frame": 7111,
+      "end_frame": 7125,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-28T04:08:20.667869+00:00"
+    },
+    {
+      "action_id": "b8cfe6b7401b4b16aa5b362fe0ae05bd",
+      "event_id": "f7296-7331",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007296-f007319",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007308-f007331"
+      ],
+      "start_frame": 7317,
+      "end_frame": 7327,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.704759+00:00"
+    },
+    {
+      "action_id": "52f05c509a6449279c2df06cdfe874c9",
+      "event_id": "f7356-7403",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007356-f007379",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007368-f007391",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007380-f007403"
+      ],
+      "start_frame": 7373,
+      "end_frame": 7391,
+      "attacker": "2",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-28T04:08:20.727283+00:00"
+    },
+    {
+      "action_id": "afb80585fb574969935ce3749baea403",
+      "event_id": "f7440-7487",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007440-f007463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007452-f007475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007464-f007487"
+      ],
+      "start_frame": 7451,
+      "end_frame": 7464,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.749561+00:00"
+    },
+    {
+      "action_id": "eac39ed90cc54541a3aba939b7c5b4aa",
+      "event_id": "f7440-7487",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007440-f007463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007452-f007475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007464-f007487"
+      ],
+      "start_frame": 7458,
+      "end_frame": 7473,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:08:20.759606+00:00"
+    },
+    {
+      "action_id": "efb03e74d1264461b63244526c8c735e",
+      "event_id": "f7440-7487",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007440-f007463",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007452-f007475",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007464-f007487"
+      ],
+      "start_frame": 7462,
+      "end_frame": 7477,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.770881+00:00"
+    },
+    {
+      "action_id": "73f17e56484c49948f2bb809cc1f1366",
+      "event_id": "f7608-7631",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007608-f007631"
+      ],
+      "start_frame": 7617,
+      "end_frame": 7631,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.794613+00:00"
+    },
+    {
+      "action_id": "2732dc0a400f48b2b0d16dfa40701873",
+      "event_id": "f7656-7679",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007656-f007679"
+      ],
+      "start_frame": 7657,
+      "end_frame": 7675,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:08:20.816771+00:00"
+    },
+    {
+      "action_id": "9552db07af7240ad88cbe3d06f5d0807",
+      "event_id": "f7716-7811",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007716-f007739",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007728-f007751",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007740-f007763",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007752-f007775",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007764-f007787",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007788-f007811"
+      ],
+      "start_frame": 7736,
+      "end_frame": 7758,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.841555+00:00"
+    },
+    {
+      "action_id": "9c60bca75f0d4936be33fc5bb23142e0",
+      "event_id": "f7716-7811",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007716-f007739",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007728-f007751",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007740-f007763",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007752-f007775",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007764-f007787",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007788-f007811"
+      ],
+      "start_frame": 7743,
+      "end_frame": 7763,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.852391+00:00"
+    },
+    {
+      "action_id": "77fd52295dc34318b5496cdb5405e730",
+      "event_id": "f7716-7811",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007716-f007739",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007728-f007751",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007740-f007763",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007752-f007775",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007764-f007787",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007788-f007811"
+      ],
+      "start_frame": 7780,
+      "end_frame": 7792,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.864778+00:00"
+    },
+    {
+      "action_id": "eecd696ce0064485b5c52faa4b4ce607",
+      "event_id": "f7920-7979",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007920-f007943",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007932-f007955",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007956-f007979"
+      ],
+      "start_frame": 7927,
+      "end_frame": 7942,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.888339+00:00"
+    },
+    {
+      "action_id": "d0f3da07bf48457da784871f1a61be40",
+      "event_id": "f7920-7979",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007920-f007943",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007932-f007955",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007956-f007979"
+      ],
+      "start_frame": 7931,
+      "end_frame": 7949,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.902360+00:00"
+    },
+    {
+      "action_id": "327741410a3642d48e897a0e8a059342",
+      "event_id": "f7920-7979",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007920-f007943",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007932-f007955",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007956-f007979"
+      ],
+      "start_frame": 7944,
+      "end_frame": 7958,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.914022+00:00"
+    },
+    {
+      "action_id": "b7880e6c01a440968b25219b9e9b904d",
+      "event_id": "f8028-8111",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008028-f008051",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008040-f008063",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008052-f008075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008064-f008087",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008076-f008099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008088-f008111"
+      ],
+      "start_frame": 8040,
+      "end_frame": 8053,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.954007+00:00"
+    },
+    {
+      "action_id": "3dec87bf8204474c9028212d30b5208c",
+      "event_id": "f8028-8111",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008028-f008051",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008040-f008063",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008052-f008075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008064-f008087",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008076-f008099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008088-f008111"
+      ],
+      "start_frame": 8058,
+      "end_frame": 8071,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.965387+00:00"
+    },
+    {
+      "action_id": "4e7f673a36e846f78671c67062b61a44",
+      "event_id": "f8028-8111",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008028-f008051",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008040-f008063",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008052-f008075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008064-f008087",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008076-f008099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008088-f008111"
+      ],
+      "start_frame": 8073,
+      "end_frame": 8091,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.978393+00:00"
+    },
+    {
+      "action_id": "781bf564a661438ab28a9c608fe88075",
+      "event_id": "f8028-8111",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008028-f008051",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008040-f008063",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008052-f008075",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008064-f008087",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008076-f008099",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008088-f008111"
+      ],
+      "start_frame": 8078,
+      "end_frame": 8089,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:20.990464+00:00"
+    },
+    {
+      "action_id": "de4c288808cc41479d043a84f1ac681f",
+      "event_id": "f8124-8171",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008124-f008147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008136-f008159",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008148-f008171"
+      ],
+      "start_frame": 8126,
+      "end_frame": 8143,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.016342+00:00"
+    },
+    {
+      "action_id": "4f9821af40b34b40bfb081ed2792e0cc",
+      "event_id": "f8124-8171",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008124-f008147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008136-f008159",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008148-f008171"
+      ],
+      "start_frame": 8130,
+      "end_frame": 8149,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.030186+00:00"
+    },
+    {
+      "action_id": "214765ac0c9b4d46b416109a9d352824",
+      "event_id": "f8124-8171",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008124-f008147",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008136-f008159",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008148-f008171"
+      ],
+      "start_frame": 8148,
+      "end_frame": 8159,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.043888+00:00"
+    },
+    {
+      "action_id": "e75906d35c244ae78b3c0fad93bfe525",
+      "event_id": "f8196-8255",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008196-f008219",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008208-f008231",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008232-f008255"
+      ],
+      "start_frame": 8208,
+      "end_frame": 8221,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.069337+00:00"
+    },
+    {
+      "action_id": "79fb459a29cf488494f9520e0b659dd3",
+      "event_id": "f8196-8255",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008196-f008219",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008208-f008231",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008232-f008255"
+      ],
+      "start_frame": 8235,
+      "end_frame": 8246,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.079950+00:00"
+    },
+    {
+      "action_id": "386059e7bd3c4b32acec6917d1cefde7",
+      "event_id": "f8292-8375",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008292-f008315",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008304-f008327",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008316-f008339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008328-f008351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008340-f008363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008352-f008375"
+      ],
+      "start_frame": 8312,
+      "end_frame": 8324,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-28T04:08:21.107910+00:00"
+    },
+    {
+      "action_id": "7fdb698ab6c04992977609585e42275c",
+      "event_id": "f8292-8375",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008292-f008315",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008304-f008327",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008316-f008339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008328-f008351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008340-f008363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008352-f008375"
+      ],
+      "start_frame": 8330,
+      "end_frame": 8345,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.119621+00:00"
+    },
+    {
+      "action_id": "b3c2fe98392f4c95badb8e10ee95c3fb",
+      "event_id": "f8292-8375",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008292-f008315",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008304-f008327",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008316-f008339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008328-f008351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008340-f008363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008352-f008375"
+      ],
+      "start_frame": 8338,
+      "end_frame": 8356,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.131334+00:00"
+    },
+    {
+      "action_id": "7b3812980a5b4dd89e75df8cc14e3cc1",
+      "event_id": "f8292-8375",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008292-f008315",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008304-f008327",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008316-f008339",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008328-f008351",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008340-f008363",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008352-f008375"
+      ],
+      "start_frame": 8350,
+      "end_frame": 8366,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.144069+00:00"
+    },
+    {
+      "action_id": "d821bcd312224c08af1942f32baaf52a",
+      "event_id": "f8412-8471",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008412-f008435",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008424-f008447",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008436-f008459",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008448-f008471"
+      ],
+      "start_frame": 8430,
+      "end_frame": 8443,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:08:21.168383+00:00"
+    },
+    {
+      "action_id": "35dfbcf2886f43ec89dd51234a25c05f",
+      "event_id": "f8412-8471",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008412-f008435",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008424-f008447",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008436-f008459",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008448-f008471"
+      ],
+      "start_frame": 8440,
+      "end_frame": 8455,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.180406+00:00"
+    },
+    {
+      "action_id": "412aa88aba75434cbddaf10078d07135",
+      "event_id": "f8412-8471",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008412-f008435",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008424-f008447",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008436-f008459",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008448-f008471"
+      ],
+      "start_frame": 8444,
+      "end_frame": 8458,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.192547+00:00"
+    },
+    {
+      "action_id": "8924b363b04145fca30cc741ad06973c",
+      "event_id": "f8496-8543",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008496-f008519",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008508-f008531",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008520-f008543"
+      ],
+      "start_frame": 8510,
+      "end_frame": 8523,
+      "attacker": "2",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-28T04:08:21.216890+00:00"
+    },
+    {
+      "action_id": "4291af915b1442febf05076b5bb4814e",
+      "event_id": "f8496-8543",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008496-f008519",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008508-f008531",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008520-f008543"
+      ],
+      "start_frame": 8511,
+      "end_frame": 8526,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.227903+00:00"
+    },
+    {
+      "action_id": "efc8a117a11e484bb0acc38a79f5d28e",
+      "event_id": "f8652-8735",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008652-f008675",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008664-f008687",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008676-f008699",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008688-f008711",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008700-f008723",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008712-f008735"
+      ],
+      "start_frame": 8677,
+      "end_frame": 8691,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.268040+00:00"
+    },
+    {
+      "action_id": "a985d035550c46a0b1b0491fd1ae68af",
+      "event_id": "f8652-8735",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008652-f008675",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008664-f008687",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008676-f008699",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008688-f008711",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008700-f008723",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008712-f008735"
+      ],
+      "start_frame": 8690,
+      "end_frame": 8706,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.280558+00:00"
+    },
+    {
+      "action_id": "209beb2a8f4948c48843978564e5ec05",
+      "event_id": "f8772-8855",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008772-f008795",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008784-f008807",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008796-f008819",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008808-f008831",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008820-f008843",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008832-f008855"
+      ],
+      "start_frame": 8786,
+      "end_frame": 8804,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-28T04:08:21.304580+00:00"
+    },
+    {
+      "action_id": "2c7c0b7f1fba41d99dadb8d977d40c92",
+      "event_id": "f8772-8855",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008772-f008795",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008784-f008807",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008796-f008819",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008808-f008831",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008820-f008843",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008832-f008855"
+      ],
+      "start_frame": 8808,
+      "end_frame": 8826,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.316610+00:00"
+    },
+    {
+      "action_id": "8184dc632291434bb175bfb2743e08dc",
+      "event_id": "f8772-8855",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008772-f008795",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008784-f008807",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008796-f008819",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008808-f008831",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008820-f008843",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008832-f008855"
+      ],
+      "start_frame": 8810,
+      "end_frame": 8829,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-28T04:08:21.329649+00:00"
+    }
+  ],
+  "source_corrections": [
+    {
+      "correction_id": "9b995b85bee5420ea4e28d28f023e631",
+      "event_id": "f1488-1511",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001488-f001511"
+      ],
+      "start_frame": 1488,
+      "end_frame": 1511,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "3f9a209508fd458699d5f80a983e579e",
+      "event_id": "f1896-1919",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001896-f001919"
+      ],
+      "start_frame": 1896,
+      "end_frame": 1919,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "1c366461345844d1af6f4117246d7e27",
+      "event_id": "f2616-2639",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f002616-f002639"
+      ],
+      "start_frame": 2616,
+      "end_frame": 2639,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "4f9a6cad1e634788a3a667050c175da7",
+      "event_id": "f324-347",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000324-f000347"
+      ],
+      "start_frame": 324,
+      "end_frame": 347,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "abfa67fa16274d3bb0e4572166478c30",
+      "event_id": "f3252-3275",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003252-f003275"
+      ],
+      "start_frame": 3252,
+      "end_frame": 3275,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "f6baa5f52e894531adb94c50e9901027",
+      "event_id": "f3288-3335",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003288-f003311",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003312-f003335"
+      ],
+      "start_frame": 3288,
+      "end_frame": 3335,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "ff698b4f19ff48f1bc03f5cbabf3ed3b",
+      "event_id": "f612-635",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000612-f000635"
+      ],
+      "start_frame": 612,
+      "end_frame": 635,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "ea55a81a227a459a97a1740783ca73af",
+      "event_id": "f672-695",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000672-f000695"
+      ],
+      "start_frame": 672,
+      "end_frame": 695,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "9725619cdb1440e2971f2ddc6fd81def",
+      "event_id": "f996-1043",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f000996-f001019",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f001020-f001043"
+      ],
+      "start_frame": 996,
+      "end_frame": 1043,
+      "label": "no_strike",
+      "corrected_at": "2026-10-27T03:30:57.277166+00:00"
+    },
+    {
+      "correction_id": "718ddba2e63a49c396e6a71c92c10dc4",
+      "event_id": "f3876-3899",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f003876-f003899"
+      ],
+      "start_frame": 3876,
+      "end_frame": 3899,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-27T19:07:07.415166+00:00"
+    },
+    {
+      "correction_id": "a60791ddeb464224a29073a456263a0c",
+      "event_id": "f4044-4067",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004044-f004067"
+      ],
+      "start_frame": 4044,
+      "end_frame": 4067,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-27T19:11:34.918741+00:00"
+    },
+    {
+      "correction_id": "ea5166a26ece4a27b4a2ffb92452cce9",
+      "event_id": "f4212-4235",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f004212-f004235"
+      ],
+      "start_frame": 4212,
+      "end_frame": 4235,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-27T19:11:34.931363+00:00"
+    },
+    {
+      "correction_id": "1108ca155ce34693a8b9910578e1d968",
+      "event_id": "f6636-6671",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006636-f006659",
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f006648-f006671"
+      ],
+      "start_frame": 6636,
+      "end_frame": 6671,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-28T04:08:20.596153+00:00"
+    },
+    {
+      "correction_id": "633f72026b024c86a024e0713b376689",
+      "event_id": "f7248-7271",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007248-f007271"
+      ],
+      "start_frame": 7248,
+      "end_frame": 7271,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-28T04:08:20.692238+00:00"
+    },
+    {
+      "correction_id": "35ca33a13fa44387a9a3b908e2a5cb35",
+      "event_id": "f7992-8015",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f007992-f008015"
+      ],
+      "start_frame": 7992,
+      "end_frame": 8015,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-28T04:08:20.940641+00:00"
+    },
+    {
+      "correction_id": "3967a4b3b2894c02a3ea3b36aa947ce4",
+      "event_id": "f8568-8591",
+      "source_window_ids": [
+        "zhang_joanna_1__zhang_weili_vs_joanna_jedrzejczyk_1__aggressive_women_round3__f008568-f008591"
+      ],
+      "start_frame": 8568,
+      "end_frame": 8591,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-28T04:08:21.254077+00:00"
+    }
+  ],
+  "completed": [
+    "f132-179",
+    "f228-275",
+    "f324-347",
+    "f360-407",
+    "f420-587",
+    "f612-635",
+    "f672-695",
+    "f828-875",
+    "f936-983",
+    "f996-1043",
+    "f1068-1091",
+    "f1104-1163",
+    "f1188-1235",
+    "f1260-1283",
+    "f1320-1343",
+    "f1356-1415",
+    "f1428-1475",
+    "f1488-1511",
+    "f1524-1559",
+    "f1668-1715",
+    "f1800-1883",
+    "f1896-1919",
+    "f1968-2039",
+    "f2052-2099",
+    "f2124-2183",
+    "f2208-2243",
+    "f2316-2423",
+    "f2448-2483",
+    "f2544-2603",
+    "f2616-2639",
+    "f2652-2759",
+    "f2796-2843",
+    "f2868-2915",
+    "f2940-2987",
+    "f3000-3047",
+    "f3060-3107",
+    "f3120-3239",
+    "f3252-3275",
+    "f3288-3335",
+    "f3348-3407",
+    "f3720-3767",
+    "f3804-3851",
+    "f3576-3683",
+    "f3924-4007",
+    "f3876-3899",
+    "f4044-4067",
+    "f4212-4235",
+    "f4248-4391",
+    "f4416-4523",
+    "f4536-4691",
+    "f4704-4835",
+    "f4896-4931",
+    "f4980-5015",
+    "f5052-5159",
+    "f5184-5219",
+    "f5484-5507",
+    "f6324-6407",
+    "f6432-6515",
+    "f6540-6611",
+    "f6636-6671",
+    "f6744-6779",
+    "f6960-7031",
+    "f7080-7139",
+    "f7248-7271",
+    "f7296-7331",
+    "f7356-7403",
+    "f7440-7487",
+    "f7608-7631",
+    "f7656-7679",
+    "f7716-7811",
+    "f7920-7979",
+    "f7992-8015",
+    "f8028-8111",
+    "f8124-8171",
+    "f8196-8255",
+    "f8292-8375",
+    "f8412-8471",
+    "f8496-8543",
+    "f8568-8591",
+    "f8652-8735",
+    "f8772-8855"
+  ],
+  "history": [
+    {
+      "action_count": 58,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3720-3767"
+    },
+    {
+      "action_count": 59,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3720-3767"
+    },
+    {
+      "action_count": 60,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3804-3851"
+    },
+    {
+      "action_count": 61,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 62,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 63,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 64,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 65,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 66,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 67,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3576-3683"
+    },
+    {
+      "action_count": 68,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3924-4007"
+    },
+    {
+      "action_count": 69,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3924-4007"
+    },
+    {
+      "action_count": 70,
+      "correction_count": 9,
+      "was_completed": false,
+      "event_id": "f3876-3899"
+    },
+    {
+      "action_count": 70,
+      "correction_count": 10,
+      "was_completed": false,
+      "event_id": "f4044-4067"
+    },
+    {
+      "action_count": 70,
+      "correction_count": 11,
+      "was_completed": false,
+      "event_id": "f4212-4235"
+    },
+    {
+      "action_count": 70,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4248-4391"
+    },
+    {
+      "action_count": 71,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4248-4391"
+    },
+    {
+      "action_count": 72,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4248-4391"
+    },
+    {
+      "action_count": 73,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4248-4391"
+    },
+    {
+      "action_count": 74,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4416-4523"
+    },
+    {
+      "action_count": 75,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4416-4523"
+    },
+    {
+      "action_count": 76,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4416-4523"
+    },
+    {
+      "action_count": 77,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4416-4523"
+    },
+    {
+      "action_count": 78,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4416-4523"
+    },
+    {
+      "action_count": 79,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4416-4523"
+    },
+    {
+      "action_count": 80,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4536-4691"
+    },
+    {
+      "action_count": 81,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4536-4691"
+    },
+    {
+      "action_count": 82,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4536-4691"
+    },
+    {
+      "action_count": 83,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4536-4691"
+    },
+    {
+      "action_count": 83,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4704-4835"
+    },
+    {
+      "action_count": 84,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4704-4835"
+    },
+    {
+      "action_count": 85,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4704-4835"
+    },
+    {
+      "action_count": 85,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4896-4931"
+    },
+    {
+      "action_count": 86,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4896-4931"
+    },
+    {
+      "action_count": 86,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4980-5015"
+    },
+    {
+      "action_count": 87,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f4980-5015"
+    },
+    {
+      "action_count": 87,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5052-5159"
+    },
+    {
+      "action_count": 88,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5052-5159"
+    },
+    {
+      "action_count": 89,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5052-5159"
+    },
+    {
+      "action_count": 90,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5052-5159"
+    },
+    {
+      "action_count": 90,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5184-5219"
+    },
+    {
+      "action_count": 91,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5184-5219"
+    },
+    {
+      "action_count": 91,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5484-5507"
+    },
+    {
+      "action_count": 92,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f5484-5507"
+    },
+    {
+      "action_count": 92,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6324-6407"
+    },
+    {
+      "action_count": 93,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6324-6407"
+    },
+    {
+      "action_count": 93,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6432-6515"
+    },
+    {
+      "action_count": 94,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6432-6515"
+    },
+    {
+      "action_count": 95,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6432-6515"
+    },
+    {
+      "action_count": 95,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6540-6611"
+    },
+    {
+      "action_count": 96,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6540-6611"
+    },
+    {
+      "action_count": 97,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6540-6611"
+    },
+    {
+      "action_count": 98,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6540-6611"
+    },
+    {
+      "action_count": 98,
+      "correction_count": 12,
+      "was_completed": false,
+      "event_id": "f6636-6671"
+    },
+    {
+      "action_count": 98,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f6744-6779"
+    },
+    {
+      "action_count": 99,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f6744-6779"
+    },
+    {
+      "action_count": 100,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f6744-6779"
+    },
+    {
+      "action_count": 100,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f6960-7031"
+    },
+    {
+      "action_count": 101,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f6960-7031"
+    },
+    {
+      "action_count": 101,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f7080-7139"
+    },
+    {
+      "action_count": 102,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f7080-7139"
+    },
+    {
+      "action_count": 102,
+      "correction_count": 13,
+      "was_completed": false,
+      "event_id": "f7248-7271"
+    },
+    {
+      "action_count": 102,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7296-7331"
+    },
+    {
+      "action_count": 103,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7296-7331"
+    },
+    {
+      "action_count": 103,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7356-7403"
+    },
+    {
+      "action_count": 104,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7356-7403"
+    },
+    {
+      "action_count": 104,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7440-7487"
+    },
+    {
+      "action_count": 105,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7440-7487"
+    },
+    {
+      "action_count": 106,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7440-7487"
+    },
+    {
+      "action_count": 107,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7440-7487"
+    },
+    {
+      "action_count": 107,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7608-7631"
+    },
+    {
+      "action_count": 108,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7608-7631"
+    },
+    {
+      "action_count": 108,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7656-7679"
+    },
+    {
+      "action_count": 109,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7656-7679"
+    },
+    {
+      "action_count": 109,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7716-7811"
+    },
+    {
+      "action_count": 110,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7716-7811"
+    },
+    {
+      "action_count": 111,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7716-7811"
+    },
+    {
+      "action_count": 112,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7716-7811"
+    },
+    {
+      "action_count": 112,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7920-7979"
+    },
+    {
+      "action_count": 113,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7920-7979"
+    },
+    {
+      "action_count": 114,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7920-7979"
+    },
+    {
+      "action_count": 115,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7920-7979"
+    },
+    {
+      "action_count": 115,
+      "correction_count": 14,
+      "was_completed": false,
+      "event_id": "f7992-8015"
+    },
+    {
+      "action_count": 115,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8028-8111"
+    },
+    {
+      "action_count": 116,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8028-8111"
+    },
+    {
+      "action_count": 117,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8028-8111"
+    },
+    {
+      "action_count": 118,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8028-8111"
+    },
+    {
+      "action_count": 119,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8028-8111"
+    },
+    {
+      "action_count": 119,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8124-8171"
+    },
+    {
+      "action_count": 120,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8124-8171"
+    },
+    {
+      "action_count": 121,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8124-8171"
+    },
+    {
+      "action_count": 122,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8124-8171"
+    },
+    {
+      "action_count": 122,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8196-8255"
+    },
+    {
+      "action_count": 123,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8196-8255"
+    },
+    {
+      "action_count": 124,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8196-8255"
+    },
+    {
+      "action_count": 124,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8292-8375"
+    },
+    {
+      "action_count": 125,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8292-8375"
+    },
+    {
+      "action_count": 126,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8292-8375"
+    },
+    {
+      "action_count": 127,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8292-8375"
+    },
+    {
+      "action_count": 128,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8292-8375"
+    },
+    {
+      "action_count": 128,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8412-8471"
+    },
+    {
+      "action_count": 129,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8412-8471"
+    },
+    {
+      "action_count": 130,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8412-8471"
+    },
+    {
+      "action_count": 131,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8412-8471"
+    },
+    {
+      "action_count": 131,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8496-8543"
+    },
+    {
+      "action_count": 132,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8496-8543"
+    },
+    {
+      "action_count": 133,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8496-8543"
+    },
+    {
+      "action_count": 133,
+      "correction_count": 15,
+      "was_completed": false,
+      "event_id": "f8568-8591"
+    },
+    {
+      "action_count": 133,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8652-8735"
+    },
+    {
+      "action_count": 134,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8652-8735"
+    },
+    {
+      "action_count": 135,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8652-8735"
+    },
+    {
+      "action_count": 135,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8772-8855"
+    },
+    {
+      "action_count": 136,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8772-8855"
+    },
+    {
+      "action_count": 137,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8772-8855"
+    },
+    {
+      "action_count": 138,
+      "correction_count": 16,
+      "was_completed": false,
+      "event_id": "f8772-8855"
+    }
+  ]
+}

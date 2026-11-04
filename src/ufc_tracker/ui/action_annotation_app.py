@@ -28,6 +28,17 @@ SHORTCUTS_JS = r"""() => {
     held.add(e.code);
     if (e.target.closest?.('input:not([type="radio"]):not([type="checkbox"]),textarea,select,[contenteditable="true"]')) return;
     const key = e.code.startsWith('Numpad') ? e.code.slice(6) : e.key;
+    const temporal = {
+      'BracketLeft': 'action-set-start', 'BracketRight': 'action-set-end',
+      'Comma': 'action-step-back-1', 'Period': 'action-step-forward-1'
+    };
+    if (temporal[e.code]) {
+      e.preventDefault();
+      const node = document.getElementById(temporal[e.code]);
+      const button = node?.matches('button') ? node : node?.querySelector('button');
+      if (button && !button.disabled) button.click();
+      return;
+    }
     if (!['7','9','4','5','6','1','3','0'].includes(key)) return;
     e.preventDefault();
     if (window.actionBusy || !document.querySelector('#action-token textarea, #action-token input')?.value) return;
@@ -42,7 +53,7 @@ SHORTCUTS_JS = r"""() => {
   }, true);
   document.addEventListener('loadedmetadata', e => {
     if (e.target.matches?.('#action-video video')) {
-      e.target.play().catch(() => {});
+      e.target.pause();
     }
   }, true);
 }"""
@@ -65,10 +76,46 @@ ACTION_RANGE_JS = r"""(state, token, attacker, start, end) => {
   const fps = Number(state?.fps) || 30;
   const center = Math.max(eventStart, Math.min(eventEnd,
     eventStart + Math.round(video.currentTime * fps)));
-  let actionStart = Math.max(eventStart, center - 12);
-  let actionEnd = Math.min(eventEnd, actionStart + 23);
-  actionStart = Math.max(eventStart, actionEnd - 23);
+  let actionStart = Math.max(eventStart, center - 7);
+  let actionEnd = Math.min(eventEnd, actionStart + 14);
+  actionStart = Math.max(eventStart, actionEnd - 14);
   return [state, token, attacker, actionStart, actionEnd];
+}"""
+
+VISIBLE_FRAME_JS = r"""(state, token, fallback) => {
+  const video = document.querySelector('#action-video video');
+  if (!video || !token || !Number.isFinite(video.currentTime)) return fallback;
+  const range = token.split(':')[1].slice(1).split('-').map(Number);
+  const fps = Number(state?.fps) || 30;
+  return Math.max(range[0], Math.min(range[1], range[0] + Math.round(video.currentTime * fps)));
+}"""
+
+SET_BOUNDARY_JS = r"""(state, token, fallback) => {
+  const video = document.querySelector('#action-video video');
+  if (!video || !token || !Number.isFinite(video.currentTime)) return fallback;
+  video.pause();
+  const range = token.split(':')[1].slice(1).split('-').map(Number);
+  const fps = Number(state?.fps) || 30;
+  return Math.max(range[0], Math.min(range[1], range[0] + Math.round(video.currentTime * fps)));
+}"""
+
+STEP_FRAME_JS = r"""(state, token, fallback) => {
+  const video = document.querySelector('#action-video video');
+  if (!video || !token || !Number.isFinite(video.currentTime)) return fallback;
+  const range = token.split(':')[1].slice(1).split('-').map(Number);
+  const fps = Number(state?.fps) || 30;
+  const current = Math.max(range[0], Math.min(range[1], range[0] + Math.round(video.currentTime * fps)));
+  const next = Math.max(range[0], Math.min(range[1], current + __DELTA__));
+  video.pause();
+  video.currentTime = (next - range[0]) / fps;
+  return next;
+}"""
+
+PLAYBACK_JS = r"""() => {
+  const video = document.querySelector('#action-video video');
+  if (!video) return;
+  video.playbackRate = __RATE__;
+  video.play().catch(() => {});
 }"""
 
 GUIDE = """### Guía de anotación
@@ -84,7 +131,11 @@ Clasifica el intento visible aunque falle o sea bloqueado. El objetivo se decide
 | 1 | other_strike | Codo, rodilla, hombro u otro ataque fuera de las cinco clases | Grappling, defensa o control |
 | 3 | ambiguous | No se distingue ataque, objetivo o técnica por oclusión/corte | Técnica rara pero claramente identificable |
 
-**Varias acciones:** cada tecla pausa el video, agrega una acción y mantiene abierto el fragmento en el mismo punto. Si no cambiaste los límites, se guardan automáticamente 24 frames alrededor del frame visible. Puedes editar los frames para reemplazar ese cálculo. Pulsa «Terminar fragmento» cuando no queden ataques.
+**Precisión temporal:** el video abre pausado. Reproduce a 0,25×, 0,5× o 1× y avanza por frame. Fija **inicio** en el primer frame donde comienza la acción y **fin** en el último frame útil; después pulsa la categoría. Si no fijas límites, la categoría usa una ventana corta automática de 15 frames centrada en el frame visible.
+
+**Atajos temporales:** `[` fija inicio, `]` fija fin, `,` retrocede un frame y `.` avanza un frame. Las teclas numéricas conservan las categorías.
+
+**Varias acciones:** cada tecla pausa el video, agrega una acción y mantiene abierto el fragmento en el mismo punto. Pulsa «Terminar fragmento» cuando no queden ataques.
 
 **Terminar fragmento:** pulsa numpad **0** cuando ya no queden ataques por registrar.
 
@@ -226,7 +277,7 @@ def build_app(root=ROOT, annotation_dir=None):
             load = gr.Button('Cargar strikes', elem_id='action-load', variant='primary')
         with gr.Row():
             with gr.Column(scale=3):
-                preview = gr.Video(label='Fragmento strike · Pose + merge', interactive=False, elem_id='action-video', autoplay=True)
+                preview = gr.Video(label='Fragmento strike · Pose + merge', interactive=False, elem_id='action-video', autoplay=False)
                 status = gr.Markdown('Selecciona un round. No se procesarán intervalos no_strike.')
                 attacker = gr.Radio(
                     [('ID 1 (rojo)', '1'), ('ID 2 (morado)', '2'), ('Desconocido', 'unknown')],
@@ -237,8 +288,20 @@ def build_app(root=ROOT, annotation_dir=None):
                     start = gr.Number(label='Frame inicial de la acción (inclusive)', precision=0)
                     end = gr.Number(label='Frame final de la acción (inclusive)', precision=0)
                 with gr.Row():
-                    mark_start = gr.Button('Inicio en frame visible')
-                    mark_end = gr.Button('Fin en frame visible')
+                    visible_frame = gr.Number(label='Frame visible', precision=0, interactive=False)
+                    read_frame = gr.Button('Leer frame visible')
+                with gr.Row():
+                    mark_start = gr.Button('Fijar inicio [', elem_id='action-set-start')
+                    mark_end = gr.Button('Fijar fin ]', elem_id='action-set-end')
+                with gr.Row():
+                    step_back_5 = gr.Button('−5 frames', elem_id='action-step-back-5')
+                    step_back_1 = gr.Button('−1 frame ,', elem_id='action-step-back-1')
+                    step_forward_1 = gr.Button('+1 frame .', elem_id='action-step-forward-1')
+                    step_forward_5 = gr.Button('+5 frames', elem_id='action-step-forward-5')
+                with gr.Row():
+                    play_quarter = gr.Button('▶ 0,25×')
+                    play_half = gr.Button('▶ 0,5×')
+                    play_normal = gr.Button('▶ 1×')
                 controls = {}
                 for keys in (('7','9'), ('4','5','6'), ('1','3')):
                     with gr.Row():
@@ -266,12 +329,12 @@ def build_app(root=ROOT, annotation_dir=None):
                          trigger_mode='once', js=ACTION_RANGE_JS).then(fn=None, js=RELEASE_JS)
         for button, command in ((prev,'prev'),(undo,'undo'),(finish,'next'),(no_strike,'correction')):
             button.click(partial(controller.decide,command=command), inputs, outputs, concurrency_id='actions', concurrency_limit=1).then(fn=None, js=RELEASE_JS)
+        read_frame.click(fn=None, inputs=[state,token,visible_frame], outputs=visible_frame, js=VISIBLE_FRAME_JS)
         for button, field in ((mark_start,start),(mark_end,end)):
-            button.click(fn=None, inputs=[state,token,start], outputs=field, js="""(state, token, fallback) => {
-              const v = document.querySelector('#action-video video');
-              if (!v || !token) return fallback;
-              const range = token.split(':')[1].slice(1).split('-').map(Number);
-              const fps = Number(state?.fps) || 30;
-              return Math.min(range[1], range[0] + Math.floor(v.currentTime * fps));
-            }""")
+            button.click(fn=None, inputs=[state,token,field], outputs=field, js=SET_BOUNDARY_JS)
+        for button, delta in ((step_back_5,-5),(step_back_1,-1),(step_forward_1,1),(step_forward_5,5)):
+            button.click(fn=None, inputs=[state,token,visible_frame], outputs=visible_frame,
+                         js=STEP_FRAME_JS.replace('__DELTA__', str(delta)))
+        for button, rate in ((play_quarter,.25),(play_half,.5),(play_normal,1)):
+            button.click(fn=None, js=PLAYBACK_JS.replace('__RATE__', str(rate)))
     return app

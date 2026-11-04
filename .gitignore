@@ -47,3 +47,6 @@ Thumbs.db
 .idea/
 
 fights-selection.md
+
+# Videos to test the model 
+tests/videos_tests/

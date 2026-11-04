@@ -1,0 +1,19 @@
+schema_version: action_training_v1
+dataset_config: configs/models/action_recognition_v2.yaml
+dataset_root: data/processed/datasets/action_recognition_v2
+output_root: outputs/action-recognition-v2
+seed: 20261021
+feature_extraction:
+  steps: 32
+  context_seconds: 0.8
+sampling:
+  negative_to_positive_ratio: 2.0
+models:
+  baseline: [logistic_regression, extra_trees]
+  temporal: [hierarchical_tcn, tcn]
+  video: [x3d_linear_probe]
+tuning:
+  max_epochs: 50
+  patience: 6
+  trials_per_finalist: 20
+  selection_metric: primary_macro_f1

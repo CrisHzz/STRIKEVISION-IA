@@ -1,0 +1,3 @@
+# Existing StrikeVision ML runtime plus optional hyperparameter optimization.
+-r requirements-strike-ml.txt
+optuna==4.5.0

@@ -1,0 +1,1496 @@
+{
+  "schema_version": "strike_actions_v1",
+  "source_sha256": "592fd83bf9f50bfad202caf08f3b30ff5bde95d96f895a57e439fc38e7db822d",
+  "video_id": "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4",
+  "video_path": "data/splits/low_kicks_women/joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4.mp4",
+  "fps": 29.97002997002997,
+  "revision": 69,
+  "actions": [
+    {
+      "action_id": "e994049719f34227a3ee8e6609fb7c4c",
+      "event_id": "f288-335",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000288-f000311",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000300-f000323",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000312-f000335"
+      ],
+      "start_frame": 291,
+      "end_frame": 307,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:47.663492+00:00"
+    },
+    {
+      "action_id": "651ec13ec4bd4c838b52377afc4b7740",
+      "event_id": "f360-419",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000360-f000383",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000372-f000395",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000396-f000419"
+      ],
+      "start_frame": 366,
+      "end_frame": 382,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.673197+00:00"
+    },
+    {
+      "action_id": "a402f3a319d84e1f8983bf6b42a96cae",
+      "event_id": "f468-527",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000468-f000491",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000480-f000503",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000492-f000515",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000504-f000527"
+      ],
+      "start_frame": 484,
+      "end_frame": 502,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:47.677248+00:00"
+    },
+    {
+      "action_id": "0d3b868962bd4c5d9613d3fd9e45d0a8",
+      "event_id": "f816-863",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000816-f000839",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000828-f000851",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000840-f000863"
+      ],
+      "start_frame": 840,
+      "end_frame": 857,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:47.706029+00:00"
+    },
+    {
+      "action_id": "1e27455a8e734ef1b2ea1d2d2df62c9c",
+      "event_id": "f936-959",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000936-f000959"
+      ],
+      "start_frame": 946,
+      "end_frame": 959,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.716877+00:00"
+    },
+    {
+      "action_id": "c2d53eda5118453d92954b9582a8659a",
+      "event_id": "f984-1031",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000984-f001007",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000996-f001019",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001008-f001031"
+      ],
+      "start_frame": 995,
+      "end_frame": 1010,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.726408+00:00"
+    },
+    {
+      "action_id": "69091672fbca4601b882e5acc1a30b45",
+      "event_id": "f1200-1235",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001200-f001223",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001212-f001235"
+      ],
+      "start_frame": 1204,
+      "end_frame": 1218,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:47.733425+00:00"
+    },
+    {
+      "action_id": "37742afc344b4e41a59bf3e2b057a2dd",
+      "event_id": "f1200-1235",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001200-f001223",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001212-f001235"
+      ],
+      "start_frame": 1219,
+      "end_frame": 1233,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.744114+00:00"
+    },
+    {
+      "action_id": "12a9f5e5f9f942a682b30084e5eeada2",
+      "event_id": "f1284-1319",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001284-f001307",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001296-f001319"
+      ],
+      "start_frame": 1294,
+      "end_frame": 1310,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.752288+00:00"
+    },
+    {
+      "action_id": "8125a4c0c5ab4f2e9d49d1bc4f5c9a21",
+      "event_id": "f1536-1571",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001536-f001559",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001548-f001571"
+      ],
+      "start_frame": 1539,
+      "end_frame": 1553,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:47.760051+00:00"
+    },
+    {
+      "action_id": "a5ddeb147e1e4a7b952160a46168fe54",
+      "event_id": "f1536-1571",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001536-f001559",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001548-f001571"
+      ],
+      "start_frame": 1551,
+      "end_frame": 1567,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.766322+00:00"
+    },
+    {
+      "action_id": "df191e17e19f4dc6b85b8760fb966fcb",
+      "event_id": "f1608-1679",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001608-f001631",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001620-f001643",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001632-f001655",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001644-f001667",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001656-f001679"
+      ],
+      "start_frame": 1642,
+      "end_frame": 1658,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.778008+00:00"
+    },
+    {
+      "action_id": "cb36f723adfe4fdeb74ce7b473d9bc97",
+      "event_id": "f1608-1679",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001608-f001631",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001620-f001643",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001632-f001655",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001644-f001667",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001656-f001679"
+      ],
+      "start_frame": 1648,
+      "end_frame": 1664,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.787096+00:00"
+    },
+    {
+      "action_id": "0923b25772fe43f3a950c5ebc4b7d6ff",
+      "event_id": "f1800-1859",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001800-f001823",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001812-f001835",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001824-f001847",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001836-f001859"
+      ],
+      "start_frame": 1823,
+      "end_frame": 1838,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.794890+00:00"
+    },
+    {
+      "action_id": "ed4580539baa4664865ad36a1ba0e9b6",
+      "event_id": "f1800-1859",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001800-f001823",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001812-f001835",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001824-f001847",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001836-f001859"
+      ],
+      "start_frame": 1828,
+      "end_frame": 1844,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.802530+00:00"
+    },
+    {
+      "action_id": "da557d2b44464ba8a7f6f5760a521cd2",
+      "event_id": "f1932-2039",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001932-f001955",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001944-f001967",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001956-f001979",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001968-f001991",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001980-f002003",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f001992-f002015",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002004-f002027",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002016-f002039"
+      ],
+      "start_frame": 1988,
+      "end_frame": 2006,
+      "attacker": "2",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:47.810557+00:00"
+    },
+    {
+      "action_id": "e9bfb82a31a94f6c895939fcecaa822e",
+      "event_id": "f2052-2099",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002052-f002075",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002064-f002087",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002076-f002099"
+      ],
+      "start_frame": 2066,
+      "end_frame": 2078,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.821390+00:00"
+    },
+    {
+      "action_id": "b6addcca937841bc8c959785595d7d96",
+      "event_id": "f2052-2099",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002052-f002075",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002064-f002087",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002076-f002099"
+      ],
+      "start_frame": 2078,
+      "end_frame": 2091,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.829338+00:00"
+    },
+    {
+      "action_id": "cb801c8f0282432bb31766585b201c88",
+      "event_id": "f2292-2375",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002292-f002315",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002304-f002327",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002316-f002339",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002328-f002351",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002340-f002363",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002352-f002375"
+      ],
+      "start_frame": 2331,
+      "end_frame": 2357,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:47.848005+00:00"
+    },
+    {
+      "action_id": "6a29751cfc594a2887cd6b65b7ab887a",
+      "event_id": "f2628-2675",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002628-f002651",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002640-f002663",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002652-f002675"
+      ],
+      "start_frame": 2648,
+      "end_frame": 2665,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.855835+00:00"
+    },
+    {
+      "action_id": "f303ffe99a2b4449adb7f731cc5e6331",
+      "event_id": "f2688-2771",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002688-f002711",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002700-f002723",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002712-f002735",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002724-f002747",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002736-f002759",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002748-f002771"
+      ],
+      "start_frame": 2704,
+      "end_frame": 2718,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.865595+00:00"
+    },
+    {
+      "action_id": "c1eb73165a8a48aba633cd1cf150c1b4",
+      "event_id": "f2688-2771",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002688-f002711",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002700-f002723",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002712-f002735",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002724-f002747",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002736-f002759",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002748-f002771"
+      ],
+      "start_frame": 2718,
+      "end_frame": 2731,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.873429+00:00"
+    },
+    {
+      "action_id": "2b9e6dc7542d45e08edd13d8c14abfd9",
+      "event_id": "f2688-2771",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002688-f002711",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002700-f002723",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002712-f002735",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002724-f002747",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002736-f002759",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002748-f002771"
+      ],
+      "start_frame": 2736,
+      "end_frame": 2752,
+      "attacker": "1",
+      "label": "other_strike",
+      "annotated_at": "2026-10-30T04:09:47.882608+00:00"
+    },
+    {
+      "action_id": "9010e85d9dea4d7cb638e04db49ff0f6",
+      "event_id": "f2916-2939",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002916-f002939"
+      ],
+      "start_frame": 2924,
+      "end_frame": 2939,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:47.890939+00:00"
+    },
+    {
+      "action_id": "4d1aa227b026423b93300ec87d8eedaf",
+      "event_id": "f3012-3095",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003012-f003035",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003024-f003047",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003036-f003059",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003060-f003083",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003072-f003095"
+      ],
+      "start_frame": 3021,
+      "end_frame": 3037,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.898120+00:00"
+    },
+    {
+      "action_id": "f9cdea593bbc4d18b0d093f356bd2642",
+      "event_id": "f3012-3095",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003012-f003035",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003024-f003047",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003036-f003059",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003060-f003083",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003072-f003095"
+      ],
+      "start_frame": 3067,
+      "end_frame": 3083,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.908326+00:00"
+    },
+    {
+      "action_id": "bb71616329e54359b8907fde1fc62953",
+      "event_id": "f3192-3239",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003192-f003215",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003204-f003227",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003216-f003239"
+      ],
+      "start_frame": 3202,
+      "end_frame": 3219,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:47.917094+00:00"
+    },
+    {
+      "action_id": "7fec1539382b4e8f9cd860d1f340c9e3",
+      "event_id": "f3252-3299",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003252-f003275",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003264-f003287",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003276-f003299"
+      ],
+      "start_frame": 3268,
+      "end_frame": 3286,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:47.926811+00:00"
+    },
+    {
+      "action_id": "aadf75fb296e48d58a91379ac3b4e429",
+      "event_id": "f3360-3419",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003360-f003383",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003372-f003395",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003384-f003407",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003396-f003419"
+      ],
+      "start_frame": 3374,
+      "end_frame": 3392,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.936390+00:00"
+    },
+    {
+      "action_id": "01e924a122964662a4896fb64967a375",
+      "event_id": "f3432-3503",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003432-f003455",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003444-f003467",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003456-f003479",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003468-f003491",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003480-f003503"
+      ],
+      "start_frame": 3464,
+      "end_frame": 3479,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.945952+00:00"
+    },
+    {
+      "action_id": "82130661d69141d8ab7af4d7b768cdbe",
+      "event_id": "f3432-3503",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003432-f003455",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003444-f003467",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003456-f003479",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003468-f003491",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003480-f003503"
+      ],
+      "start_frame": 3480,
+      "end_frame": 3498,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:47.954976+00:00"
+    },
+    {
+      "action_id": "46785d3eb6db422bb9c8a508113f1e1a",
+      "event_id": "f3660-3695",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003660-f003683",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003672-f003695"
+      ],
+      "start_frame": 3678,
+      "end_frame": 3695,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:47.962512+00:00"
+    },
+    {
+      "action_id": "01c01b18b765450ba1156202c537582b",
+      "event_id": "f4812-4835",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f004812-f004835"
+      ],
+      "start_frame": 4812,
+      "end_frame": 4824,
+      "attacker": "1",
+      "label": "other_strike",
+      "annotated_at": "2026-10-30T04:09:47.982144+00:00"
+    },
+    {
+      "action_id": "777a85e02980483eaad135f28e90409b",
+      "event_id": "f6636-6683",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006636-f006659",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006648-f006671",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006660-f006683"
+      ],
+      "start_frame": 6640,
+      "end_frame": 6656,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:47.992745+00:00"
+    },
+    {
+      "action_id": "35d98dba1ffe49b7a4ceecff4ae8c3ef",
+      "event_id": "f6696-6743",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006696-f006719",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006708-f006731",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006720-f006743"
+      ],
+      "start_frame": 6710,
+      "end_frame": 6727,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.000815+00:00"
+    },
+    {
+      "action_id": "12bf60eca8ac49de9b745fdeff10b0ea",
+      "event_id": "f6840-6887",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006840-f006863",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006852-f006875",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f006864-f006887"
+      ],
+      "start_frame": 6851,
+      "end_frame": 6868,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.006810+00:00"
+    },
+    {
+      "action_id": "8839588c8f594c9483ba6ba2ef9cbdf7",
+      "event_id": "f7056-7115",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007056-f007079",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007068-f007091",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007080-f007103",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007092-f007115"
+      ],
+      "start_frame": 7074,
+      "end_frame": 7087,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.019200+00:00"
+    },
+    {
+      "action_id": "b5b146c7fda142d68f64ade3cc766b71",
+      "event_id": "f7056-7115",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007056-f007079",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007068-f007091",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007080-f007103",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007092-f007115"
+      ],
+      "start_frame": 7088,
+      "end_frame": 7103,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.027793+00:00"
+    },
+    {
+      "action_id": "6bde913419f347e1a251f6c95c8a9a30",
+      "event_id": "f7140-7247",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007140-f007163",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007152-f007175",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007164-f007187",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007188-f007211",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007200-f007223",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007212-f007235",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007224-f007247"
+      ],
+      "start_frame": 7146,
+      "end_frame": 7163,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:48.037195+00:00"
+    },
+    {
+      "action_id": "971999bed64e42978827f88973f50d59",
+      "event_id": "f7296-7355",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007296-f007319",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007308-f007331",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007320-f007343",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007332-f007355"
+      ],
+      "start_frame": 7314,
+      "end_frame": 7330,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.047073+00:00"
+    },
+    {
+      "action_id": "0f69738dfeb940c08e3ba72554dc4484",
+      "event_id": "f7392-7427",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007392-f007415",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007404-f007427"
+      ],
+      "start_frame": 7392,
+      "end_frame": 7407,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.055072+00:00"
+    },
+    {
+      "action_id": "3a4648f4402a41ddb754e1069951e45b",
+      "event_id": "f7644-7703",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007644-f007667",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007656-f007679",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007668-f007691",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007680-f007703"
+      ],
+      "start_frame": 7658,
+      "end_frame": 7675,
+      "attacker": "1",
+      "label": "kick_leg",
+      "annotated_at": "2026-10-30T04:09:48.065981+00:00"
+    },
+    {
+      "action_id": "bcf8faedfb424df4bb9c0a73e3a0ba96",
+      "event_id": "f7764-7847",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007764-f007787",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007776-f007799",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007788-f007811",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007800-f007823",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007812-f007835",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007824-f007847"
+      ],
+      "start_frame": 7768,
+      "end_frame": 7786,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:48.075705+00:00"
+    },
+    {
+      "action_id": "5eee191eb6b249de923eb4ee61c5ef07",
+      "event_id": "f7764-7847",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007764-f007787",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007776-f007799",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007788-f007811",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007800-f007823",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007812-f007835",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007824-f007847"
+      ],
+      "start_frame": 7805,
+      "end_frame": 7822,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.085089+00:00"
+    },
+    {
+      "action_id": "1327cc4324294d799d5b283dc0d6cbc1",
+      "event_id": "f7944-7991",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007944-f007967",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007956-f007979",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007968-f007991"
+      ],
+      "start_frame": 7950,
+      "end_frame": 7962,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.100955+00:00"
+    },
+    {
+      "action_id": "e282b940ee03433680c415a7424b65b3",
+      "event_id": "f7944-7991",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007944-f007967",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007956-f007979",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007968-f007991"
+      ],
+      "start_frame": 7957,
+      "end_frame": 7971,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.113729+00:00"
+    },
+    {
+      "action_id": "5ab9475df3674ac18785207f0908a94f",
+      "event_id": "f8004-8051",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008004-f008027",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008016-f008039",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008028-f008051"
+      ],
+      "start_frame": 8006,
+      "end_frame": 8021,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.122531+00:00"
+    },
+    {
+      "action_id": "863961a659db4fb3937804ad29111718",
+      "event_id": "f8064-8147",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008064-f008087",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008076-f008099",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008088-f008111",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008100-f008123",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008112-f008135",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008124-f008147"
+      ],
+      "start_frame": 8085,
+      "end_frame": 8098,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.133335+00:00"
+    },
+    {
+      "action_id": "62675fed3b794a4a947725ee7d5b6000",
+      "event_id": "f8064-8147",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008064-f008087",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008076-f008099",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008088-f008111",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008100-f008123",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008112-f008135",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008124-f008147"
+      ],
+      "start_frame": 8096,
+      "end_frame": 8113,
+      "attacker": "1",
+      "label": "other_strike",
+      "annotated_at": "2026-10-30T04:09:48.144058+00:00"
+    },
+    {
+      "action_id": "c5463e75a1b242308a912a5d3e3a666d",
+      "event_id": "f8304-8339",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008304-f008327",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008316-f008339"
+      ],
+      "start_frame": 8324,
+      "end_frame": 8339,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.162559+00:00"
+    },
+    {
+      "action_id": "0f9425bad6d740c9843d6ed07a07e32a",
+      "event_id": "f8304-8339",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008304-f008327",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008316-f008339"
+      ],
+      "start_frame": 8330,
+      "end_frame": 8339,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.170426+00:00"
+    },
+    {
+      "action_id": "060a839c64c643f89e0875b2b7f3a0dc",
+      "event_id": "f8376-8423",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008376-f008399",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008388-f008411",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008400-f008423"
+      ],
+      "start_frame": 8390,
+      "end_frame": 8407,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:48.183987+00:00"
+    },
+    {
+      "action_id": "9bb54cf8e7704dbe8dc00fe9b3979e81",
+      "event_id": "f8460-8567",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008460-f008483",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008472-f008495",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008484-f008507",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008496-f008519",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008520-f008543",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008532-f008555",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008544-f008567"
+      ],
+      "start_frame": 8467,
+      "end_frame": 8482,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.195930+00:00"
+    },
+    {
+      "action_id": "8249556bdfa144f0abde56c42f156bdc",
+      "event_id": "f8460-8567",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008460-f008483",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008472-f008495",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008484-f008507",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008496-f008519",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008520-f008543",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008532-f008555",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008544-f008567"
+      ],
+      "start_frame": 8478,
+      "end_frame": 8494,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.206393+00:00"
+    },
+    {
+      "action_id": "fb5d3ab50a2e4f839f7d1ed861122ccc",
+      "event_id": "f8604-8651",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008604-f008627",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008616-f008639",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008628-f008651"
+      ],
+      "start_frame": 8604,
+      "end_frame": 8618,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.217037+00:00"
+    },
+    {
+      "action_id": "98b2f38e87214ff6995af00e93fd2dee",
+      "event_id": "f8604-8651",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008604-f008627",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008616-f008639",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008628-f008651"
+      ],
+      "start_frame": 8608,
+      "end_frame": 8622,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.228201+00:00"
+    },
+    {
+      "action_id": "ba769f7ba7874acf86ea6a8ba3be9cba",
+      "event_id": "f8604-8651",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008604-f008627",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008616-f008639",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008628-f008651"
+      ],
+      "start_frame": 8618,
+      "end_frame": 8634,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.237420+00:00"
+    },
+    {
+      "action_id": "e15966715a9d456eadfd57c83f1e931f",
+      "event_id": "f8820-8879",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008820-f008843",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008832-f008855",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008844-f008867",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008856-f008879"
+      ],
+      "start_frame": 8835,
+      "end_frame": 8852,
+      "attacker": "1",
+      "label": "kick_body",
+      "annotated_at": "2026-10-30T04:09:48.258424+00:00"
+    },
+    {
+      "action_id": "13243db8190149e5b5e2810d02c262f6",
+      "event_id": "f8916-8987",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008916-f008939",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008928-f008951",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008940-f008963",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008952-f008975",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008964-f008987"
+      ],
+      "start_frame": 8932,
+      "end_frame": 8947,
+      "attacker": "1",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.268713+00:00"
+    },
+    {
+      "action_id": "643f19c3a3e2460aaf90c2ea51e16c99",
+      "event_id": "f8916-8987",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008916-f008939",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008928-f008951",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008940-f008963",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008952-f008975",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008964-f008987"
+      ],
+      "start_frame": 8937,
+      "end_frame": 8952,
+      "attacker": "2",
+      "label": "punch_head",
+      "annotated_at": "2026-10-30T04:09:48.277457+00:00"
+    },
+    {
+      "action_id": "7de3e23a7a6a407cbbf5cf74344d3598",
+      "event_id": "f8916-8987",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008916-f008939",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008928-f008951",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008940-f008963",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008952-f008975",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008964-f008987"
+      ],
+      "start_frame": 8948,
+      "end_frame": 8963,
+      "attacker": "1",
+      "label": "other_strike",
+      "annotated_at": "2026-10-30T04:09:48.289814+00:00"
+    }
+  ],
+  "source_corrections": [
+    {
+      "correction_id": "850d01cccbf848c290492f94fe90a924",
+      "event_id": "f156-179",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000156-f000179"
+      ],
+      "start_frame": 156,
+      "end_frame": 179,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:47.653590+00:00"
+    },
+    {
+      "correction_id": "e6e429be10734fc280d42fdecae24002",
+      "event_id": "f600-623",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000600-f000623"
+      ],
+      "start_frame": 600,
+      "end_frame": 623,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:47.690137+00:00"
+    },
+    {
+      "correction_id": "1949e76123f84b288d1c1c87a368cb80",
+      "event_id": "f672-731",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000672-f000695",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000684-f000707",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000696-f000719",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f000708-f000731"
+      ],
+      "start_frame": 672,
+      "end_frame": 731,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:47.696977+00:00"
+    },
+    {
+      "correction_id": "3376aa1fb4c54ec38eab0e77b15b9bb2",
+      "event_id": "f2208-2255",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002208-f002231",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002220-f002243",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f002232-f002255"
+      ],
+      "start_frame": 2208,
+      "end_frame": 2255,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:47.837400+00:00"
+    },
+    {
+      "correction_id": "84742c0cc6d34e4d8ef96a62bb375e11",
+      "event_id": "f3960-4031",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003960-f003983",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003972-f003995",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003984-f004007",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f003996-f004019",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f004008-f004031"
+      ],
+      "start_frame": 3960,
+      "end_frame": 4031,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:47.970972+00:00"
+    },
+    {
+      "correction_id": "08c4f7db0f51414a938657b97b6b4275",
+      "event_id": "f7884-7919",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007884-f007907",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f007896-f007919"
+      ],
+      "start_frame": 7884,
+      "end_frame": 7919,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:48.094921+00:00"
+    },
+    {
+      "correction_id": "e32c0585d6e94d11bc68c2d71872ddef",
+      "event_id": "f8172-8195",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008172-f008195"
+      ],
+      "start_frame": 8172,
+      "end_frame": 8195,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:48.153669+00:00"
+    },
+    {
+      "correction_id": "a1a7ffea8ece4a3abe10235ae7744179",
+      "event_id": "f8700-8759",
+      "source_window_ids": [
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008700-f008723",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008712-f008735",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008724-f008747",
+        "joanna_andrade__joanna_jedrzejczyk_vs_jessica_andrade__low_kicks_women_round4__f008736-f008759"
+      ],
+      "start_frame": 8700,
+      "end_frame": 8759,
+      "label": "no_strike",
+      "reason": "prior_strike_annotation_error",
+      "annotated_at": "2026-10-30T04:09:48.248362+00:00"
+    }
+  ],
+  "completed": [
+    "f156-179",
+    "f288-335",
+    "f360-419",
+    "f468-527",
+    "f600-623",
+    "f672-731",
+    "f816-863",
+    "f936-959",
+    "f984-1031",
+    "f1200-1235",
+    "f1284-1319",
+    "f1536-1571",
+    "f1608-1679",
+    "f1800-1859",
+    "f1932-2039",
+    "f2052-2099",
+    "f2208-2255",
+    "f2292-2375",
+    "f2628-2675",
+    "f2688-2771",
+    "f2916-2939",
+    "f3012-3095",
+    "f3192-3239",
+    "f3252-3299",
+    "f3360-3419",
+    "f3432-3503",
+    "f3660-3695",
+    "f3960-4031",
+    "f4812-4835",
+    "f6636-6683",
+    "f6696-6743",
+    "f6840-6887",
+    "f7056-7115",
+    "f7140-7247",
+    "f7296-7355",
+    "f7392-7427",
+    "f7644-7703",
+    "f7764-7847",
+    "f7884-7919",
+    "f7944-7991",
+    "f8004-8051",
+    "f8064-8147",
+    "f8172-8195",
+    "f8304-8339",
+    "f8376-8423",
+    "f8460-8567",
+    "f8604-8651",
+    "f8700-8759",
+    "f8820-8879",
+    "f8916-8987"
+  ],
+  "history": [
+    {
+      "action_count": 0,
+      "correction_count": 0,
+      "was_completed": false,
+      "event_id": "f156-179"
+    },
+    {
+      "action_count": 0,
+      "correction_count": 1,
+      "was_completed": false,
+      "event_id": "f288-335"
+    },
+    {
+      "action_count": 1,
+      "correction_count": 1,
+      "was_completed": false,
+      "event_id": "f360-419"
+    },
+    {
+      "action_count": 2,
+      "correction_count": 1,
+      "was_completed": false,
+      "event_id": "f468-527"
+    },
+    {
+      "action_count": 3,
+      "correction_count": 1,
+      "was_completed": false,
+      "event_id": "f600-623"
+    },
+    {
+      "action_count": 3,
+      "correction_count": 2,
+      "was_completed": false,
+      "event_id": "f672-731"
+    },
+    {
+      "action_count": 3,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f816-863"
+    },
+    {
+      "action_count": 4,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f936-959"
+    },
+    {
+      "action_count": 5,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f984-1031"
+    },
+    {
+      "action_count": 6,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1200-1235"
+    },
+    {
+      "action_count": 7,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1200-1235"
+    },
+    {
+      "action_count": 8,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1284-1319"
+    },
+    {
+      "action_count": 9,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1536-1571"
+    },
+    {
+      "action_count": 10,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1536-1571"
+    },
+    {
+      "action_count": 11,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1608-1679"
+    },
+    {
+      "action_count": 12,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1608-1679"
+    },
+    {
+      "action_count": 13,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1800-1859"
+    },
+    {
+      "action_count": 14,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1800-1859"
+    },
+    {
+      "action_count": 15,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f1932-2039"
+    },
+    {
+      "action_count": 16,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f2052-2099"
+    },
+    {
+      "action_count": 17,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f2052-2099"
+    },
+    {
+      "action_count": 18,
+      "correction_count": 3,
+      "was_completed": false,
+      "event_id": "f2208-2255"
+    },
+    {
+      "action_count": 18,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f2292-2375"
+    },
+    {
+      "action_count": 19,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f2628-2675"
+    },
+    {
+      "action_count": 20,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f2688-2771"
+    },
+    {
+      "action_count": 21,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f2688-2771"
+    },
+    {
+      "action_count": 22,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f2688-2771"
+    },
+    {
+      "action_count": 23,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f2916-2939"
+    },
+    {
+      "action_count": 24,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3012-3095"
+    },
+    {
+      "action_count": 25,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3012-3095"
+    },
+    {
+      "action_count": 26,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3192-3239"
+    },
+    {
+      "action_count": 27,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3252-3299"
+    },
+    {
+      "action_count": 28,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3360-3419"
+    },
+    {
+      "action_count": 29,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3432-3503"
+    },
+    {
+      "action_count": 30,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3432-3503"
+    },
+    {
+      "action_count": 31,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3660-3695"
+    },
+    {
+      "action_count": 32,
+      "correction_count": 4,
+      "was_completed": false,
+      "event_id": "f3960-4031"
+    },
+    {
+      "action_count": 32,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f4812-4835"
+    },
+    {
+      "action_count": 33,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f6636-6683"
+    },
+    {
+      "action_count": 34,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f6696-6743"
+    },
+    {
+      "action_count": 35,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f6840-6887"
+    },
+    {
+      "action_count": 36,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7056-7115"
+    },
+    {
+      "action_count": 37,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7056-7115"
+    },
+    {
+      "action_count": 38,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7140-7247"
+    },
+    {
+      "action_count": 39,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7296-7355"
+    },
+    {
+      "action_count": 40,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7392-7427"
+    },
+    {
+      "action_count": 41,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7644-7703"
+    },
+    {
+      "action_count": 42,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7764-7847"
+    },
+    {
+      "action_count": 43,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7764-7847"
+    },
+    {
+      "action_count": 44,
+      "correction_count": 5,
+      "was_completed": false,
+      "event_id": "f7884-7919"
+    },
+    {
+      "action_count": 44,
+      "correction_count": 6,
+      "was_completed": false,
+      "event_id": "f7944-7991"
+    },
+    {
+      "action_count": 45,
+      "correction_count": 6,
+      "was_completed": false,
+      "event_id": "f7944-7991"
+    },
+    {
+      "action_count": 46,
+      "correction_count": 6,
+      "was_completed": false,
+      "event_id": "f8004-8051"
+    },
+    {
+      "action_count": 47,
+      "correction_count": 6,
+      "was_completed": false,
+      "event_id": "f8064-8147"
+    },
+    {
+      "action_count": 48,
+      "correction_count": 6,
+      "was_completed": false,
+      "event_id": "f8064-8147"
+    },
+    {
+      "action_count": 49,
+      "correction_count": 6,
+      "was_completed": false,
+      "event_id": "f8172-8195"
+    },
+    {
+      "action_count": 49,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8304-8339"
+    },
+    {
+      "action_count": 50,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8304-8339"
+    },
+    {
+      "action_count": 51,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8376-8423"
+    },
+    {
+      "action_count": 52,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8460-8567"
+    },
+    {
+      "action_count": 53,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8460-8567"
+    },
+    {
+      "action_count": 54,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8604-8651"
+    },
+    {
+      "action_count": 55,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8604-8651"
+    },
+    {
+      "action_count": 56,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8604-8651"
+    },
+    {
+      "action_count": 57,
+      "correction_count": 7,
+      "was_completed": false,
+      "event_id": "f8700-8759"
+    },
+    {
+      "action_count": 57,
+      "correction_count": 8,
+      "was_completed": false,
+      "event_id": "f8820-8879"
+    },
+    {
+      "action_count": 58,
+      "correction_count": 8,
+      "was_completed": false,
+      "event_id": "f8916-8987"
+    },
+    {
+      "action_count": 59,
+      "correction_count": 8,
+      "was_completed": false,
+      "event_id": "f8916-8987"
+    },
+    {
+      "action_count": 60,
+      "correction_count": 8,
+      "was_completed": false,
+      "event_id": "f8916-8987"
+    }
+  ]
+}

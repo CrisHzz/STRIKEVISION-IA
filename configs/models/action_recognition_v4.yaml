@@ -1,0 +1,32 @@
+schema_version: strikevision_action_recognition_v1
+action_annotations_dirs:
+  - data/annotations/strike_actions_v1
+  - data/annotations/strike_actions_zhang_joanna_trial
+  - data/annotations/strike_actions_joanna_andrade_trial
+binary_annotations_dir: data/annotations/strike_annotations_v1
+splits_manifest: data/metadata/splits_manifest.csv
+positive_interval_policy: exhaustive_unless_uncertain_overlap
+classes:
+  - punch_head
+  - punch_body
+  - kick_leg
+  - kick_body
+  - kick_head
+  - other_strike
+untrusted_pose_videos:
+  adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_round3: referee_and_spectator_identity_errors_in_visual_review
+  adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_round4: referee_and_spectator_identity_errors_in_visual_review
+fixed_splits:
+  test_fights:
+    - adesanya_pereira_1
+    - topuria_holloway
+  development_folds:
+    aldo_font: 0
+    fiziev_bahamondes: 0
+    holloway_gaethje: 1
+    topuria_gaethje: 1
+    romero_adesanya: 2
+    yan_sandhagen: 2
+  train_only_fights:
+    - zhang_joanna_1
+    - joanna_andrade

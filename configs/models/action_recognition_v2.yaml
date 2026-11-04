@@ -1,0 +1,18 @@
+schema_version: strikevision_action_recognition_v1
+action_annotations_dir: data/annotations/strike_actions_v1
+binary_annotations_dir: data/annotations/strike_annotations_v1
+splits_manifest: data/metadata/splits_manifest.csv
+# The annotator reviewed the timeline and attempted to register every action.
+# Missing techniques are negatives unless an ambiguous action or an action with
+# unknown attacker overlaps the interval.
+positive_interval_policy: exhaustive_unless_uncertain_overlap
+classes:
+  - punch_head
+  - punch_body
+  - kick_leg
+  - kick_body
+  - kick_head
+  - other_strike
+untrusted_pose_videos:
+  adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_round3: referee_and_spectator_identity_errors_in_visual_review
+  adesanya_pereira_1__israel_adesanya_vs_alex_pereira_1__aggressive_men_round4: referee_and_spectator_identity_errors_in_visual_review
