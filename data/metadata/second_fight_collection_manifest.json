@@ -1,0 +1,1764 @@
+{
+  "schema_version": 1,
+  "collection": "second_fight_collection",
+  "source_csv": "peleas_ufc_rounds_formateado.csv",
+  "source_video_count": 32,
+  "round_clip_count": 134,
+  "dvc_files": [
+    "data/raw/full_fights/full_fights_second_collection.dvc",
+    "data/splits/fights_remaining_mixed.dvc"
+  ],
+  "fights": [
+    {
+      "fight_name": "Alexander Volkanovski vs Max Holloway I | UFC 245",
+      "youtube_id": "t_5G7bGTPxs",
+      "source_url": "https://www.youtube.com/watch?v=t_5G7bGTPxs",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs.mp4",
+        "duration_sec": 1695.594,
+        "fps": 29.97,
+        "file_size_bytes": 1135861869
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round1.mp4",
+          "start_sec": 32.0,
+          "end_sec": 332.0,
+          "duration_sec": 300.0,
+          "fps": 29.97,
+          "file_size_bytes": 540999286
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round2.mp4",
+          "start_sec": 343.0,
+          "end_sec": 650.0,
+          "duration_sec": 307.007,
+          "fps": 29.97,
+          "file_size_bytes": 541342077
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round3.mp4",
+          "start_sec": 665.0,
+          "end_sec": 969.0,
+          "duration_sec": 303.97,
+          "fps": 29.97,
+          "file_size_bytes": 542237666
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round4.mp4",
+          "start_sec": 973.0,
+          "end_sec": 1282.0,
+          "duration_sec": 309.009,
+          "fps": 29.97,
+          "file_size_bytes": 548925776
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round5.mp4",
+          "start_sec": 1296.0,
+          "end_sec": 1596.0,
+          "duration_sec": 300.0,
+          "fps": 29.97,
+          "file_size_bytes": 529437312
+        }
+      ]
+    },
+    {
+      "fight_name": "Alexander Volkanovski vs Max Holloway II | UFC 251",
+      "youtube_id": "rXVF_mTnTbc",
+      "source_url": "https://www.youtube.com/watch?v=rXVF_mTnTbc",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/alexander_volkanovski_vs_max_holloway_ii_ufc_251__rXVF_mTnTbc.mp4",
+        "duration_sec": 1757.222,
+        "fps": 29.97,
+        "file_size_bytes": 1167898344
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_ii_ufc_251__rXVF_mTnTbc__round1.mp4",
+          "start_sec": 33.0,
+          "end_sec": 336.0,
+          "duration_sec": 303.003,
+          "fps": 29.97,
+          "file_size_bytes": 547161998
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_ii_ufc_251__rXVF_mTnTbc__round2.mp4",
+          "start_sec": 407.0,
+          "end_sec": 694.0,
+          "duration_sec": 287.02,
+          "fps": 29.97,
+          "file_size_bytes": 512605901
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_ii_ufc_251__rXVF_mTnTbc__round3.mp4",
+          "start_sec": 735.0,
+          "end_sec": 992.0,
+          "duration_sec": 257.023,
+          "fps": 29.97,
+          "file_size_bytes": 460816291
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_ii_ufc_251__rXVF_mTnTbc__round4.mp4",
+          "start_sec": 1054.0,
+          "end_sec": 1324.0,
+          "duration_sec": 269.97,
+          "fps": 29.97,
+          "file_size_bytes": 473807926
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/alexander_volkanovski_vs_max_holloway_ii_ufc_251__rXVF_mTnTbc__round5.mp4",
+          "start_sec": 1335.0,
+          "end_sec": 1626.0,
+          "duration_sec": 291.024,
+          "fps": 29.97,
+          "file_size_bytes": 510290446
+        }
+      ]
+    },
+    {
+      "fight_name": "Carlos Condit vs Nick Diaz | UFC 143",
+      "youtube_id": "QKC_fzMXUD8",
+      "source_url": "https://www.youtube.com/watch?v=QKC_fzMXUD8",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/carlos_condit_vs_nick_diaz_ufc_143__QKC_fzMXUD8.mp4",
+        "duration_sec": 2333.467,
+        "fps": 30.0,
+        "file_size_bytes": 203207488
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/carlos_condit_vs_nick_diaz_ufc_143__QKC_fzMXUD8__round1.mp4",
+          "start_sec": 159.0,
+          "end_sec": 459.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 69018634
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/carlos_condit_vs_nick_diaz_ufc_143__QKC_fzMXUD8__round2.mp4",
+          "start_sec": 527.0,
+          "end_sec": 827.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 68429329
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/carlos_condit_vs_nick_diaz_ufc_143__QKC_fzMXUD8__round3.mp4",
+          "start_sec": 904.0,
+          "end_sec": 1204.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 67566352
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/carlos_condit_vs_nick_diaz_ufc_143__QKC_fzMXUD8__round4.mp4",
+          "start_sec": 1272.0,
+          "end_sec": 1572.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 66518142
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/carlos_condit_vs_nick_diaz_ufc_143__QKC_fzMXUD8__round5.mp4",
+          "start_sec": 1674.0,
+          "end_sec": 1974.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 116103269
+        }
+      ]
+    },
+    {
+      "fight_name": "Donald Cerrone vs Al Iaquinta | UFC Ottawa",
+      "youtube_id": "HCS-vt1ipT8",
+      "source_url": "https://www.youtube.com/watch?v=HCS-vt1ipT8",
+      "selection_focus": [
+        "kick_head"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/donald_cerrone_vs_al_iaquinta_ufc_ottawa__HCS-vt1ipT8.mp4",
+        "duration_sec": 1934.499,
+        "fps": 29.97,
+        "file_size_bytes": 798174773
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/donald_cerrone_vs_al_iaquinta_ufc_ottawa__HCS-vt1ipT8__round1.mp4",
+          "start_sec": 12.0,
+          "end_sec": 308.0,
+          "duration_sec": 296.029,
+          "fps": 29.97,
+          "file_size_bytes": 440306130
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/donald_cerrone_vs_al_iaquinta_ufc_ottawa__HCS-vt1ipT8__round2.mp4",
+          "start_sec": 382.0,
+          "end_sec": 675.0,
+          "duration_sec": 293.026,
+          "fps": 29.97,
+          "file_size_bytes": 421402276
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/donald_cerrone_vs_al_iaquinta_ufc_ottawa__HCS-vt1ipT8__round3.mp4",
+          "start_sec": 751.0,
+          "end_sec": 1073.0,
+          "duration_sec": 321.988,
+          "fps": 29.97,
+          "file_size_bytes": 475705827
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/donald_cerrone_vs_al_iaquinta_ufc_ottawa__HCS-vt1ipT8__round4.mp4",
+          "start_sec": 1154.0,
+          "end_sec": 1416.0,
+          "duration_sec": 261.995,
+          "fps": 29.97,
+          "file_size_bytes": 393358402
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/donald_cerrone_vs_al_iaquinta_ufc_ottawa__HCS-vt1ipT8__round5.mp4",
+          "start_sec": 1507.0,
+          "end_sec": 1805.0,
+          "duration_sec": 298.031,
+          "fps": 29.97,
+          "file_size_bytes": 441567815
+        }
+      ]
+    },
+    {
+      "fight_name": "Dustin Poirier vs Dan Hooker | UFC Vegas 4",
+      "youtube_id": "mr64Pu9LZ7A",
+      "source_url": "https://www.youtube.com/watch?v=mr64Pu9LZ7A",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/dustin_poirier_vs_dan_hooker_ufc_vegas_4__mr64Pu9LZ7A.mp4",
+        "duration_sec": 1838.803,
+        "fps": 29.97,
+        "file_size_bytes": 1215227689
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_dan_hooker_ufc_vegas_4__mr64Pu9LZ7A__round1.mp4",
+          "start_sec": 30.0,
+          "end_sec": 336.0,
+          "duration_sec": 305.972,
+          "fps": 29.97,
+          "file_size_bytes": 539094430
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_dan_hooker_ufc_vegas_4__mr64Pu9LZ7A__round2.mp4",
+          "start_sec": 358.0,
+          "end_sec": 657.0,
+          "duration_sec": 298.999,
+          "fps": 29.97,
+          "file_size_bytes": 520196164
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_dan_hooker_ufc_vegas_4__mr64Pu9LZ7A__round3.mp4",
+          "start_sec": 740.0,
+          "end_sec": 998.0,
+          "duration_sec": 258.024,
+          "fps": 29.97,
+          "file_size_bytes": 434120153
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_dan_hooker_ufc_vegas_4__mr64Pu9LZ7A__round4.mp4",
+          "start_sec": 1078.0,
+          "end_sec": 1340.0,
+          "duration_sec": 262.028,
+          "fps": 29.97,
+          "file_size_bytes": 435366276
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_dan_hooker_ufc_vegas_4__mr64Pu9LZ7A__round5.mp4",
+          "start_sec": 1383.0,
+          "end_sec": 1677.0,
+          "duration_sec": 294.027,
+          "fps": 29.97,
+          "file_size_bytes": 500371569
+        }
+      ]
+    },
+    {
+      "fight_name": "Dustin Poirier vs Max Holloway II | UFC 236",
+      "youtube_id": "4pCrGcfilQA",
+      "source_url": "https://www.youtube.com/watch?v=4pCrGcfilQA",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/dustin_poirier_vs_max_holloway_ii_ufc_236__4pCrGcfilQA.mp4",
+        "duration_sec": 1726.724,
+        "fps": 29.97,
+        "file_size_bytes": 686836527
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_max_holloway_ii_ufc_236__4pCrGcfilQA__round1.mp4",
+          "start_sec": 12.0,
+          "end_sec": 307.0,
+          "duration_sec": 295.028,
+          "fps": 29.97,
+          "file_size_bytes": 543866303
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_max_holloway_ii_ufc_236__4pCrGcfilQA__round2.mp4",
+          "start_sec": 344.0,
+          "end_sec": 624.0,
+          "duration_sec": 280.013,
+          "fps": 29.97,
+          "file_size_bytes": 524489992
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_max_holloway_ii_ufc_236__4pCrGcfilQA__round3.mp4",
+          "start_sec": 666.0,
+          "end_sec": 927.0,
+          "duration_sec": 260.994,
+          "fps": 29.97,
+          "file_size_bytes": 467218725
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_max_holloway_ii_ufc_236__4pCrGcfilQA__round4.mp4",
+          "start_sec": 961.0,
+          "end_sec": 1235.0,
+          "duration_sec": 273.974,
+          "fps": 29.97,
+          "file_size_bytes": 484500060
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/dustin_poirier_vs_max_holloway_ii_ufc_236__4pCrGcfilQA__round5.mp4",
+          "start_sec": 1273.0,
+          "end_sec": 1569.0,
+          "duration_sec": 296.029,
+          "fps": 29.97,
+          "file_size_bytes": 518348879
+        }
+      ]
+    },
+    {
+      "fight_name": "Edson Barboza vs Dan Hooker | UFC Milwaukee",
+      "youtube_id": "ohgMDvJtY_M",
+      "source_url": "https://www.youtube.com/watch?v=ohgMDvJtY_M",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/edson_barboza_vs_dan_hooker_ufc_milwaukee__ohgMDvJtY_M.mp4",
+        "duration_sec": 889.155,
+        "fps": 29.97,
+        "file_size_bytes": 590102849
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_dan_hooker_ufc_milwaukee__ohgMDvJtY_M__round1.mp4",
+          "start_sec": 0.0,
+          "end_sec": 309.0,
+          "duration_sec": 309.009,
+          "fps": 29.97,
+          "file_size_bytes": 550003428
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_dan_hooker_ufc_milwaukee__ohgMDvJtY_M__round2.mp4",
+          "start_sec": 311.0,
+          "end_sec": 618.0,
+          "duration_sec": 307.007,
+          "fps": 29.97,
+          "file_size_bytes": 524711479
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_dan_hooker_ufc_milwaukee__ohgMDvJtY_M__round3.mp4",
+          "start_sec": 669.0,
+          "end_sec": 810.0,
+          "duration_sec": 141.008,
+          "fps": 29.97,
+          "file_size_bytes": 249018690
+        }
+      ]
+    },
+    {
+      "fight_name": "Edson Barboza vs Paul Felder I | UFC on FOX 16",
+      "youtube_id": "_NIvoVLKMRo",
+      "source_url": "https://www.youtube.com/watch?v=_NIvoVLKMRo",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/edson_barboza_vs_paul_felder_i_ufc_on_fox_16___NIvoVLKMRo.mp4",
+        "duration_sec": 1306.865,
+        "fps": 29.834,
+        "file_size_bytes": 360726020
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_paul_felder_i_ufc_on_fox_16___NIvoVLKMRo__round1.mp4",
+          "start_sec": 184.0,
+          "end_sec": 572.0,
+          "duration_sec": 387.989,
+          "fps": 29.833,
+          "file_size_bytes": 333372957
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_paul_felder_i_ufc_on_fox_16___NIvoVLKMRo__round2.mp4",
+          "start_sec": 573.0,
+          "end_sec": 883.0,
+          "duration_sec": 310.022,
+          "fps": 29.833,
+          "file_size_bytes": 277054093
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_paul_felder_i_ufc_on_fox_16___NIvoVLKMRo__round3.mp4",
+          "start_sec": 884.0,
+          "end_sec": 1194.0,
+          "duration_sec": 309.989,
+          "fps": 29.833,
+          "file_size_bytes": 272338021
+        }
+      ]
+    },
+    {
+      "fight_name": "Edson Barboza vs Paul Felder II | UFC 242",
+      "youtube_id": "-4MUKTQ7SqM",
+      "source_url": "https://www.youtube.com/watch?v=-4MUKTQ7SqM",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/edson_barboza_vs_paul_felder_ii_ufc_242__-4MUKTQ7SqM.mp4",
+        "duration_sec": 1481.046,
+        "fps": 29.97,
+        "file_size_bytes": 212716418
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_paul_felder_ii_ufc_242__-4MUKTQ7SqM__round1.mp4",
+          "start_sec": 118.0,
+          "end_sec": 425.0,
+          "duration_sec": 306.973,
+          "fps": 29.97,
+          "file_size_bytes": 109277765
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_paul_felder_ii_ufc_242__-4MUKTQ7SqM__round2.mp4",
+          "start_sec": 524.0,
+          "end_sec": 823.0,
+          "duration_sec": 298.999,
+          "fps": 29.97,
+          "file_size_bytes": 105216526
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_paul_felder_ii_ufc_242__-4MUKTQ7SqM__round3.mp4",
+          "start_sec": 892.0,
+          "end_sec": 1193.0,
+          "duration_sec": 300.967,
+          "fps": 29.97,
+          "file_size_bytes": 110855251
+        }
+      ]
+    },
+    {
+      "fight_name": "Edson Barboza vs Sodiq Yusuff | UFC Vegas 81",
+      "youtube_id": "XCBnO1MZWVs",
+      "source_url": "https://www.youtube.com/watch?v=XCBnO1MZWVs",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/edson_barboza_vs_sodiq_yusuff_ufc_vegas_81__XCBnO1MZWVs.mp4",
+        "duration_sec": 493.08,
+        "fps": 25.0,
+        "file_size_bytes": 284114046
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_sodiq_yusuff_ufc_vegas_81__XCBnO1MZWVs__round1.mp4",
+          "start_sec": 18.0,
+          "end_sec": 146.0,
+          "duration_sec": 128.0,
+          "fps": 25.0,
+          "file_size_bytes": 216922298
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_sodiq_yusuff_ufc_vegas_81__XCBnO1MZWVs__round2.mp4",
+          "start_sec": 155.0,
+          "end_sec": 222.0,
+          "duration_sec": 67.0,
+          "fps": 25.0,
+          "file_size_bytes": 113017567
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_sodiq_yusuff_ufc_vegas_81__XCBnO1MZWVs__round3.mp4",
+          "start_sec": 223.0,
+          "end_sec": 332.0,
+          "duration_sec": 109.0,
+          "fps": 25.0,
+          "file_size_bytes": 188989454
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_sodiq_yusuff_ufc_vegas_81__XCBnO1MZWVs__round4.mp4",
+          "start_sec": 334.0,
+          "end_sec": 418.0,
+          "duration_sec": 84.0,
+          "fps": 25.0,
+          "file_size_bytes": 138743620
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/edson_barboza_vs_sodiq_yusuff_ufc_vegas_81__XCBnO1MZWVs__round5.mp4",
+          "start_sec": 428.0,
+          "end_sec": 467.0,
+          "duration_sec": 39.0,
+          "fps": 25.0,
+          "file_size_bytes": 59802429
+        }
+      ]
+    },
+    {
+      "fight_name": "Irene Aldana vs Karol Rosa | UFC 296",
+      "youtube_id": "sdZ3TFBMq-w",
+      "source_url": "https://www.youtube.com/watch?v=sdZ3TFBMq-w",
+      "selection_focus": [
+        "kick_leg",
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/karol_rosa_vs_irene_aldana_ufc_296__sdZ3TFBMq-w.mp4",
+        "duration_sec": 1068.5,
+        "fps": 30.0,
+        "file_size_bytes": 522635474
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/karol_rosa_vs_irene_aldana_ufc_296__sdZ3TFBMq-w__round1.mp4",
+          "start_sec": 7.0,
+          "end_sec": 307.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 246182189
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/karol_rosa_vs_irene_aldana_ufc_296__sdZ3TFBMq-w__round2.mp4",
+          "start_sec": 323.0,
+          "end_sec": 623.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 234142206
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/karol_rosa_vs_irene_aldana_ufc_296__sdZ3TFBMq-w__round3.mp4",
+          "start_sec": 633.0,
+          "end_sec": 933.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 521416281
+        }
+      ]
+    },
+    {
+      "fight_name": "Israel Adesanya vs Kelvin Gastelum | UFC 236",
+      "youtube_id": "J19ORjYOehE",
+      "source_url": "https://www.youtube.com/watch?v=J19ORjYOehE",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/israel_adesanya_vs_kelvin_gastelum_ufc_236__J19ORjYOehE.mp4",
+        "duration_sec": 1609.074,
+        "fps": 29.97,
+        "file_size_bytes": 687315917
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/israel_adesanya_vs_kelvin_gastelum_ufc_236__J19ORjYOehE__round1.mp4",
+          "start_sec": 40.0,
+          "end_sec": 341.0,
+          "duration_sec": 301.001,
+          "fps": 29.97,
+          "file_size_bytes": 500745435
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/israel_adesanya_vs_kelvin_gastelum_ufc_236__J19ORjYOehE__round2.mp4",
+          "start_sec": 356.0,
+          "end_sec": 655.0,
+          "duration_sec": 298.999,
+          "fps": 29.97,
+          "file_size_bytes": 508248151
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/israel_adesanya_vs_kelvin_gastelum_ufc_236__J19ORjYOehE__round3.mp4",
+          "start_sec": 668.0,
+          "end_sec": 958.0,
+          "duration_sec": 290.023,
+          "fps": 29.97,
+          "file_size_bytes": 494676636
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/israel_adesanya_vs_kelvin_gastelum_ufc_236__J19ORjYOehE__round4.mp4",
+          "start_sec": 971.0,
+          "end_sec": 1263.0,
+          "duration_sec": 292.025,
+          "fps": 29.97,
+          "file_size_bytes": 496981736
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/israel_adesanya_vs_kelvin_gastelum_ufc_236__J19ORjYOehE__round5.mp4",
+          "start_sec": 1278.0,
+          "end_sec": 1575.0,
+          "duration_sec": 297.03,
+          "fps": 29.97,
+          "file_size_bytes": 509250752
+        }
+      ]
+    },
+    {
+      "fight_name": "Joanna Jedrzejczyk vs Karolina Kowalkiewicz | UFC 205",
+      "youtube_id": "cvpzcWDjSrc",
+      "source_url": "https://www.youtube.com/watch?v=cvpzcWDjSrc",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/joanna_jedrzejczyk_vs_karolina_kowalkiewicz_ufc_205__cvpzcWDjSrc.mp4",
+        "duration_sec": 2638.6,
+        "fps": 25.0,
+        "file_size_bytes": 184029718
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_karolina_kowalkiewicz_ufc_205__cvpzcWDjSrc__round1.mp4",
+          "start_sec": 462.0,
+          "end_sec": 764.0,
+          "duration_sec": 302.0,
+          "fps": 25.0,
+          "file_size_bytes": 67263294
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_karolina_kowalkiewicz_ufc_205__cvpzcWDjSrc__round2.mp4",
+          "start_sec": 852.0,
+          "end_sec": 1147.0,
+          "duration_sec": 295.0,
+          "fps": 25.0,
+          "file_size_bytes": 65823095
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_karolina_kowalkiewicz_ufc_205__cvpzcWDjSrc__round3.mp4",
+          "start_sec": 1242.0,
+          "end_sec": 1516.0,
+          "duration_sec": 274.0,
+          "fps": 25.0,
+          "file_size_bytes": 61829662
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_karolina_kowalkiewicz_ufc_205__cvpzcWDjSrc__round4.mp4",
+          "start_sec": 1610.0,
+          "end_sec": 1893.0,
+          "duration_sec": 283.0,
+          "fps": 25.0,
+          "file_size_bytes": 63485595
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_karolina_kowalkiewicz_ufc_205__cvpzcWDjSrc__round5.mp4",
+          "start_sec": 1991.0,
+          "end_sec": 2268.0,
+          "duration_sec": 277.0,
+          "fps": 25.0,
+          "file_size_bytes": 61753305
+        }
+      ]
+    },
+    {
+      "fight_name": "Joanna Jedrzejczyk vs Michelle Waterson | UFC Tampa",
+      "youtube_id": "YZh5IiZ_fpE",
+      "source_url": "https://www.youtube.com/watch?v=YZh5IiZ_fpE",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/joanna_jedrzejczyk_vs_michelle_waterson_ufc_tampa__YZh5IiZ_fpE.mp4",
+        "duration_sec": 2181.019,
+        "fps": 26.036,
+        "file_size_bytes": 417988032
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_michelle_waterson_ufc_tampa__YZh5IiZ_fpE__round1.mp4",
+          "start_sec": 19.0,
+          "end_sec": 327.0,
+          "duration_sec": 308.0,
+          "fps": 26.0,
+          "file_size_bytes": 70452701
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_michelle_waterson_ufc_tampa__YZh5IiZ_fpE__round2.mp4",
+          "start_sec": 393.0,
+          "end_sec": 694.0,
+          "duration_sec": 300.962,
+          "fps": 26.0,
+          "file_size_bytes": 74927099
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_michelle_waterson_ufc_tampa__YZh5IiZ_fpE__round3.mp4",
+          "start_sec": 755.0,
+          "end_sec": 1058.0,
+          "duration_sec": 302.962,
+          "fps": 26.0,
+          "file_size_bytes": 74785011
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_michelle_waterson_ufc_tampa__YZh5IiZ_fpE__round4.mp4",
+          "start_sec": 1121.0,
+          "end_sec": 1424.0,
+          "duration_sec": 302.962,
+          "fps": 26.0,
+          "file_size_bytes": 156004552
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_michelle_waterson_ufc_tampa__YZh5IiZ_fpE__round5.mp4",
+          "start_sec": 1512.0,
+          "end_sec": 1817.0,
+          "duration_sec": 304.962,
+          "fps": 26.0,
+          "file_size_bytes": 150408692
+        }
+      ]
+    },
+    {
+      "fight_name": "Joanna Jedrzejczyk vs Valerie Letourneau | UFC 193",
+      "youtube_id": "toVIx9A27RM",
+      "source_url": "https://www.youtube.com/watch?v=toVIx9A27RM",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/joanna_jedrzejczyk_vs_valerie_letourneau_ufc_193__toVIx9A27RM.mp4",
+        "duration_sec": 2112.9,
+        "fps": 30.0,
+        "file_size_bytes": 139240380
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_valerie_letourneau_ufc_193__toVIx9A27RM__round1.mp4",
+          "start_sec": 149.0,
+          "end_sec": 451.0,
+          "duration_sec": 302.0,
+          "fps": 30.0,
+          "file_size_bytes": 59655844
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_valerie_letourneau_ufc_193__toVIx9A27RM__round2.mp4",
+          "start_sec": 518.0,
+          "end_sec": 822.0,
+          "duration_sec": 304.0,
+          "fps": 30.0,
+          "file_size_bytes": 65297055
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_valerie_letourneau_ufc_193__toVIx9A27RM__round3.mp4",
+          "start_sec": 892.0,
+          "end_sec": 1194.0,
+          "duration_sec": 302.0,
+          "fps": 30.0,
+          "file_size_bytes": 63996948
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_valerie_letourneau_ufc_193__toVIx9A27RM__round4.mp4",
+          "start_sec": 1265.0,
+          "end_sec": 1567.0,
+          "duration_sec": 302.0,
+          "fps": 30.0,
+          "file_size_bytes": 65123773
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/joanna_jedrzejczyk_vs_valerie_letourneau_ufc_193__toVIx9A27RM__round5.mp4",
+          "start_sec": 1637.0,
+          "end_sec": 1940.0,
+          "duration_sec": 303.0,
+          "fps": 30.0,
+          "file_size_bytes": 64771168
+        }
+      ]
+    },
+    {
+      "fight_name": "Joanne Calderwood vs Katlyn Chookagian | UFC 238",
+      "youtube_id": "aXsB4ENZCKE",
+      "source_url": "https://www.youtube.com/watch?v=aXsB4ENZCKE",
+      "selection_focus": [
+        "kick_leg"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/joanne_calderwood_vs_katlyn_chookagian_ufc_238__aXsB4ENZCKE.mp4",
+        "duration_sec": 713.446,
+        "fps": 29.97,
+        "file_size_bytes": 165035265
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/joanne_calderwood_vs_katlyn_chookagian_ufc_238__aXsB4ENZCKE__round1.mp4",
+          "start_sec": 29.0,
+          "end_sec": 153.0,
+          "duration_sec": 123.991,
+          "fps": 29.97,
+          "file_size_bytes": 225658659
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/joanne_calderwood_vs_katlyn_chookagian_ufc_238__aXsB4ENZCKE__round2.mp4",
+          "start_sec": 169.0,
+          "end_sec": 391.0,
+          "duration_sec": 222.022,
+          "fps": 29.97,
+          "file_size_bytes": 403787695
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/joanne_calderwood_vs_katlyn_chookagian_ufc_238__aXsB4ENZCKE__round3.mp4",
+          "start_sec": 396.0,
+          "end_sec": 597.0,
+          "duration_sec": 200.967,
+          "fps": 29.97,
+          "file_size_bytes": 355694417
+        }
+      ]
+    },
+    {
+      "fight_name": "José Aldo vs Jeremy Stephens | UFC Calgary",
+      "youtube_id": "f9OgQLtROAg",
+      "source_url": "https://www.youtube.com/watch?v=f9OgQLtROAg",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/jose_aldo_vs_jeremy_stephens_ufc_calgary__f9OgQLtROAg.mp4",
+        "duration_sec": 601.833,
+        "fps": 30.0,
+        "file_size_bytes": 123636846
+      },
+      "round_count": 1,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/jose_aldo_vs_jeremy_stephens_ufc_calgary__f9OgQLtROAg__round1.mp4",
+          "start_sec": 26.0,
+          "end_sec": 259.0,
+          "duration_sec": 233.0,
+          "fps": 30.0,
+          "file_size_bytes": 357756116
+        }
+      ]
+    },
+    {
+      "fight_name": "José Aldo vs Pedro Munhoz | UFC 265",
+      "youtube_id": "c7RFEWzjOD4",
+      "source_url": "https://www.youtube.com/watch?v=c7RFEWzjOD4",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/jose_aldo_vs_pedro_munhoz_ufc_265__c7RFEWzjOD4.mp4",
+        "duration_sec": 1223.956,
+        "fps": 29.97,
+        "file_size_bytes": 181663253
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/jose_aldo_vs_pedro_munhoz_ufc_265__c7RFEWzjOD4__round1.mp4",
+          "start_sec": 96.0,
+          "end_sec": 411.0,
+          "duration_sec": 314.981,
+          "fps": 29.97,
+          "file_size_bytes": 246500727
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/jose_aldo_vs_pedro_munhoz_ufc_265__c7RFEWzjOD4__round2.mp4",
+          "start_sec": 488.0,
+          "end_sec": 788.0,
+          "duration_sec": 300.0,
+          "fps": 29.97,
+          "file_size_bytes": 238982805
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/jose_aldo_vs_pedro_munhoz_ufc_265__c7RFEWzjOD4__round3.mp4",
+          "start_sec": 859.0,
+          "end_sec": 1192.0,
+          "duration_sec": 332.999,
+          "fps": 29.97,
+          "file_size_bytes": 265893521
+        }
+      ]
+    },
+    {
+      "fight_name": "Max Holloway vs Anthony Pettis | UFC 206",
+      "youtube_id": "MJa3hd3JqJc",
+      "source_url": "https://www.youtube.com/watch?v=MJa3hd3JqJc",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/max_holloway_vs_anthony_pettis_ufc_206__MJa3hd3JqJc.mp4",
+        "duration_sec": 1564.033,
+        "fps": 30.0,
+        "file_size_bytes": 499488364
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_anthony_pettis_ufc_206__MJa3hd3JqJc__round1.mp4",
+          "start_sec": 197.0,
+          "end_sec": 497.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 505162018
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_anthony_pettis_ufc_206__MJa3hd3JqJc__round2.mp4",
+          "start_sec": 577.0,
+          "end_sec": 877.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 495549127
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_anthony_pettis_ufc_206__MJa3hd3JqJc__round3.mp4",
+          "start_sec": 946.0,
+          "end_sec": 1269.0,
+          "duration_sec": 323.0,
+          "fps": 30.0,
+          "file_size_bytes": 516929151
+        }
+      ]
+    },
+    {
+      "fight_name": "Max Holloway vs Arnold Allen | UFC Kansas City",
+      "youtube_id": "eGyc1Wb30s8",
+      "source_url": "https://www.youtube.com/watch?v=eGyc1Wb30s8",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/max_holloway_vs_arnold_allen_ufc_kansas_city__eGyc1Wb30s8.mp4",
+        "duration_sec": 2156.133,
+        "fps": 30.0,
+        "file_size_bytes": 309938934
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_arnold_allen_ufc_kansas_city__eGyc1Wb30s8__round1.mp4",
+          "start_sec": 160.0,
+          "end_sec": 474.0,
+          "duration_sec": 314.0,
+          "fps": 30.0,
+          "file_size_bytes": 230341627
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_arnold_allen_ufc_kansas_city__eGyc1Wb30s8__round2.mp4",
+          "start_sec": 543.0,
+          "end_sec": 854.0,
+          "duration_sec": 311.0,
+          "fps": 30.0,
+          "file_size_bytes": 230026332
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_arnold_allen_ufc_kansas_city__eGyc1Wb30s8__round3.mp4",
+          "start_sec": 922.0,
+          "end_sec": 1226.0,
+          "duration_sec": 304.0,
+          "fps": 30.0,
+          "file_size_bytes": 224434359
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_arnold_allen_ufc_kansas_city__eGyc1Wb30s8__round4.mp4",
+          "start_sec": 1290.0,
+          "end_sec": 1602.0,
+          "duration_sec": 312.0,
+          "fps": 30.0,
+          "file_size_bytes": 231788975
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_arnold_allen_ufc_kansas_city__eGyc1Wb30s8__round5.mp4",
+          "start_sec": 1663.0,
+          "end_sec": 1971.0,
+          "duration_sec": 308.0,
+          "fps": 30.0,
+          "file_size_bytes": 226012540
+        }
+      ]
+    },
+    {
+      "fight_name": "Max Holloway vs Brian Ortega | UFC 231",
+      "youtube_id": "AgoyvEWTRfA",
+      "source_url": "https://www.youtube.com/watch?v=AgoyvEWTRfA",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/max_holloway_vs_brian_ortega_ufc_231__AgoyvEWTRfA.mp4",
+        "duration_sec": 1322.688,
+        "fps": 29.97,
+        "file_size_bytes": 878975248
+      },
+      "round_count": 4,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_brian_ortega_ufc_231__AgoyvEWTRfA__round1.mp4",
+          "start_sec": 16.0,
+          "end_sec": 314.0,
+          "duration_sec": 298.031,
+          "fps": 29.967,
+          "file_size_bytes": 524267516
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_brian_ortega_ufc_231__AgoyvEWTRfA__round2.mp4",
+          "start_sec": 315.0,
+          "end_sec": 613.0,
+          "duration_sec": 298.031,
+          "fps": 29.97,
+          "file_size_bytes": 535361031
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_brian_ortega_ufc_231__AgoyvEWTRfA__round3.mp4",
+          "start_sec": 614.0,
+          "end_sec": 915.0,
+          "duration_sec": 301.001,
+          "fps": 29.97,
+          "file_size_bytes": 516919651
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_brian_ortega_ufc_231__AgoyvEWTRfA__round4.mp4",
+          "start_sec": 916.0,
+          "end_sec": 1225.0,
+          "duration_sec": 309.009,
+          "fps": 29.97,
+          "file_size_bytes": 545777609
+        }
+      ]
+    },
+    {
+      "fight_name": "Max Holloway vs Calvin Kattar | UFC on ABC 1",
+      "youtube_id": "uJBmkeUVM6s",
+      "source_url": "https://www.youtube.com/watch?v=uJBmkeUVM6s",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/max_holloway_vs_calvin_kattar_ufc_on_abc_1__uJBmkeUVM6s.mp4",
+        "duration_sec": 1683.381,
+        "fps": 29.97,
+        "file_size_bytes": 745331727
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_calvin_kattar_ufc_on_abc_1__uJBmkeUVM6s__round1.mp4",
+          "start_sec": 30.0,
+          "end_sec": 327.0,
+          "duration_sec": 296.997,
+          "fps": 29.97,
+          "file_size_bytes": 514690578
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_calvin_kattar_ufc_on_abc_1__uJBmkeUVM6s__round2.mp4",
+          "start_sec": 347.0,
+          "end_sec": 620.0,
+          "duration_sec": 273.006,
+          "fps": 29.97,
+          "file_size_bytes": 489437939
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_calvin_kattar_ufc_on_abc_1__uJBmkeUVM6s__round3.mp4",
+          "start_sec": 689.0,
+          "end_sec": 981.0,
+          "duration_sec": 291.992,
+          "fps": 29.97,
+          "file_size_bytes": 529462086
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_calvin_kattar_ufc_on_abc_1__uJBmkeUVM6s__round4.mp4",
+          "start_sec": 1035.0,
+          "end_sec": 1324.0,
+          "duration_sec": 289.022,
+          "fps": 29.97,
+          "file_size_bytes": 533437559
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_calvin_kattar_ufc_on_abc_1__uJBmkeUVM6s__round5.mp4",
+          "start_sec": 1347.0,
+          "end_sec": 1638.0,
+          "duration_sec": 291.024,
+          "fps": 29.97,
+          "file_size_bytes": 519060625
+        }
+      ]
+    },
+    {
+      "fight_name": "Max Holloway vs Dustin Poirier III | UFC 318",
+      "youtube_id": "-AgELEx_fRU",
+      "source_url": "https://www.youtube.com/watch?v=-AgELEx_fRU",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/max_holloway_vs_dustin_poirier_iii_ufc_318__-AgELEx_fRU.mp4",
+        "duration_sec": 1727.292,
+        "fps": 29.97,
+        "file_size_bytes": 701315694
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_dustin_poirier_iii_ufc_318__-AgELEx_fRU__round1.mp4",
+          "start_sec": 46.0,
+          "end_sec": 341.0,
+          "duration_sec": 295.028,
+          "fps": 29.97,
+          "file_size_bytes": 568446519
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_dustin_poirier_iii_ufc_318__-AgELEx_fRU__round2.mp4",
+          "start_sec": 351.0,
+          "end_sec": 654.0,
+          "duration_sec": 302.969,
+          "fps": 29.97,
+          "file_size_bytes": 571940485
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_dustin_poirier_iii_ufc_318__-AgELEx_fRU__round3.mp4",
+          "start_sec": 662.0,
+          "end_sec": 961.0,
+          "duration_sec": 298.999,
+          "fps": 29.97,
+          "file_size_bytes": 573743658
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_dustin_poirier_iii_ufc_318__-AgELEx_fRU__round4.mp4",
+          "start_sec": 984.0,
+          "end_sec": 1273.0,
+          "duration_sec": 288.989,
+          "fps": 29.97,
+          "file_size_bytes": 554983275
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_dustin_poirier_iii_ufc_318__-AgELEx_fRU__round5.mp4",
+          "start_sec": 1324.0,
+          "end_sec": 1604.0,
+          "duration_sec": 279.98,
+          "fps": 29.97,
+          "file_size_bytes": 535336380
+        }
+      ]
+    },
+    {
+      "fight_name": "Max Holloway vs Yair Rodriguez | UFC Vegas 42",
+      "youtube_id": "PHzT9Wl8HYQ",
+      "source_url": "https://www.youtube.com/watch?v=PHzT9Wl8HYQ",
+      "selection_focus": [
+        "punch_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/max_holloway_vs_yair_rodriguez_ufc_vegas_42__PHzT9Wl8HYQ.mp4",
+        "duration_sec": 1776.24,
+        "fps": 29.97,
+        "file_size_bytes": 787034200
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_yair_rodriguez_ufc_vegas_42__PHzT9Wl8HYQ__round1.mp4",
+          "start_sec": 45.0,
+          "end_sec": 322.0,
+          "duration_sec": 277.01,
+          "fps": 29.97,
+          "file_size_bytes": 518642960
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_yair_rodriguez_ufc_vegas_42__PHzT9Wl8HYQ__round2.mp4",
+          "start_sec": 345.0,
+          "end_sec": 652.0,
+          "duration_sec": 307.007,
+          "fps": 29.97,
+          "file_size_bytes": 590220935
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_yair_rodriguez_ufc_vegas_42__PHzT9Wl8HYQ__round3.mp4",
+          "start_sec": 687.0,
+          "end_sec": 979.0,
+          "duration_sec": 291.992,
+          "fps": 29.97,
+          "file_size_bytes": 522974205
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_yair_rodriguez_ufc_vegas_42__PHzT9Wl8HYQ__round4.mp4",
+          "start_sec": 1013.0,
+          "end_sec": 1362.0,
+          "duration_sec": 349.015,
+          "fps": 29.97,
+          "file_size_bytes": 618874596
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/max_holloway_vs_yair_rodriguez_ufc_vegas_42__PHzT9Wl8HYQ__round5.mp4",
+          "start_sec": 1403.0,
+          "end_sec": 1693.0,
+          "duration_sec": 290.023,
+          "fps": 29.97,
+          "file_size_bytes": 524639302
+        }
+      ]
+    },
+    {
+      "fight_name": "Paulo Costa vs Marvin Vettori | UFC Vegas 41",
+      "youtube_id": "g5p4FzZxrvY",
+      "source_url": "https://www.youtube.com/watch?v=g5p4FzZxrvY",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/paulo_costa_vs_marvin_vettori_ufc_vegas_41__g5p4FzZxrvY.mp4",
+        "duration_sec": 1784.349,
+        "fps": 29.97,
+        "file_size_bytes": 1172552191
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/paulo_costa_vs_marvin_vettori_ufc_vegas_41__g5p4FzZxrvY__round1.mp4",
+          "start_sec": 46.0,
+          "end_sec": 334.0,
+          "duration_sec": 288.021,
+          "fps": 29.97,
+          "file_size_bytes": 540157749
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/paulo_costa_vs_marvin_vettori_ufc_vegas_41__g5p4FzZxrvY__round2.mp4",
+          "start_sec": 366.0,
+          "end_sec": 740.0,
+          "duration_sec": 373.974,
+          "fps": 29.97,
+          "file_size_bytes": 652438038
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/paulo_costa_vs_marvin_vettori_ufc_vegas_41__g5p4FzZxrvY__round3.mp4",
+          "start_sec": 755.0,
+          "end_sec": 1046.0,
+          "duration_sec": 290.991,
+          "fps": 29.97,
+          "file_size_bytes": 513079702
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/paulo_costa_vs_marvin_vettori_ufc_vegas_41__g5p4FzZxrvY__round4.mp4",
+          "start_sec": 1055.0,
+          "end_sec": 1345.0,
+          "duration_sec": 289.99,
+          "fps": 29.97,
+          "file_size_bytes": 516418416
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/paulo_costa_vs_marvin_vettori_ufc_vegas_41__g5p4FzZxrvY__round5.mp4",
+          "start_sec": 1373.0,
+          "end_sec": 1670.0,
+          "duration_sec": 297.03,
+          "fps": 29.97,
+          "file_size_bytes": 529396494
+        }
+      ]
+    },
+    {
+      "fight_name": "Rafael Fiziev vs Marc Diakiese | UFC Fight Island 2",
+      "youtube_id": "dIXqbcvQghQ",
+      "source_url": "https://www.youtube.com/watch?v=dIXqbcvQghQ",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/rafael_fiziev_vs_marc_diakiese_ufc_fight_island_2__dIXqbcvQghQ.mp4",
+        "duration_sec": 1267.433,
+        "fps": 30.0,
+        "file_size_bytes": 117210419
+      },
+      "round_count": 3,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/rafael_fiziev_vs_marc_diakiese_ufc_fight_island_2__dIXqbcvQghQ__round1.mp4",
+          "start_sec": 94.0,
+          "end_sec": 389.0,
+          "duration_sec": 295.0,
+          "fps": 30.0,
+          "file_size_bytes": 108249383
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/rafael_fiziev_vs_marc_diakiese_ufc_fight_island_2__dIXqbcvQghQ__round2.mp4",
+          "start_sec": 469.0,
+          "end_sec": 764.0,
+          "duration_sec": 295.0,
+          "fps": 30.0,
+          "file_size_bytes": 118370320
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/rafael_fiziev_vs_marc_diakiese_ufc_fight_island_2__dIXqbcvQghQ__round3.mp4",
+          "start_sec": 850.0,
+          "end_sec": 1153.0,
+          "duration_sec": 303.0,
+          "fps": 30.0,
+          "file_size_bytes": 121949498
+        }
+      ]
+    },
+    {
+      "fight_name": "Robert Whittaker vs Yoel Romero II | UFC 225",
+      "youtube_id": "7CAkyfHMhhA",
+      "source_url": "https://www.youtube.com/watch?v=7CAkyfHMhhA",
+      "selection_focus": [
+        "kick_head"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/robert_whittaker_vs_yoel_romero_ii_ufc_225__7CAkyfHMhhA.mp4",
+        "duration_sec": 1668.7,
+        "fps": 29.97,
+        "file_size_bytes": 1105775327
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/robert_whittaker_vs_yoel_romero_ii_ufc_225__7CAkyfHMhhA__round1.mp4",
+          "start_sec": 9.0,
+          "end_sec": 309.0,
+          "duration_sec": 300.033,
+          "fps": 29.97,
+          "file_size_bytes": 498105607
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/robert_whittaker_vs_yoel_romero_ii_ufc_225__7CAkyfHMhhA__round2.mp4",
+          "start_sec": 315.0,
+          "end_sec": 615.0,
+          "duration_sec": 300.033,
+          "fps": 29.97,
+          "file_size_bytes": 502761062
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/robert_whittaker_vs_yoel_romero_ii_ufc_225__7CAkyfHMhhA__round3.mp4",
+          "start_sec": 621.0,
+          "end_sec": 921.0,
+          "duration_sec": 300.0,
+          "fps": 29.97,
+          "file_size_bytes": 505852476
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/robert_whittaker_vs_yoel_romero_ii_ufc_225__7CAkyfHMhhA__round4.mp4",
+          "start_sec": 933.0,
+          "end_sec": 1233.0,
+          "duration_sec": 300.0,
+          "fps": 29.97,
+          "file_size_bytes": 481307813
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/robert_whittaker_vs_yoel_romero_ii_ufc_225__7CAkyfHMhhA__round5.mp4",
+          "start_sec": 1241.0,
+          "end_sec": 1541.0,
+          "duration_sec": 300.0,
+          "fps": 29.97,
+          "file_size_bytes": 508364742
+        }
+      ]
+    },
+    {
+      "fight_name": "Sean Strickland vs Paulo Costa | UFC 302",
+      "youtube_id": "o2dGZdAkcYc",
+      "source_url": "https://www.youtube.com/watch?v=o2dGZdAkcYc",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/sean_strickland_vs_paulo_costa_ufc_302__o2dGZdAkcYc.mp4",
+        "duration_sec": 1681.413,
+        "fps": 29.97,
+        "file_size_bytes": 1123896459
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/sean_strickland_vs_paulo_costa_ufc_302__o2dGZdAkcYc__round1.mp4",
+          "start_sec": 17.0,
+          "end_sec": 314.0,
+          "duration_sec": 296.997,
+          "fps": 29.97,
+          "file_size_bytes": 519190529
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/sean_strickland_vs_paulo_costa_ufc_302__o2dGZdAkcYc__round2.mp4",
+          "start_sec": 327.0,
+          "end_sec": 619.0,
+          "duration_sec": 291.992,
+          "fps": 29.97,
+          "file_size_bytes": 518707716
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/sean_strickland_vs_paulo_costa_ufc_302__o2dGZdAkcYc__round3.mp4",
+          "start_sec": 625.0,
+          "end_sec": 926.0,
+          "duration_sec": 300.967,
+          "fps": 29.97,
+          "file_size_bytes": 531193702
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/sean_strickland_vs_paulo_costa_ufc_302__o2dGZdAkcYc__round4.mp4",
+          "start_sec": 935.0,
+          "end_sec": 1234.0,
+          "duration_sec": 299.032,
+          "fps": 29.97,
+          "file_size_bytes": 522351848
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/sean_strickland_vs_paulo_costa_ufc_302__o2dGZdAkcYc__round5.mp4",
+          "start_sec": 1239.0,
+          "end_sec": 1538.0,
+          "duration_sec": 299.032,
+          "fps": 29.97,
+          "file_size_bytes": 525883183
+        }
+      ]
+    },
+    {
+      "fight_name": "Stephen Thompson vs Kevin Holland | UFC Orlando",
+      "youtube_id": "9yv28rKSYpY",
+      "source_url": "https://www.youtube.com/watch?v=9yv28rKSYpY",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/stephen_thompson_vs_kevin_holland_ufc_orlando__9yv28rKSYpY.mp4",
+        "duration_sec": 1486.284,
+        "fps": 29.97,
+        "file_size_bytes": 670071948
+      },
+      "round_count": 4,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/stephen_thompson_vs_kevin_holland_ufc_orlando__9yv28rKSYpY__round1.mp4",
+          "start_sec": 10.0,
+          "end_sec": 318.0,
+          "duration_sec": 308.008,
+          "fps": 29.97,
+          "file_size_bytes": 534149587
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/stephen_thompson_vs_kevin_holland_ufc_orlando__9yv28rKSYpY__round2.mp4",
+          "start_sec": 320.0,
+          "end_sec": 619.0,
+          "duration_sec": 298.999,
+          "fps": 29.97,
+          "file_size_bytes": 517781545
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/stephen_thompson_vs_kevin_holland_ufc_orlando__9yv28rKSYpY__round3.mp4",
+          "start_sec": 620.0,
+          "end_sec": 930.0,
+          "duration_sec": 309.976,
+          "fps": 29.97,
+          "file_size_bytes": 538930960
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/stephen_thompson_vs_kevin_holland_ufc_orlando__9yv28rKSYpY__round4.mp4",
+          "start_sec": 932.0,
+          "end_sec": 1362.0,
+          "duration_sec": 429.996,
+          "fps": 29.97,
+          "file_size_bytes": 717340130
+        }
+      ]
+    },
+    {
+      "fight_name": "TJ Dillashaw vs Renan Barao II | UFC on FOX 16",
+      "youtube_id": "Z1EQ3DkkswE",
+      "source_url": "https://www.youtube.com/watch?v=Z1EQ3DkkswE",
+      "selection_focus": [
+        "kick_head"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/tj_dillashaw_vs_renan_barao_ii_ufc_on_fox_16__Z1EQ3DkkswE.mp4",
+        "duration_sec": 3271.72,
+        "fps": 25.0,
+        "file_size_bytes": 1433509495
+      },
+      "round_count": 4,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/tj_dillashaw_vs_renan_barao_ii_ufc_on_fox_16__Z1EQ3DkkswE__round1.mp4",
+          "start_sec": 818.0,
+          "end_sec": 1117.0,
+          "duration_sec": 299.0,
+          "fps": 25.0,
+          "file_size_bytes": 491707356
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/tj_dillashaw_vs_renan_barao_ii_ufc_on_fox_16__Z1EQ3DkkswE__round2.mp4",
+          "start_sec": 1191.0,
+          "end_sec": 1529.0,
+          "duration_sec": 338.0,
+          "fps": 25.0,
+          "file_size_bytes": 557792499
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/tj_dillashaw_vs_renan_barao_ii_ufc_on_fox_16__Z1EQ3DkkswE__round3.mp4",
+          "start_sec": 1604.0,
+          "end_sec": 1890.0,
+          "duration_sec": 286.0,
+          "fps": 25.0,
+          "file_size_bytes": 474743826
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/tj_dillashaw_vs_renan_barao_ii_ufc_on_fox_16__Z1EQ3DkkswE__round4.mp4",
+          "start_sec": 2027.0,
+          "end_sec": 2323.0,
+          "duration_sec": 296.0,
+          "fps": 25.0,
+          "file_size_bytes": 444109643
+        }
+      ]
+    },
+    {
+      "fight_name": "Valentina Shevchenko vs Joanna Jedrzejczyk | UFC 231",
+      "youtube_id": "prqYZSDpZIA",
+      "source_url": "https://www.youtube.com/watch?v=prqYZSDpZIA",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/valentina_shevchenko_vs_joanna_jedrzejczyk_ufc_231__prqYZSDpZIA.mp4",
+        "duration_sec": 2249.467,
+        "fps": 30.0,
+        "file_size_bytes": 310818149
+      },
+      "round_count": 5,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/valentina_shevchenko_vs_joanna_jedrzejczyk_ufc_231__prqYZSDpZIA__round1.mp4",
+          "start_sec": 170.0,
+          "end_sec": 470.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 111517457
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/valentina_shevchenko_vs_joanna_jedrzejczyk_ufc_231__prqYZSDpZIA__round2.mp4",
+          "start_sec": 542.0,
+          "end_sec": 842.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 118736100
+        },
+        {
+          "round_number": 3,
+          "relative_path": "data/splits/fights_remaining_mixed/valentina_shevchenko_vs_joanna_jedrzejczyk_ufc_231__prqYZSDpZIA__round3.mp4",
+          "start_sec": 915.0,
+          "end_sec": 1215.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 120904322
+        },
+        {
+          "round_number": 4,
+          "relative_path": "data/splits/fights_remaining_mixed/valentina_shevchenko_vs_joanna_jedrzejczyk_ufc_231__prqYZSDpZIA__round4.mp4",
+          "start_sec": 1288.0,
+          "end_sec": 1588.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 108330367
+        },
+        {
+          "round_number": 5,
+          "relative_path": "data/splits/fights_remaining_mixed/valentina_shevchenko_vs_joanna_jedrzejczyk_ufc_231__prqYZSDpZIA__round5.mp4",
+          "start_sec": 1662.0,
+          "end_sec": 1962.0,
+          "duration_sec": 300.0,
+          "fps": 30.0,
+          "file_size_bytes": 110602361
+        }
+      ]
+    },
+    {
+      "fight_name": "Yair Rodriguez vs Josh Emmett | UFC 284",
+      "youtube_id": "AOT4pqtAnrM",
+      "source_url": "https://www.youtube.com/watch?v=AOT4pqtAnrM",
+      "selection_focus": [
+        "kick_body"
+      ],
+      "source_video": {
+        "relative_path": "data/raw/full_fights/full_fights_second_collection/yair_rodriguez_vs_josh_emmett_ufc_284__AOT4pqtAnrM.mp4",
+        "duration_sec": 769.935,
+        "fps": 29.97,
+        "file_size_bytes": 509953046
+      },
+      "round_count": 2,
+      "rounds": [
+        {
+          "round_number": 1,
+          "relative_path": "data/splits/fights_remaining_mixed/yair_rodriguez_vs_josh_emmett_ufc_284__AOT4pqtAnrM__round1.mp4",
+          "start_sec": 33.0,
+          "end_sec": 334.0,
+          "duration_sec": 301.001,
+          "fps": 29.97,
+          "file_size_bytes": 545395116
+        },
+        {
+          "round_number": 2,
+          "relative_path": "data/splits/fights_remaining_mixed/yair_rodriguez_vs_josh_emmett_ufc_284__AOT4pqtAnrM__round2.mp4",
+          "start_sec": 336.0,
+          "end_sec": 619.0,
+          "duration_sec": 283.016,
+          "fps": 29.97,
+          "file_size_bytes": 496041858
+        }
+      ]
+    }
+  ]
+}

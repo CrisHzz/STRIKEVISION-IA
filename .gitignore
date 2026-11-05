@@ -21,6 +21,8 @@ env/
 
 # Large local data artifacts
 data/raw/**
+!data/raw/full_fights/
+!data/raw/full_fights/full_fights_second_collection.dvc
 data/interim/**
 data/processed/**
 data/splits/**/*.mp4

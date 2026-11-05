@@ -1,0 +1,6 @@
+outs:
+- md5: b88e576e4fd4db0828b34f8a77b23b82.dir
+  size: 49806314547
+  nfiles: 134
+  hash: md5
+  path: fights_remaining_mixed
