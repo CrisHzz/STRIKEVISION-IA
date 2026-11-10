@@ -8,7 +8,7 @@ import subprocess
 import sysconfig
 import uuid
 import csv
-from collections import defaultdict
+from collections import defaultdict, deque
 from dataclasses import asdict
 from pathlib import Path
 from types import SimpleNamespace
@@ -169,9 +169,12 @@ class ActionInferenceEngine:
         destination = self.output_root / uuid.uuid4().hex
         app_config = yaml.safe_load((self.root / "configs/app/pose_pipeline.yaml").read_text(encoding="utf-8"))
         device = tracking_device if tracking_device is not None else str(app_config.get("tracking_device", "auto"))
+
         def pose_progress(stage: str, current: int, total: int) -> None:
             if progress is not None:
-                progress(0.75 * current / max(total, 1), f"{stage}: {current}/{total} frames")
+                start, width, label = (0.0, 0.35, "Tracking") if stage == "tracking" else (0.35, 0.40, "Estimando poses")
+                progress(start + width * min(current / max(total, 1), 1.0), f"{label}: {current}/{total} cuadros")
+
         if prepared_pose_dir is not None:
             prepared = Path(prepared_pose_dir).resolve()
             metadata = json.loads((prepared / 'run_metadata.json').read_text(encoding='utf-8'))
@@ -191,24 +194,38 @@ class ActionInferenceEngine:
                 "import runpy, sys; sys.path.append(sys.argv.pop(1)); "
                 "sys.path.insert(0, sys.argv.pop(1)); sys.argv.pop(0); runpy.run_path(sys.argv[0], run_name='__main__')"
             )
-            worker = subprocess.run(
-                [str(Path(pose_python).resolve()), "-c", bootstrap, sysconfig.get_path("purelib"),
+            diagnostics = deque(maxlen=20)
+            with subprocess.Popen(
+                [str(Path(pose_python).resolve()), "-u", "-c", bootstrap, sysconfig.get_path("purelib"),
                  str(self.root / "src"), str(script), "--video", str(video_path.resolve()),
                  "--output-dir", str(destination), "--max-frames", str(requested_frames),
-                 "--device", device, "--merge-tracks", "--no-preview"],
-                cwd=self.root, capture_output=True, encoding="utf-8", errors="replace",
-            )
-            if worker.returncode:
-                detail = (worker.stderr.strip() or worker.stdout.strip())[-2000:]
-                raise RuntimeError(f"Falló la extracción de pose ({worker.returncode}): {detail}")
+                 "--device", device, "--merge-tracks", "--no-preview", "--progress-json"],
+                cwd=self.root, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                encoding="utf-8", errors="replace",
+            ) as worker:
+                try:
+                    for line in worker.stdout:
+                        if line.startswith("POSE_PROGRESS "):
+                            pose_progress(*json.loads(line.removeprefix("POSE_PROGRESS ")))
+                        else:
+                            diagnostics.append(line)
+                    code = worker.wait()
+                finally:
+                    if worker.poll() is None:
+                        worker.kill()
+            if code:
+                detail = "".join(diagnostics).strip()[-2000:]
+                raise RuntimeError(f"Falló la extracción de pose ({code}): {detail}")
             pose = SimpleNamespace(metrics_path=destination / "pose_metrics.json", pose_path=destination / "pose.jsonl")
         else:
             pose = run_pose_pipeline(
-            video_path, destination, tracking_confidence=float(app_config.get("tracking_confidence", 0.5)),
-            merge_track_fragments=True, max_frames=int(requested_frames), generate_preview=False,
+                video_path, destination, tracking_confidence=float(app_config.get("tracking_confidence", 0.5)),
+                merge_track_fragments=True, max_frames=int(requested_frames), generate_preview=False,
                 progress_callback=pose_progress,
                 tracking_device=device,
-        )
+            )
+        if progress is not None:
+            progress(0.75, "Clasificando acciones con v4…")
         metrics = json.loads(pose.metrics_path.read_text(encoding="utf-8"))
         run_metadata = json.loads(pose.metrics_path.with_name("run_metadata.json").read_text(encoding="utf-8"))
         fps, frame_count = float(metrics["fps"]), int(metrics["frame_count"])
@@ -223,7 +240,11 @@ class ActionInferenceEngine:
                                 "start_frame": start, "end_frame": start + window_frames - 1, "pose_usable": True})
         if not samples:
             raise ValueError("El video no contiene una ventana completa para analizar")
-        sequences = [extract_pose_sequence(sample, records, spec) for sample in samples]
+        sequences = []
+        for index, sample in enumerate(samples, 1):
+            sequences.append(extract_pose_sequence(sample, records, spec))
+            if progress is not None and (index % 30 == 0 or index == len(samples)):
+                progress(0.75 + 0.10 * index / len(samples), f"Preparando ventanas: {index}/{len(samples)}")
         features = np.stack([sequence["features"] for sequence in sequences])
         masks = np.stack([sequence["frame_mask"][:, 0] for sequence in sequences])
         if kind == "classical":
@@ -310,8 +331,10 @@ class ActionInferenceEngine:
                 cv2.rectangle(frame, (x - 6, y - height - 7), (x + width + 7, y + baseline + 6), color, -1)
                 cv2.putText(frame, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.56, (16, 16, 16), 2, cv2.LINE_AA)
         if generate_preview:
+            if progress is not None:
+                progress(0.90, "Generando el video anotado…")
             render_pose_preview(video_path, load_pose_records(pose.pose_path), preview, frame_count=frame_count, frame_overlay=overlay,
-                            progress_callback=(lambda current, total: progress(0.75 + 0.25 * current / max(total, 1), "Renderizando…")) if progress else None)
+                                progress_callback=(lambda current, total: progress(0.90 + 0.09 * current / max(total, 1), f"Renderizando: {current}/{total} cuadros")) if progress else None)
         result = {"schema_version": "action_inference_v1", "candidate_dir": str(Path(candidate_dir).resolve()),
                   "candidate_kind": kind, "classes": list(ACTION_CLASSES), "thresholds": thresholds.tolist(),
                   "action_threshold": action_threshold,
@@ -325,4 +348,6 @@ class ActionInferenceEngine:
                   "note": "Los eventos son técnicas predichas. No son golpes conectados ni un conteo clínicamente exacto."}
         result_path = destination / "results.json"
         result_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+        if progress is not None:
+            progress(1.0, "Análisis completado")
         return {**result, "preview_path": str(preview), "json_path": str(result_path)}

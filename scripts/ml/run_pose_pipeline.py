@@ -70,6 +70,7 @@ def main() -> None:
     parser.add_argument("--max-frames", type=int, default=None)
     parser.add_argument("--device", default=None, help="auto, cpu, cuda:N or GPU index")
     parser.add_argument("--no-preview", action="store_true", help="Skip full video rendering")
+    parser.add_argument("--progress-json", action="store_true", help="Emit frame progress for a parent process")
     parser.add_argument("--merge-tracks", action="store_true", help="Merge fragments into two fighter slots")
     parser.add_argument("--reuse", action="store_true", help="Reuse only artifacts with matching source, options, weights and hashes")
     parser.add_argument(
@@ -124,9 +125,13 @@ def main() -> None:
         if args.dvc_add:
             parser.error("Use --dvc-add on the initial run, or version the reused artifacts separately.")
         return
+    def report_progress(stage: str, current: int, total: int) -> None:
+        print("POSE_PROGRESS " + json.dumps([stage, current, total]), flush=True)
+
     result = run_pose_pipeline(
         video_path,
         output_dir,
+        progress_callback=report_progress if args.progress_json else None,
         **options,
     )
     if args.reuse:
