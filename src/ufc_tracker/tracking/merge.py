@@ -526,6 +526,7 @@ def extract_merged_fighter_tracking(
     max_gap_frames: int = MAX_MERGE_GAP_FRAMES,
     max_distance: float = MAX_MERGE_DISTANCE,
     progress_callback: Callable[[int, int], None] | None = None,
+    device: str = "auto",
 ) -> MergedTracking:
     """Run detection and ByteTrack, then rebuild two fighters from the fragments.
 
@@ -552,6 +553,7 @@ def extract_merged_fighter_tracking(
         max_frames=max_frames,
         conf=confidence,
         progress_callback=progress_callback,
+        device=device,
     )
     fragments = describe_fragments(per_frame, stats)
     candidates = select_fragment_candidates(

@@ -5,6 +5,42 @@ action_annotations_dirs:
   - data/annotations/strike_actions_joanna_andrade_trial
 binary_annotations_dir: data/annotations/strike_annotations_v1
 splits_manifest: data/metadata/splits_manifest.csv
+direct_rounds:
+  - annotation: data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round1.json
+    review_manifest: output/annotation_audits/volkanovski_holloway_i/round1_all_frames/manifest.json
+    refinement: output/annotation_audits/volkanovski_holloway_i/round1_refinement
+    supervised_classes: [punch_head]
+    fight_id: volkanovski_holloway_i
+    category: fights_remaining_mixed
+    fighters: [Max Holloway, Alexander Volkanovski]
+  - annotation: data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round2.json
+    review_manifest: output/annotation_audits/volkanovski_holloway_i/round2_all_frames/manifest.json
+    refinement: output/annotation_audits/volkanovski_holloway_i/round2_refinement
+    supervised_classes: [punch_head]
+    fight_id: volkanovski_holloway_i
+    category: fights_remaining_mixed
+    fighters: [Max Holloway, Alexander Volkanovski]
+  - annotation: data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round3.json
+    review_manifest: output/annotation_audits/volkanovski_holloway_i/round3_all_frames/manifest.json
+    refinement: output/annotation_audits/volkanovski_holloway_i/round3_refinement
+    supervised_classes: [punch_head]
+    fight_id: volkanovski_holloway_i
+    category: fights_remaining_mixed
+    fighters: [Max Holloway, Alexander Volkanovski]
+  - annotation: data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round4.json
+    review_manifest: output/annotation_audits/volkanovski_holloway_i/round4_all_frames/manifest.json
+    refinement: output/annotation_audits/volkanovski_holloway_i/round4_refinement
+    supervised_classes: [punch_head]
+    fight_id: volkanovski_holloway_i
+    category: fights_remaining_mixed
+    fighters: [Max Holloway, Alexander Volkanovski]
+  - annotation: data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round5.json
+    review_manifest: output/annotation_audits/volkanovski_holloway_i/round5_all_frames/manifest.json
+    refinement: output/annotation_audits/volkanovski_holloway_i/round5_refinement
+    supervised_classes: [punch_head]
+    fight_id: volkanovski_holloway_i
+    category: fights_remaining_mixed
+    fighters: [Max Holloway, Alexander Volkanovski]
 positive_interval_policy: exhaustive_unless_uncertain_overlap
 classes:
   - punch_head
@@ -30,3 +66,4 @@ fixed_splits:
   train_only_fights:
     - zhang_joanna_1
     - joanna_andrade
+    - volkanovski_holloway_i

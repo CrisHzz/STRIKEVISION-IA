@@ -23,7 +23,7 @@ from sklearn.preprocessing import StandardScaler
 from torch.utils.data import DataLoader, TensorDataset
 
 from ufc_tracker.action_recognition.contracts import ACTION_CLASSES, ACTION_SCHEMA_VERSION
-from ufc_tracker.action_recognition.features import PoseFeatureSpec, build_pose_feature_cache
+from ufc_tracker.action_recognition.features import PoseFeatureSpec, build_pose_feature_cache, samples_sha256
 from ufc_tracker.action_recognition.metrics import multilabel_metrics, optimize_thresholds
 from ufc_tracker.action_recognition.models import build_torch_model, masked_bce_with_logits
 from ufc_tracker.action_recognition.rgb import build_x3d_embeddings
@@ -92,13 +92,21 @@ def _feature_cache(
     root: Path, samples: list[dict[str, Any]], cache_path: Path, spec: PoseFeatureSpec,
 ) -> dict[str, np.ndarray]:
     metadata_path = cache_path.with_suffix(".json")
-    expected_ids = [sample["sample_id"] for sample in samples]
+    expected_hash = samples_sha256(samples)
     if cache_path.is_file() and metadata_path.is_file():
         metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
-        if metadata.get("sample_ids") == expected_ids and metadata.get("spec") == asdict(spec):
+        if metadata.get("samples_sha256") == expected_hash and metadata.get("spec") == asdict(spec):
             return _load_cache(cache_path)
     build_pose_feature_cache(root, samples, cache_path, spec)
     return _load_cache(cache_path)
+
+
+def pose_training_loader(arrays: dict[str, np.ndarray], count: int, batch_size: int, *, shuffle: bool) -> DataLoader:
+    dataset = TensorDataset(
+        torch.from_numpy(arrays["features"][:count]), torch.from_numpy(arrays["frame_mask"][:count, :, 0]),
+        torch.from_numpy(arrays["target"][:count]), torch.from_numpy(arrays["target_mask"][:count]),
+    )
+    return DataLoader(dataset, batch_size=batch_size, shuffle=shuffle)
 
 
 def _fit_classical(
@@ -301,11 +309,7 @@ def run_temporal_model(
         min(20.0, float(len(action_targets) - action_positives) / max(action_positives, 1.0)),
         dtype=torch.float32,
     )
-    train_dataset = TensorDataset(
-        torch.from_numpy(arrays["features"][:split]), torch.from_numpy(arrays["frame_mask"][:split, :, 0]),
-        torch.from_numpy(arrays["target"][:split]), torch.from_numpy(arrays["target_mask"][:split]),
-    )
-    loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    loader = pose_training_loader(arrays, split, batch_size, shuffle=True)
     best, best_state, stale = -1.0, None, 0
     history = []
     for epoch in range(1, max_epochs + 1):

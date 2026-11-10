@@ -47,6 +47,20 @@ def test_pose_sequences_do_not_create_motion_across_track_change_or_untrusted_po
     assert hidden["pose_coverage"] == 0
 
 
+def test_audited_velocity_respects_exclusions_in_skipped_source_frames():
+    sample = {"attacker": "1", "fps": 30, "start_frame": 0, "end_frame": 4}
+    records = [_record(frame, fighter) for frame in range(5) for fighter in ("1", "2")]
+    edges = {frame: np.ones((2, 17), dtype=bool) for frame in range(1, 5)}
+    edges[1][1] = False
+    sequence = extract_pose_sequence(
+        sample, records, PoseFeatureSpec(steps=3, context_seconds=0), audited_velocity_edges=edges,
+    )
+    assert sequence["frame_indices"].tolist() == [0, 2, 4]
+    assert sequence["velocity_mask"][1, 0].any()
+    assert not sequence["velocity_mask"][1, 1].any()
+    assert sequence["velocity_mask"][2, 1].any()
+
+
 def test_pose_feature_cache_preserves_requested_train_validation_order(tmp_path):
     for name in ("a", "z"):
         path = tmp_path / name / "pose.jsonl"

@@ -27,6 +27,7 @@ def extract_fighter_tracking(
     confidence: float = 0.5,
     max_frames: int | None = None,
     min_track_frames: int = 15,
+    device: str = "auto",
 ) -> tuple[list[TrackingRecord], float, int]:
     """Run the registered UFC detector/ByteTrack pipeline and export both fighters.
 
@@ -47,7 +48,7 @@ def extract_fighter_tracking(
         raise ValueError(f"Video has invalid FPS: {path}")
 
     per_frame, stats, frame_count = track_video(
-        path, max_frames=max_frames, conf=confidence
+        path, max_frames=max_frames, conf=confidence, device=device
     )
     effective_min_track_frames = min(
         min_track_frames,

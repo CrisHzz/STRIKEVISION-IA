@@ -4,11 +4,14 @@ from __future__ import annotations
 
 import json
 import pickle
+import subprocess
+import sysconfig
 import uuid
 import csv
 from collections import defaultdict
 from dataclasses import asdict
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any
 
 import cv2
@@ -29,6 +32,7 @@ class ActionInferenceEngine:
 
     def __init__(self, root: Path) -> None:
         self.root = Path(root).resolve()
+        self.output_root = self.root / "outputs/action-recognition/gradio"
 
     def _load_candidate(self, run_dir: Path) -> tuple[str, dict[str, Any], PoseFeatureSpec, np.ndarray]:
         run_dir = Path(run_dir).resolve()
@@ -152,7 +156,9 @@ class ActionInferenceEngine:
 
     def analyze(
         self, video_path: str | Path, requested_frames: int, candidate_dir: str | Path,
-        *, progress=None,
+        *, progress=None, prepared_pose_dir: str | Path | None = None,
+        generate_preview: bool = True, tracking_device: str | None = None,
+        pose_python: str | Path | None = None,
     ) -> dict[str, Any]:
         video_path = Path(video_path)
         if not video_path.is_file():
@@ -160,17 +166,51 @@ class ActionInferenceEngine:
         if requested_frames < 24:
             raise ValueError("Se necesitan al menos 24 frames")
         kind, candidate, spec, thresholds = self._load_candidate(Path(candidate_dir))
-        destination = self.root / "outputs/action-recognition/gradio" / uuid.uuid4().hex
+        destination = self.output_root / uuid.uuid4().hex
         app_config = yaml.safe_load((self.root / "configs/app/pose_pipeline.yaml").read_text(encoding="utf-8"))
+        device = tracking_device if tracking_device is not None else str(app_config.get("tracking_device", "auto"))
         def pose_progress(stage: str, current: int, total: int) -> None:
             if progress is not None:
                 progress(0.75 * current / max(total, 1), f"{stage}: {current}/{total} frames")
-        pose = run_pose_pipeline(
+        if prepared_pose_dir is not None:
+            prepared = Path(prepared_pose_dir).resolve()
+            metadata = json.loads((prepared / 'run_metadata.json').read_text(encoding='utf-8'))
+            metrics_check = json.loads((prepared / 'pose_metrics.json').read_text(encoding='utf-8'))
+            stored_video = Path(metadata['video'])
+            if not stored_video.is_absolute():
+                stored_video = self.root / stored_video
+            if stored_video.resolve() != video_path.resolve() or int(metrics_check['frame_count']) != requested_frames:
+                raise ValueError('Prepared pose does not match the requested complete video')
+            pose = SimpleNamespace(metrics_path=prepared / 'pose_metrics.json', pose_path=prepared / 'pose.jsonl')
+            destination.mkdir(parents=True, exist_ok=True)
+        elif pose_python is not None:
+            if progress is not None:
+                progress(0, "Extrayendo tracking y poses en el proceso de inferencia…")
+            script = self.root / "scripts/ml/run_pose_pipeline.py"
+            bootstrap = (
+                "import runpy, sys; sys.path.append(sys.argv.pop(1)); "
+                "sys.path.insert(0, sys.argv.pop(1)); sys.argv.pop(0); runpy.run_path(sys.argv[0], run_name='__main__')"
+            )
+            worker = subprocess.run(
+                [str(Path(pose_python).resolve()), "-c", bootstrap, sysconfig.get_path("purelib"),
+                 str(self.root / "src"), str(script), "--video", str(video_path.resolve()),
+                 "--output-dir", str(destination), "--max-frames", str(requested_frames),
+                 "--device", device, "--merge-tracks", "--no-preview"],
+                cwd=self.root, capture_output=True, encoding="utf-8", errors="replace",
+            )
+            if worker.returncode:
+                detail = (worker.stderr.strip() or worker.stdout.strip())[-2000:]
+                raise RuntimeError(f"Falló la extracción de pose ({worker.returncode}): {detail}")
+            pose = SimpleNamespace(metrics_path=destination / "pose_metrics.json", pose_path=destination / "pose.jsonl")
+        else:
+            pose = run_pose_pipeline(
             video_path, destination, tracking_confidence=float(app_config.get("tracking_confidence", 0.5)),
             merge_track_fragments=True, max_frames=int(requested_frames), generate_preview=False,
-            progress_callback=pose_progress,
+                progress_callback=pose_progress,
+                tracking_device=device,
         )
         metrics = json.loads(pose.metrics_path.read_text(encoding="utf-8"))
+        run_metadata = json.loads(pose.metrics_path.with_name("run_metadata.json").read_text(encoding="utf-8"))
         fps, frame_count = float(metrics["fps"]), int(metrics["frame_count"])
         records = [record.__dict__ for record in load_pose_records(pose.pose_path)]
         window_frames = max(24, int(round(0.8 * fps)))
@@ -269,7 +309,8 @@ class ActionInferenceEngine:
                     y = 58 if fighter_id == "1" else 88
                 cv2.rectangle(frame, (x - 6, y - height - 7), (x + width + 7, y + baseline + 6), color, -1)
                 cv2.putText(frame, text, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 0.56, (16, 16, 16), 2, cv2.LINE_AA)
-        render_pose_preview(video_path, load_pose_records(pose.pose_path), preview, frame_count=frame_count, frame_overlay=overlay,
+        if generate_preview:
+            render_pose_preview(video_path, load_pose_records(pose.pose_path), preview, frame_count=frame_count, frame_overlay=overlay,
                             progress_callback=(lambda current, total: progress(0.75 + 0.25 * current / max(total, 1), "Renderizando…")) if progress else None)
         result = {"schema_version": "action_inference_v1", "candidate_dir": str(Path(candidate_dir).resolve()),
                   "candidate_kind": kind, "classes": list(ACTION_CLASSES), "thresholds": thresholds.tolist(),
@@ -279,6 +320,7 @@ class ActionInferenceEngine:
                   "postprocessing": {"decision_anchor": "window_center", "minimum_confidence": 0.5,
                                      "minimum_pose_coverage": 0.65, "maximum_event_seconds": 0.9},
                   "pose_metrics": metrics.get("metrics", {}),
+                  "tracking_device": run_metadata.get("performance", {}).get("tracking_device_resolved"),
                   "timeline_csv_path": str(timeline_path),
                   "note": "Los eventos son técnicas predichas. No son golpes conectados ni un conteo clínicamente exacto."}
         result_path = destination / "results.json"

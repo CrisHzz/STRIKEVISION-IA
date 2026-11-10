@@ -13,6 +13,7 @@ from datetime import datetime, timezone
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from statistics import median
+from time import perf_counter
 from typing import Any
 
 import cv2
@@ -645,6 +646,7 @@ def run_pose_pipeline(
     estimator_factory: EstimatorFactory = _default_factory,
     progress_callback: PipelineProgressCallback | None = None,
     generate_preview: bool = True,
+    tracking_device: str = "auto",
 ) -> PosePipelineResult:
     """Generate DVC-ready fighter tracks, MediaPipe poses, metrics and preview.
 
@@ -660,6 +662,10 @@ def run_pose_pipeline(
     if not generate_preview and (destination / "pose_preview.mp4").exists():
         raise ValueError("Use a fresh output directory when omitting preview generation")
 
+    from ufc_tracker.tracking.device import resolve_tracking_device
+
+    resolved_device = resolve_tracking_device(tracking_device)
+    started = perf_counter()
     if merge_track_fragments:
         merged = extract_merged_fighter_tracking(
             source,
@@ -667,6 +673,7 @@ def run_pose_pipeline(
             max_frames=max_frames,
             max_gap_frames=max_merge_gap_frames,
             max_distance=max_merge_distance,
+            device=resolved_device,
             progress_callback=(
                 None
                 if progress_callback is None
@@ -683,6 +690,7 @@ def run_pose_pipeline(
             confidence=tracking_confidence,
             max_frames=max_frames,
             min_track_frames=min_track_frames,
+            device=resolved_device,
         )
         tracking_metadata = {
             "component": "registered_person_detector",
@@ -699,7 +707,9 @@ def run_pose_pipeline(
         }
     tracking_path = destination / "tracking.jsonl"
     _write_jsonl(tracking_path, (record.to_dict() for record in tracking_records))
+    tracking_seconds = perf_counter() - started
 
+    pose_started = perf_counter()
     estimator = estimator_factory()
     backend_name = estimator.name
     backend_metadata = {
@@ -721,6 +731,8 @@ def run_pose_pipeline(
     pose_path = destination / "pose.jsonl"
     preview_path = destination / "pose_preview.mp4"
     _write_jsonl(pose_path, (record.to_dict() for record in records))
+    pose_seconds = perf_counter() - pose_started
+    render_started = perf_counter()
     if generate_preview:
         render_pose_preview(
             source,
@@ -733,6 +745,7 @@ def run_pose_pipeline(
                 else lambda current, total: progress_callback("render", current, total)
             ),
         )
+    preview_seconds = perf_counter() - render_started if generate_preview else 0.0
     pose_metrics = calculate_metrics(records)
 
     root = project_root(Path(__file__).resolve())
@@ -766,6 +779,15 @@ def run_pose_pipeline(
         "keypoint_contract": list(KEYPOINT_NAMES),
         "required_keypoints": list(REQUIRED_KEYPOINTS),
         "preview": {"generated": generate_preview},
+        "performance": {
+            "tracking_device_requested": tracking_device,
+            "tracking_device_resolved": resolved_device,
+            "tracking_seconds": tracking_seconds,
+            "pose_seconds": pose_seconds,
+            "preview_seconds": preview_seconds,
+            "total_seconds": perf_counter() - started,
+            "tracking_frames_per_second": frame_count / max(tracking_seconds, 1e-9),
+        },
     }
     metadata_path.write_text(json.dumps(metadata_payload, indent=2, ensure_ascii=False), encoding="utf-8")
     return PosePipelineResult(

@@ -177,6 +177,7 @@ class SplitAnnotationApp:
                 tracking_confidence=float(self.pose_config.get("tracking_confidence", 0.5)),
                 min_track_frames=int(self.pose_config.get("min_track_frames", 15)),
                 merge_track_fragments=True,
+                tracking_device=str(self.pose_config.get("tracking_device", "auto")),
                 progress_callback=lambda stage, current, total: self._report_pipeline_progress(
                     progress, stage, current, total
                 ),

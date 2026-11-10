@@ -29,6 +29,7 @@ from ufc_tracker.action_recognition.contracts import (
     intervals_overlap,
     multi_hot,
 )
+from ufc_tracker.action_recognition.features import AuditedPose, PoseFeatureSpec, has_active_attacker
 from ufc_tracker.annotations.actions import strike_intervals
 
 
@@ -125,6 +126,102 @@ def _action_record(
     }
 
 
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+
+def _direct_round(
+    root: Path, source: dict[str, Any], spec: PoseFeatureSpec,
+) -> tuple[str, list[dict[str, Any]], dict[str, str]]:
+    supervised_classes = source.get("supervised_classes", list(ACTION_CLASSES))
+    if (not isinstance(supervised_classes, list) or not supervised_classes
+            or any(label not in ACTION_CLASSES for label in supervised_classes)):
+        raise ValueError("Direct supervised_classes must be a nonempty list of action classes")
+    annotation = root / source["annotation"]
+    review_manifest = root / source["review_manifest"]
+    refinement = root / source["refinement"]
+    payload = _read_json(annotation)
+    review = _read_json(review_manifest)
+    inventory = _read_json(refinement / "overlay_inventory.json")
+    geometry = _read_json(refinement / "geometry_report.json")
+    validation = _read_json(refinement / "v4_validation.json")
+    mask_path = refinement / "geometry_masks.npz"
+    annotation_hash, review_hash, mask_hash = map(sha256, (annotation, review_manifest, mask_path))
+    identity_path = refinement / "identity_decisions.json"
+    identity_hash = sha256(identity_path)
+    exclusions = refinement / "joint_exclusions.json"
+    video = (root / payload["video"]).resolve()
+    if (
+        payload["schema_version"] != "direct_strike_actions_v1"
+        or inventory["annotations_sha256"] != annotation_hash
+        or not payload["source_sha256"] == review_hash == inventory["manifest_sha256"]
+        or not payload["revision"] == inventory["source_revision"] == geometry["source_revision"] == validation["source_revision"]
+        or not payload["frame_count"] == review["decoded_frames"] == inventory["frame_count"]
+        or not payload["fps"] == review["fps"] == inventory["fps"]
+        or (root / review["video"]).resolve() != video
+        or sha256(video) != inventory["video_sha256"]
+        or not inventory["visual_annotation_complete"]
+        or not geometry["identity_audit_complete"]
+        or not identity_hash == geometry["identity_decisions_sha256"] == validation["identity_decisions_sha256"]
+        or (sha256(exclusions) if exclusions.is_file() else None) != geometry["joint_exclusions_sha256"]
+        or mask_hash != validation["masks_sha256"]
+        or geometry["pose_sha256"] != inventory["pose_sha256"]
+    ):
+        raise ValueError(f"Incomplete or stale direct annotation refinement: {annotation.name}")
+    cursor = 0
+    for first, last in sorted((row["start_frame"], row["end_frame"]) for row in payload["reviewed_ranges"]
+                              if row["status"] == "reviewed"):
+        if not 0 <= first <= cursor <= payload["frame_count"] or not first <= last < payload["frame_count"]:
+            raise ValueError(f"Invalid or incomplete direct review coverage: {annotation.name}")
+        cursor = max(cursor, last + 1)
+    if cursor != payload["frame_count"]:
+        raise ValueError(f"Incomplete direct review coverage: {annotation.name}")
+
+    fighters = dict(zip(source["fighters"], FIGHTER_IDS, strict=True))
+    if set(fighters) != set(inventory["fighter_counts"]):
+        raise ValueError(f"Direct fighter identities do not match refinement: {annotation.name}")
+    windows = {row["action_id"]: row for row in inventory["actions"]}
+    actions = {row["action_id"]: row for row in payload["actions"]}
+    if len(actions) != len(payload["actions"]) or set(actions) != set(windows) or video.stem != annotation.stem:
+        raise ValueError(f"Direct action IDs do not match refinement: {annotation.name}")
+    provenance = {
+        "action_annotation": annotation.relative_to(root).as_posix(), "action_sha256": annotation_hash,
+        "review_manifest": review_manifest.relative_to(root).as_posix(), "review_manifest_sha256": review_hash,
+        "pose": geometry["pose_path"], "pose_sha256": geometry["pose_sha256"],
+        "pose_masks_path": mask_path.relative_to(root).as_posix(), "pose_masks_sha256": mask_hash,
+        "identity_decisions_sha256": identity_hash,
+    }
+    pose_fields = {key: provenance[key] for key in ("pose_sha256", "pose_masks_path", "pose_masks_sha256")}
+    pose_fields["pose_path"] = provenance["pose"]
+    audited = AuditedPose(root, pose_fields)
+    if set(audited.by_action) != set(actions):
+        raise ValueError(f"Direct action IDs do not match pose masks: {annotation.name}")
+    round_data = {"video_id": video.stem, "video_path": video.relative_to(root.resolve()).as_posix(), "fps": payload["fps"]}
+    records = []
+    for action_id, action in actions.items():
+        window = windows[action_id]
+        if any(action[key] != window[key] for key in ("label", "fighter", "start_frame", "end_frame")):
+            raise ValueError(f"Direct action interval or identity mismatch: {action_id}")
+        record = _action_record(
+            {**action, "attacker": fighters[action["fighter"]], "event_id": action_id},
+            round_data=round_data, fight=source, source_path=annotation,
+        )
+        record.update(pose_fields, pose_action_id=action_id, pose_review_window=window["review_window"],
+                      fighter=action["fighter"], pose_usable=True)
+        if record["label"] == AMBIGUOUS_LABEL:
+            record["supervision"] = "excluded_ambiguous"
+        elif record["label"] in ACTION_CLASSES:
+            sample = {**record, "sample_id": f"action:{action_id}"}
+            record["supervision"] = ("positive" if has_active_attacker(sample, audited.sequence(sample, spec))
+                                     else "excluded_no_usable_attacker_pose")
+            if record["supervision"] == "positive" and record["label"] not in supervised_classes:
+                record["supervision"] = "excluded_by_class_scope"
+        else:
+            raise ValueError(f"Unknown direct action label: {record['label']}")
+        records.append(record)
+    return video.stem, records, provenance
+
+
 def _choose_test_fights(
     fight_counts: dict[str, Counter[str]],
 ) -> tuple[str, str]:
@@ -203,7 +300,8 @@ def build_action_corpus(root: Path, config_path: Path) -> tuple[list[dict[str, A
     action_dirs = [root / Path(path) for path in configured_action_dirs]
     source_dir = root / config["binary_annotations_dir"]
     action_paths = sorted(path for directory in action_dirs for path in directory.glob("*.json"))
-    if not action_paths:
+    direct_rounds = config.get("direct_rounds", [])
+    if not action_paths and not direct_rounds:
         raise ValueError("No action annotations found")
     duplicate_stems = [
         stem for stem, count in Counter(path.stem for path in action_paths).items() if count > 1
@@ -275,6 +373,18 @@ def build_action_corpus(root: Path, config_path: Path) -> tuple[list[dict[str, A
             "pose": pose_path.as_posix(), "pose_sha256": sha256(root / pose_path),
         }
 
+    direct_spec = PoseFeatureSpec(**config.get("direct_pose_features", {}))
+    for source in direct_rounds:
+        video_id, records, provenance = _direct_round(root, source, direct_spec)
+        if video_id in per_round_actions:
+            raise ValueError(f"Duplicate action annotation round: {video_id}")
+        per_round_actions[video_id] = records
+        # The action masks only cover action contexts, not no-strike intervals.
+        per_round_source[video_id] = []
+        per_round_fights[video_id] = source["fight_id"]
+        source_provenance[video_id] = provenance
+        audit.extend(records)
+
     for video_id, records in per_round_actions.items():
         known = [record for record in records if record["supervision"] == "positive"]
         for record in known:
@@ -297,6 +407,11 @@ def build_action_corpus(root: Path, config_path: Path) -> tuple[list[dict[str, A
             fully_supervised = (
                 positive_interval_policy == "exhaustive_unless_uncertain_overlap"
                 and not uncertain_overlap
+                and "pose_masks_path" not in record
+            )
+            audited_fields = (
+                "pose_masks_path", "pose_masks_sha256", "pose_sha256", "pose_action_id",
+                "pose_review_window", "fighter",
             )
             samples.append({
                 "sample_id": f"action:{record['action_id']}", "sample_type": "positive_action",
@@ -304,6 +419,7 @@ def build_action_corpus(root: Path, config_path: Path) -> tuple[list[dict[str, A
                     "round_id", "fight_id", "category", "video_path", "pose_path", "pose_usable", "fps",
                     "start_frame", "end_frame", "start_seconds", "end_seconds", "attacker",
                 )},
+                **{key: record[key] for key in audited_fields if key in record},
                 "target_labels": [label for label in ACTION_CLASSES if label in positives],
                 "target": positive_target,
                 "target_mask": [1] * len(ACTION_CLASSES) if fully_supervised else positive_target,
@@ -388,6 +504,10 @@ def build_action_corpus(root: Path, config_path: Path) -> tuple[list[dict[str, A
         "confirmed_no_strike_samples": sum(row["sample_type"] == "confirmed_no_strike" for row in samples),
         "excluded_ambiguous": sum(row["supervision"] == "excluded_ambiguous" for row in audit),
         "excluded_unknown_attacker": sum(row["supervision"] == "excluded_unknown_attacker" for row in audit),
+        "excluded_no_usable_attacker_pose": sum(
+            row["supervision"] == "excluded_no_usable_attacker_pose" for row in audit
+        ),
+        "excluded_by_class_scope": sum(row["supervision"] == "excluded_by_class_scope" for row in audit),
         "source_corrections": len(corrections), "test_fights": list(test_fights),
         "development_folds": folds, "train_only_fights": sorted(train_only_fights),
         "sources": source_provenance,

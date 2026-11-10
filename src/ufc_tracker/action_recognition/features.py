@@ -70,6 +70,7 @@ def _record_index(records: list[dict[str, Any]]) -> dict[tuple[int, str], dict[s
 
 def extract_pose_sequence(
     sample: dict[str, Any], records: list[dict[str, Any]], spec: PoseFeatureSpec = PoseFeatureSpec(),
+    *, audited_velocity_edges: dict[int, np.ndarray] | None = None,
 ) -> dict[str, np.ndarray]:
     """Create a fixed-length attacker-first sequence with explicit validity masks.
 
@@ -132,6 +133,14 @@ def extract_pose_sequence(
             continue
         continuous = track_ids[time_index] == track_ids[time_index - 1]
         valid = point_mask[time_index] & point_mask[time_index - 1] & continuous[:, None]
+        if audited_velocity_edges is not None:
+            for frame in range(int(frame_indices[time_index - 1]) + 1, int(frame_indices[time_index]) + 1):
+                edge = audited_velocity_edges.get(frame)
+                body = index.get((frame, attacker))
+                if edge is None or body is None or _origin_and_scale(body) is None:
+                    valid[:] = False
+                    break
+                valid &= edge
         velocity[time_index][valid] = (
             positions[time_index][valid] - positions[time_index - 1][valid]
         ) / (elapsed_frames / fps)
@@ -168,9 +177,78 @@ def pooled_pose_features(sequence: dict[str, np.ndarray]) -> np.ndarray:
     return np.concatenate((selected.mean(axis=0), selected.std(axis=0), selected.max(axis=0), sequence["pose_coverage"].reshape(1)))
 
 
-def _samples_sha256(samples: list[dict[str, Any]]) -> str:
+def samples_sha256(samples: list[dict[str, Any]]) -> str:
     payload = "\n".join(json.dumps(sample, sort_keys=True, separators=(",", ":")) for sample in samples)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def _checked_source(path: Path, digest: str) -> None:
+    with path.open("rb") as stream:
+        if hashlib.file_digest(stream, "sha256").hexdigest() != digest:
+            raise ValueError(f"Audited pose source changed: {path}")
+
+
+class AuditedPose:
+    """Read one round of attacker-first masks with physical fighter IDs."""
+
+    def __init__(self, root: Path, sample: dict[str, Any]):
+        pose = root / sample["pose_path"]
+        masks = root / sample["pose_masks_path"]
+        _checked_source(pose, sample["pose_sha256"])
+        _checked_source(masks, sample["pose_masks_sha256"])
+        self.rows = {
+            number: json.loads(line)
+            for number, line in enumerate(pose.read_text(encoding="utf-8-sig").splitlines(), 1)
+            if line.strip()
+        }
+        with np.load(masks, allow_pickle=False) as archive:
+            self.frames = archive["frame_indices"]
+            self.references = archive["pose_line_1based"]
+            self.coordinates = archive["coordinates_px"]
+            self.confidence = archive["confidence"]
+            self.edges = archive["velocity_mask"]
+            action_ids = archive["action_ids"].tolist()
+            if (not np.array_equal(archive["point_mask"], self.confidence > 0)
+                    or not np.isfinite(self.coordinates).all() or not np.isfinite(self.confidence).all()
+                    or len(set(action_ids)) != len(action_ids)):
+                raise ValueError(f"Invalid audited pose masks: {masks}")
+        self.by_action = {action_id: index for index, action_id in enumerate(action_ids)}
+
+    def sequence(self, sample: dict[str, Any], spec: PoseFeatureSpec) -> dict[str, np.ndarray]:
+        index = self.by_action[sample["pose_action_id"]]
+        frames = self.frames[index]
+        start, end = sample["pose_review_window"]
+        if frames[frames >= 0].tolist() != list(range(start, end + 1)):
+            raise ValueError(f"Audited pose window mismatch: {sample['sample_id']}")
+        attacker = sample["attacker"]
+        fighters = (attacker, "2" if attacker == "1" else "1")
+        records = []
+        edges = {}
+        for offset, frame in enumerate(frames[:end - start + 1]):
+            frame = int(frame)
+            edges[frame] = self.edges[index, offset]
+            for slot, fighter in enumerate(fighters):
+                line = self.references[index, offset, slot]
+                scores = self.confidence[index, offset, slot]
+                if line < 0:
+                    if scores.any():
+                        raise ValueError(f"Masked pose without source row at frame {frame}")
+                    continue
+                row = self.rows[line]
+                if row["frame_index"] != frame or not row["visible"] or row["track_id"] < 0:
+                    raise ValueError(f"Invalid pose source row {line} for frame {frame}")
+                joints = {
+                    name: [*self.coordinates[index, offset, slot, joint].tolist(), float(scores[joint])]
+                    for joint, name in enumerate(KEYPOINT_NAMES) if scores[joint] > 0
+                }
+                records.append({**row, "fighter_id": fighter, "keypoints": joints, "pose_valid": bool(joints)})
+        return extract_pose_sequence(sample, records, spec, audited_velocity_edges=edges)
+
+
+def has_active_attacker(sample: dict[str, Any], sequence: dict[str, np.ndarray]) -> bool:
+    frames = sequence["frame_indices"]
+    active = (frames >= sample["start_frame"]) & (frames <= sample["end_frame"])
+    return bool(sequence["frame_mask"][active, 0].any())
 
 
 def build_pose_feature_cache(
@@ -181,11 +259,22 @@ def build_pose_feature_cache(
 ) -> dict[str, Any]:
     """Extract a selected sample set once and save its hashes and masks beside it."""
     root, destination = Path(root), Path(destination)
-    by_pose: dict[str, list[tuple[int, dict[str, Any]]]] = {}
+    by_pose: dict[tuple, list[tuple[int, dict[str, Any]]]] = {}
     for position, sample in enumerate(samples):
-        by_pose.setdefault(sample["pose_path"], []).append((position, sample))
+        key = tuple(sample.get(field, "") for field in (
+            "pose_path", "pose_sha256", "pose_masks_path", "pose_masks_sha256",
+        ))
+        by_pose.setdefault(key, []).append((position, sample))
     sequences: list[tuple[dict[str, Any], dict[str, np.ndarray]] | None] = [None] * len(samples)
-    for pose_path, grouped_samples in sorted(by_pose.items()):
+    for (pose_path, _, masks_path, _), grouped_samples in sorted(by_pose.items()):
+        if masks_path:
+            audited = AuditedPose(root, grouped_samples[0][1])
+            for position, sample in grouped_samples:
+                sequence = audited.sequence(sample, spec)
+                if not has_active_attacker(sample, sequence):
+                    raise ValueError(f"No usable attacker pose during {sample['sample_id']}")
+                sequences[position] = (sample, sequence)
+            continue
         records = _jsonl(root / pose_path)
         for position, sample in grouped_samples:
             sequences[position] = (sample, extract_pose_sequence(sample, records, spec))
@@ -213,7 +302,7 @@ def build_pose_feature_cache(
     finally:
         temporary.unlink(missing_ok=True)
     metadata = {
-        "schema_version": "pose_feature_cache_v1", "samples_sha256": _samples_sha256(samples),
+        "schema_version": "pose_feature_cache_v1", "samples_sha256": samples_sha256(samples),
         "sample_ids": [sample["sample_id"] for sample, _ in ordered_sequences], "spec": asdict(spec),
         "shape": list(arrays["features"].shape), "feature_dim": int(arrays["features"].shape[-1]),
         "pose_coverage_mean": float(arrays["pose_coverage"].mean()),

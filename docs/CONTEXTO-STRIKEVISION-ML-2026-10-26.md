@@ -748,3 +748,386 @@ El candidato líder actual es
 se debe anotar y mantener completamente fuera del entrenamiento y de la
 sintonización: es la primera prueba externa honesta del candidato V4.
 
+
+## Continuidad de anotacion directa: Volkanovski–Holloway I, round 1
+
+Instruccion explicita vigente del usuario: completar el round sin cerrar respuestas por tandas arbitrarias. Guardar puntos de control durante el trabajo y continuar. Una actualizacion de progreso no es un motivo para finalizar el turno. Ante compactacion, recuperar el punto de control y seguir; no reiniciar ni inventar revision. No es posible cambiar el tamano de la ventana de contexto mediante este archivo.
+
+Estado comprobado: hojas 1–475 de 562 revisadas y guardadas; siguiente hoja 476 (frame 7600). Quedan 87 hojas. Fuente de verdad: JSON en data/annotations/action_strikes_direct_v1 y sus reviewed_ranges; los reportes anteriores pueden estar desactualizados.
+
+Descartar las detecciones de pose del arbitro; no detener la anotacion por ellas, no asignarlas a atletas y no fabricarlas como poses validas. Conservar acciones simultaneas como eventos independientes. Revisar todos los cuadros de cada hoja. No usar el clasificador v4 para inventar etiquetas. No declarar listo para entrenamiento sin verificar el adaptador y la geometria. Entregar conteo final por clase solamente tras completar y validar cobertura hasta frame 8990. Sin PDF en esta tanda por preferencia vigente.
+
+Actualizacion: revision visual completada hasta hoja 562, frame 8990. Fuente y conteos comprobados en output/annotation_audits/volkanovski_holloway_i/round1_reporte_final.json. Integracion de poses para entrenamiento pendiente.
+
+### Continuidad: Volkanovski-Holloway I, round 2 (2026-11-05)
+
+- Tanda solicitada completada: hojas 1-144 de 576, cuadros originales 0-2303 inclusive, 2304 cuadros revisados visualmente en hojas consecutivas de 16 imagenes.
+- Siguiente hoja: 145 (frame 2304). Quedan 432 hojas del round; no declarar el round completo.
+- Fuente: data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round2.json, revision 177.
+- Conteo: punch_head 16, punch_body 3, kick_leg 7, kick_body 1, kick_head 0, other_strike 0; ambiguous 5. Total 32 registros, 27 acciones confirmadas.
+- Reportes y punto de reanudacion: output/annotation_audits/volkanovski_holloway_i/round2_001_144_reporte.md, round2_001_144_reporte.json y round2_001_144_progress.json.
+- Conservar acciones simultaneas como registros separados. No transformar medicion con palma abierta o amagos en golpes. No forzar objetivo de patadas fuera del encuadre.
+- Las hojas de esta tanda son RGB sin pose superpuesta. track_slot=null: enlace geometrico y validacion de poses pendientes, training_ready=false. Descartar detecciones del arbitro al integrar poses, segun regla del usuario. No afirmar que los errores de tracking estan corregidos o auditados sobre estas hojas sin overlay.
+- Validado: 144 rangos de hoja sin huecos 0-2303, sin acciones duplicadas exactas y evidencia existente. Sin PDF en esta tanda.
+
+
+## Continuidad: Volkanovski-Holloway I R2, hojas 145-284
+
+Tanda de 140 hojas completada con revision visual de todos sus 2240 cuadros (2304-4543). Acumulado 284/576; continuar desde hoja 285, quedan 292. Reporte: output/annotation_audits/volkanovski_holloway_i/round2_145_284_reporte.md y .json. Revision 373. Conteos acumulados: {"punch_head": 56, "punch_body": 6, "kick_leg": 14, "kick_body": 1, "kick_head": 0, "other_strike": 0, "ambiguous": 10}. Golpes simultaneos en registros separados. Sin PDF en esta tanda. Poses aun sin vincular ni validar geometricamente: training_ready=false, track_slot null; descartar poses del arbitro.
+
+
+## Continuidad 2026-11-06 - Volkanovski Holloway I R2, hojas 305-444
+
+Tanda de 140 hojas completada mediante revision visual de todos los 16 cuadros por hoja. Cobertura acumulada 444/576 (frames 0-7103); continuar en hoja 445, frame 7104. Pendientes 132 hojas. Reporte: `output/annotation_audits/volkanovski_holloway_i/round2_305_444_reporte.md` y JSON equivalente. Progreso: `round2_305_444_progress.json`. Sin PDF por instruccion vigente de tandas.
+
+Conteos tanda: {'kick_leg': 2, 'punch_head': 26, 'ambiguous': 3, 'kick_body': 1, 'punch_body': 1}; acumulados: {'punch_head': 84, 'ambiguous': 14, 'kick_leg': 16, 'punch_body': 7, 'kick_body': 2}.
+
+Hojas 305-444 revisadas en RGB por identidad fisica; sin overlay de pose. Vinculacion de track_slot y auditoria de pose pendientes; descartar capturas del arbitro. No declarar datos listos para entrenamiento v4.
+
+
+## Continuidad 2026-11-06: Volkanovski-Holloway I, round 2 completo en RGB
+
+Revision visual completada hasta la hoja 576/576 (9201 cuadros). Tanda final 445-576: 132 hojas. Totales: punch_head=113, punch_body=10, kick_leg=22, kick_body=3, kick_head=0, other_strike=1, ambiguous=14. Reporte: `output/annotation_audits/volkanovski_holloway_i/round2_completo_reporte.md`; JSON de acciones en `data/annotations/action_strikes_direct_v1/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round2.json`. Acciones simultaneas separadas por identidad fisica. Pendiente vinculacion a poses y validacion de tracking: training_ready=false; no afirmar listo para v4. Descartar poses del arbitro. No se inicio round 3.
+
+
+## Avance 2026-11-06: Volkanovski-Holloway I, round 3, primeras 150 hojas
+
+Revision visual completada de hojas 1-150/570, cuadros 0-2399 (2400 cuadros). Restan 420 hojas; continuar en hoja 151, cuadro 2400. Conteos: punch_head=22, punch_body=2, kick_leg=6, kick_body=2, kick_head=0, other_strike=0, ambiguous=2. Total 34 registros, 32 acciones clasificadas. Acciones simultaneas independientes; sin PDF para esta tanda. Reporte: output/annotation_audits/volkanovski_holloway_i/round3_001_150_reporte.md y .json. Guardado mediante DirectActionStore, revision 185. Cobertura continua, evidencia existente y ausencia de duplicados exactos comprobadas.
+
+IMPORTANTE: anotacion visual RGB; track_slot=null y training_ready=false. Pendiente vincular/verificar poses por identidad para entrenamiento v4; descartar poses del arbitro. No afirmar que tracking o keypoints esten validados. No usar modelo v4 para generar estas etiquetas.
+
+
+## Volkanovski-Holloway I R3: hojas 151-290 completadas
+
+Revision visual de 140 hojas adicionales y sus 2240 cuadros (2400-4639). Avance acumulado 290/570; restan 280; siguiente hoja 291, cuadro 4640. Conteos de tanda: {"punch_head": 28, "punch_body": 0, "kick_leg": 4, "kick_body": 1, "kick_head": 0, "other_strike": 0, "ambiguous": 4}; acumulados: {"punch_head": 50, "punch_body": 2, "kick_leg": 10, "kick_body": 3, "kick_head": 0, "other_strike": 0, "ambiguous": 6}. Reporte output/annotation_audits/volkanovski_holloway_i/round3_151_290_reporte.md y .json. Cobertura continua y evidencia comprobadas; sin duplicados exactos. Sin PDF por preferencia de tandas. Poses pendientes, track_slot=null, training_ready=false; descartar poses del arbitro al vincular.
+
+
+### 2026-11-06 — Volkanovski–Holloway I, R3: hojas 291–430
+
+Se revisaron visualmente las 140 hojas completas (cuadros 4640–6879), conservando acciones simultáneas por identidad física. Acumulado 430/570 hojas; continuar en 431, cuadro 6880; faltan 140 hojas.
+
+Conteos tanda: {"punch_head": 39, "punch_body": 2, "kick_leg": 4, "kick_body": 1, "kick_head": 0, "other_strike": 1, "ambiguous": 3}. Acumulado: {"punch_head": 89, "punch_body": 4, "kick_leg": 14, "kick_body": 4, "kick_head": 0, "other_strike": 1, "ambiguous": 9}. Revisión 554.
+
+Reporte: output/annotation_audits/volkanovski_holloway_i/round3_291_430_reporte.md y .json. Sin PDF para esta tanda. Poses no visibles: track_slot null, training_ready false; vinculación de poses y validación de tracking pendientes. Descartar poses del árbitro. No convertir ambigüedad en positivo.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R3: revision RGB completa
+
+Hojas 431-570 terminadas; acumulado 570/570 (cuadros 0-9109). 176 registros: punch_head 129, punch_body 6, kick_leg 22, kick_body 6, kick_head 1, other_strike 2, ambiguous 10. 166 acciones positivas. Simultaneas separadas. Reporte: output/annotation_audits/volkanovski_holloway_i/round3_completo_reporte.md y JSON. JSON canonico mediante DirectActionStore. Asociacion con poses y validacion de tracking pendientes: track_slot null, training_ready false. Descartar poses del arbitro. Revision RGB completa no equivale a dataset v4 listo.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R4: hojas 1-140 completas
+
+Revision visual de las primeras 140/579 hojas y sus 2240 cuadros (0-2239). Continuar desde hoja 141, cuadro 2240; restan 439 hojas. Conteos: {"punch_head": 20, "punch_body": 1, "kick_leg": 5, "kick_body": 2, "kick_head": 1, "other_strike": 0, "ambiguous": 1}. 29 acciones positivas y 1 ambigua excluida. Simultaneas separadas. Reporte: output/annotation_audits/volkanovski_holloway_i/round4_001_140_reporte.md y JSON. Revision 171. Cobertura continua, evidencia existente y cero duplicados exactos comprobados. Sin PDF para esta tanda. RGB sin overlay: track_slot=null, training_ready=false; asociacion de poses y auditoria de tracking pendientes. Descartar poses del arbitro.
+
+
+## 2026-11-06 - Volkanovski-Holloway I, R4: hojas 141-280 completadas
+
+Revision visual de 140 hojas completas, frames 2240-4479. Cobertura acumulada 280/579 hojas (frames 0-4479). Proxima hoja 281, frame 4480; restan 299.
+
+| Clase | Esta tanda | Acumulado |
+|---|---:|---:|
+| punch_head | 32 | 52 |
+| punch_body | 0 | 1 |
+| kick_leg | 4 | 9 |
+| kick_body | 1 | 3 |
+| kick_head | 0 | 1 |
+| other_strike | 0 | 0 |
+| ambiguous | 2 | 3 |
+
+
+39 registros nuevos: 37 positivos y 2 ambiguos. Acumulado: 69 registros, 66 positivos y 3 ambiguos. Acciones simultaneas separadas por identidad fisica. No contar medicion, paradas, amagos ni pummeling como golpes.
+
+JSON canonico revision 351. Cobertura continua, evidencias verificadas y cero duplicados exactos. Asociacion con poses y validacion de tracking pendientes, track_slot=null y training_ready=false; descartar poses del arbitro. No producir negativos automaticos.
+
+Reportes: output/annotation_audits/volkanovski_holloway_i/round4_141_280_reporte.md y .json. Sin PDF por tratarse de tanda parcial.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R4: hojas 281-420 completas
+
+Revision visual de 140 hojas completas, 2240 cuadros (4480-6719). Acumulado 420/579; continuar en hoja 421, frame 6720. Restan 159 hojas.
+
+| Clase | Nuevas | Acumuladas |
+|---|---:|---:|
+| punch_head | 43 | 95 |
+| punch_body | 1 | 2 |
+| kick_leg | 5 | 14 |
+| kick_body | 1 | 4 |
+| kick_head | 0 | 1 |
+| other_strike | 0 | 0 |
+| ambiguous | 2 | 5 |
+
+
+51? Registros verificados en reporte JSON; revision 544. Acciones simultaneas separadas. Cobertura continua y evidencia verificadas, cero duplicados exactos. RGB sin overlay: track_slot=null, training_ready=false; poses y tracking pendientes. Descartar poses del arbitro. Sin PDF para tanda parcial. Reportes: output/annotation_audits/volkanovski_holloway_i/round4_281_420_reporte.md y .json.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R4 completo, 579/579
+
+Ultimas 159 hojas (421-579), cuadros 6720-9260, revisadas visualmente. Cobertura RGB total 9261 cuadros. Restan 0 hojas.
+
+| Clase | Ultimas 159 hojas | Total round |
+|---|---:|---:|
+| punch_head | 42 | 137 |
+| punch_body | 5 | 7 |
+| kick_leg | 3 | 17 |
+| kick_body | 1 | 5 |
+| kick_head | 0 | 1 |
+| other_strike | 0 | 0 |
+| ambiguous | 5 | 10 |
+
+177 registros, 167 positivos y 10 ambiguos. Revision 760. Simultaneas separadas; evidencia y cobertura verificadas, sin duplicados exactos. Poses y tracking pendientes, track_slot=null, training_ready=false; descartar poses del arbitro. Reporte: output/annotation_audits/volkanovski_holloway_i/round4_completo_reporte.md y .json. PDF clasificado: output/pdf/volkanovski_holloway_i_round4_clasificado.pdf. No iniciar R5 sin orden.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R5: hojas 5-144
+
+Round 5: hojas 5-144 revisadas (140 hojas, frames 64-2303). Acumulado 144/562. Siguiente hoja 145.
+
+- kick_leg: 7
+- kick_body: 1
+- punch_head: 32
+- punch_body: 4
+- kick_head: 1
+- ambiguous: 2
+
+Pose y tracking pendientes, training_ready=false.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R5: hojas 145-284
+
+140 hojas completas; 2240 cuadros consecutivos (2304-4543). Acumulado: 284/562 hojas. Siguiente: 285. Restan 278.
+
+| Clase | Tanda | Acumulado round |
+|---|---:|---:|
+| punch_head | 42 | 74 |
+| punch_body | 3 | 7 |
+| kick_leg | 3 | 10 |
+| kick_body | 2 | 3 |
+| kick_head | 0 | 1 |
+| other_strike | 1 | 1 |
+| ambiguous | 3 | 5 |
+
+Tanda: 54 registros, 51 positivos y 3 ambiguos. Acumulado: 101 registros, 96 positivos y 5 ambiguos.
+
+Pose y tracking pendientes; track_slot=null, training_ready=false. Simultaneas separadas. Cobertura continua y evidencia verificadas; cero duplicados exactos. Reportes: output/annotation_audits/volkanovski_holloway_i/round5_145_284_reporte.md y .json. Continuar en hoja 285, frame 4544.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R5: hojas 285-424
+
+140 hojas completas; 2240 cuadros consecutivos (4544-6783). Acumulado: 424/562 hojas. Siguiente: 425. Restan 138.
+
+| Clase | Tanda | Acumulado round |
+|---|---:|---:|
+| punch_head | 32 | 106 |
+| punch_body | 3 | 10 |
+| kick_leg | 2 | 12 |
+| kick_body | 0 | 3 |
+| kick_head | 0 | 1 |
+| other_strike | 1 | 2 |
+| ambiguous | 3 | 8 |
+
+Tanda: 41 registros, 38 positivos y 3 ambiguos. Acumulado: 142 registros, 134 positivos y 8 ambiguos.
+
+Pose y tracking pendientes; track_slot=null, training_ready=false. Simultaneas separadas. Cobertura continua y evidencia verificadas; cero duplicados exactos. Reportes: output/annotation_audits/volkanovski_holloway_i/round5_285_424_reporte.md y .json. Continuar en hoja 425, frame 6784.
+
+
+## 2026-11-06 - Volkanovski-Holloway I R5: hojas 425-562
+
+138 hojas completas; 2207 cuadros consecutivos (6784-8990). Acumulado: 562/562 hojas. Round completo en revision visual RGB.
+
+| Clase | Tanda | Acumulado round |
+|---|---:|---:|
+| punch_head | 34 | 140 |
+| punch_body | 4 | 14 |
+| kick_leg | 2 | 14 |
+| kick_body | 2 | 5 |
+| kick_head | 0 | 1 |
+| other_strike | 2 | 4 |
+| ambiguous | 2 | 10 |
+
+Tanda: 46 registros, 44 positivos y 2 ambiguos. Acumulado: 188 registros, 178 positivos y 10 ambiguos.
+
+Pose y tracking pendientes; track_slot=null, training_ready=false. Simultaneas separadas. Cobertura continua y evidencia verificadas; cero duplicados exactos. Reportes: output/annotation_audits/volkanovski_holloway_i/round5_425_562_reporte.md y .json. Revision RGB del round terminada: 562/562 hojas. Sin PDF por instruccion del usuario.
+
+
+## 2026-11-06 - Round 1: auditoria geometrica automatica
+
+Generadas mascaras para 155 acciones en output/annotation_audits/volkanovski_holloway_i/round1_geometry_masks. 107 candidatas con cobertura articular del atacante >=0.65. Controles de confianza, caja, limites, segmentos y saltos temporales. Revision automatica, no aprobacion visual. training_mask=false y training_ready=false; falta revision manual y adaptador v4 con contexto auditado. Se excluyeron tramos dudosos del sidecar de las ultimas 26 acciones: no inferir identidad global por track_id entre planos. Script reproducible scripts/annotation/build_round1_geometry_masks.py. Originales intactos; sin PDF.
+
+## 2026-11-06 - Volkanovski-Holloway I R3: refinamiento post autoanotación
+
+- RGB de origen en revisión 750, con 570/570 hojas, 9.110 cuadros y 176 registros (166 clasificados y 10 ambiguos). El inventario detectó 49 pares de acciones clasificadas superpuestas entre ambos atletas.
+- Extracción de tracking y poses completa en 534,48 s. Tracking en RTX 3060 (303,47 s), poses en CPU (230,24 s). Los JSONL y la caché están en `data/processed/poses_direct_actions/alexander_volkanovski_vs_max_holloway_i_ufc_245__t_5G7bGTPxs__round3/`.
+- En `output/annotation_audits/volkanovski_holloway_i/round3_refinement/` están las 269 hojas de evidencia, los inventarios, las decisiones de identidad con filas de pose, el reporte y las máscaras. La auditoría visual de identidad abarca 463/3.332 cuadros únicos de contexto y 24/176 ventanas completas (17 `punch_head`, 4 `kick_leg`, 1 `punch_body` y 2 `ambiguous`). Una ventana completa puede contener cuadros excluidos.
+- Se verificaron 856 referencias por peleador y cuadro. Se excluyeron 53 por persona incorrecta, 12 por falta de detección del atleta y 5 por identidad sin resolver. En el intercambio de los cuadros 1211–1219 se descartaron detecciones del árbitro y se registraron los cambios de ranura de Volkanovski.
+- Las máscaras geométricas filtran únicamente poses con identidad verificada. `frame_mask` indica al menos una articulación retenida y `training_mask` permanece falso. La aprobación visual de articulaciones y la validación del adaptador v4 siguen pendientes. El JSON de anotaciones conserva su revisión de origen.
+- Continuar la auditoría en la ventana **1847–1882**, acción `kick_body` de cuadros **1859–1870**. Guardar decisiones con `scripts/annotation/save_refinement_identity_spans.py --round 3` y regenerar el reporte y el NPZ con la misma ejecución.
+
+### Punto de continuación actualizado del round 3
+
+Auditoría de identidad ampliada a **44/176 ventanas y 876/3.332 cuadros**. Desde la ventana 1847–1882 se completaron 20 ventanas y se añadieron 413 cuadros únicos. Las decisiones nuevas contienen 724 referencias verificadas, 98 exclusiones por persona incorrecta (árbitro, público o rival) y 4 casos sin resolver. El intercambio simultáneo en 2020–2032 mantiene sus dos etiquetas RGB, pero la pose de Holloway se excluyó en ese intervalo por seguimiento del público.
+
+Se regeneró el NPZ y se comprobó la coincidencia de cada referencia con las decisiones de identidad y la ausencia de puntos activos en cuadros excluidos o pendientes. `training_ready=false`. Aún faltan la revisión articular y la integración con la entrada temporal de v4, que usa 32 pasos y normalización con el cuerpo del atacante. Retomar en **2934–2968** (`punch_head`, 2946–2956).
+
+## 2026-11-07 - Volkanovski-Holloway I R2 y R3: cierre de identidad y máscaras
+
+La revisión de identidad por cuadro cubre el contexto completo de las 339 ventanas. Las poses del árbitro, del público o del peleador equivocado se descartaron. Las poses ausentes o mezcladas quedaron sin referencia cuando no se pudo asignar una fila fiable. Se conservan por separado los registros RGB simultáneos.
+
+| Round | Ventanas | Cuadros únicos | Referencias verificadas | Persona incorrecta | Ausentes | No resueltas | Pares simultáneos |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 2 | 163/163 | 2.834/2.834 | 5.002 | 322 | 181 | 163 | 62 |
+| 3 | 176/176 | 3.332/3.332 | 5.939 | 467 | 167 | 91 | 49 |
+
+Se regeneraron `geometry_report.json` y `geometry_masks.npz` en los directorios `round2_refinement` y `round3_refinement`. Hay 102 y 132 positivos, respectivamente, con cobertura articular del atacante de al menos 65 %. El script `scripts/annotation/validate_refinement_v4.py 2 3` valida las filas referenciadas y ejercita el extractor temporal y el TCN sin entrenar. La velocidad se invalida si falta una transición auditada entre cuadros muestreados.
+
+| Clase | R2 RGB | R2 prueba v4 | R3 RGB | R3 prueba v4 |
+|---|---:|---:|---:|---:|
+| punch_head | 113 | 105 | 129 | 123 |
+| punch_body | 10 | 9 | 6 | 6 |
+| kick_leg | 22 | 22 | 22 | 21 |
+| kick_body | 3 | 3 | 6 | 6 |
+| kick_head | 0 | 0 | 1 | 1 |
+| other_strike | 1 | 1 | 2 | 2 |
+| ambiguous | 14 | 0 | 10 | 0 |
+| Total | 163 | 140 | 176 | 159 |
+
+La prueba técnica excluyó 9 positivos en R2 y 7 en R3 por ausencia de pose del atacante utilizable durante el golpe. Los ambiguos quedan fuera de la supervisión.
+
+`scripts/annotation/render_refinement_masks.py 2 3` generó 515 hojas para R2 y 551 para R3 bajo `masked_overlays/<SHA-256 del NPZ>/`. Cada manifiesto vincula hojas por `action_id` y rango de cuadros. Verde indica atacante y azul rival. La revisión puntual de las hojas enmascaradas produjo exclusiones manuales para ambas muñecas de Volkanovski en R2, cuadro 8165, y el tobillo derecho de Holloway durante la patada alta en R3, cuadros 8712–8722. `joint_exclusions.json` conserva los motivos y la evidencia de cada exclusión. Se regeneraron las máscaras y la prueba v4 mantuvo los mismos totales.
+
+**Punto de continuación.** La identidad está cerrada. Queda revisar exhaustivamente las articulaciones que muestran las hojas de máscaras, registrar sus correcciones y conectar los ejemplos aprobados al constructor de corpus de v4. Ambos rounds siguen con `training_ready=false`. Los 299 casos que pasan la prueba técnica aún no son ejemplos aprobados.
+
+## 2026-11-07 - Volkanovski-Holloway I R4 y R5: refinamiento post autoanotación
+
+Se verificaron los inventarios RGB de origen antes de extraer tracking y pose. El round 4 tiene 579 hojas, 9.261 cuadros, 177 registros y 53 pares de positivos simultáneos. El round 5 tiene 562 hojas, 8.991 cuadros, 188 registros y 57 pares. Los manifiestos separan las etiquetas ambiguas y guardan la procedencia por SHA-256.
+
+La extracción se ejecuta con `configs/app/pose_pipeline_direct_actions.yaml`, GPU RTX 3060 para detección y tracking, MediaPipe CPU para pose, sin vista previa y con caché verificada. En este equipo `strikevision_ML` tiene PyTorch CPU. Se usó el Python de `strikevision_McByte` para cargar su PyTorch CUDA, con las dependencias de pose ya instaladas en `strikevision_ML` añadidas al final de la ruta de importación del proceso. Una prueba aislada de 16 cuadros confirmó las etapas completas antes de procesar ambos videos.
+
+La auditoría utiliza las hojas `overlays/` y `save_refinement_identity_spans.py --round 4` o `--round 5`. El comando registra el próximo cuadro pendiente. Las máscaras y la prueba v4 distinguen auditoría de identidad, elegibilidad técnica y aprobación visual.
+
+### Cierre de identidad y validación técnica
+
+| Round | Ventanas auditadas | Cuadros únicos de contexto | Referencias verificadas | Persona incorrecta | Ausentes | No resueltas | Duplicadas |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 4 | 177/177 | 3.315/3.315 | 5.862 | 534 | 163 | 65 | 6 |
+| 5 | 188/188 | 3.438/3.438 | 5.844 | 708 | 262 | 51 | 11 |
+
+Cada cuadro tiene una decisión por atleta. Se descartaron las detecciones del árbitro y del público. El mapa conserva cambios de ranura y cada acción simultánea mantiene su propio atacante. Los vínculos exactos están en `identity_decisions.json` y en el eje atacante/rival de `geometry_masks.npz`.
+
+| Clase | R4 RGB | R4 pasa v4 | R5 RGB | R5 pasa v4 |
+|---|---:|---:|---:|---:|
+| punch_head | 137 | 134 | 140 | 134 |
+| punch_body | 7 | 7 | 14 | 14 |
+| kick_leg | 17 | 17 | 14 | 14 |
+| kick_body | 5 | 5 | 5 | 5 |
+| kick_head | 1 | 1 | 1 | 1 |
+| other_strike | 0 | 0 | 4 | 3 |
+| ambiguous | 10 | 0 | 10 | 0 |
+| **Total** | **177** | **164** | **188** | **171** |
+
+`validate_refinement_v4.py 4 5` verificó referencias, máscaras, continuidad de velocidades y paso por el extractor de 32 pasos y el TCN sin entrenar. Tres positivos de R4 y siete de R5 quedaron fuera por falta de una pose utilizable del atacante durante el golpe. Hubo 125 y 135 positivos, respectivamente, con cobertura articular del atacante de al menos 65 % en los cuadros de acción.
+
+Se inspeccionaron las ventanas enmascaradas de ambas patadas altas y se excluyó el tobillo derecho de Volkanovski en R4 (1591–1595) y el de Holloway en R5 (927–930). `joint_exclusions.json` registra los cuadros y las imágenes que motivaron la corrección. La prueba de v4 mantuvo sus totales tras regenerar las máscaras. Para localizar la revisión vigente, usar el SHA-256 de `v4_validation.json` bajo `masked_overlays/` en cada directorio `round4_refinement` y `round5_refinement`.
+
+Durante esa revisión aparecieron dos posibles golpes de mano fuera de los registros RGB vigentes. Revisar el de Volkanovski en R4 (1577–1583) y el de Holloway al inicio de la patada alta en R5 (885–890) si se reabre la anotación RGB. Estas observaciones quedan fuera del conteo hasta resolverlas.
+
+**Punto de continuación.** Identidad, vínculos, geometría y prueba técnica cerrados para R4 y R5. Quedan la revisión exhaustiva de las articulaciones retenidas y la incorporación de ejemplos aprobados al constructor de corpus. `training_ready=false` en ambos rounds.
+
+## 2026-11-09 - Round 1: preparación de auditoría de contexto v4
+
+Se verificó la cobertura RGB del round 1 filtrando los 562 rangos con estado `reviewed`. Los 30 rangos adicionales corresponden a decisiones `no_strike` o `ambiguous`, por lo que no deben contarse como hojas adicionales. Se generaron 247 hojas de tracking y pose en `round1_refinement/overlays/` usando la extracción con caché verificada de `poses_direct_actions`.
+
+La nueva auditoría por cuadro y atleta cubre 178/3.128 cuadros de contexto y 6/155 ventanas. En 600–643 la segunda ranura sigue al árbitro y se descarta para Holloway; desde el corte en 644 se identificaron ambos peleadores. Las decisiones y máscaras parciales están en `round1_refinement/identity_decisions.json` y `geometry_masks.npz`. Continuar en el cuadro 997, ventana 997–1029. El contexto del round 1 aún no está auditado completamente, la aprobación visual de articulaciones de los cinco rounds y la integración al corpus v4 siguen pendientes. `training_ready=false`.
+
+La auditoría avanzó a 36/155 ventanas y 788/3.128 cuadros únicos. Se excluyeron capturas del árbitro y del público, incluso cuando la ranura cambió durante el mismo intercambio. Las poses del otro atleta se conservaron en los cuadros donde pudieron verificarse. El siguiente cuadro pendiente es el 2654, en la ventana 2654–2691.
+
+La auditoría avanzó a 76/155 ventanas y 1.564/3.128 cuadros únicos. Se guardaron las reasignaciones durante los cruces y se excluyeron las capturas del árbitro y del público. Las máscaras parciales se regeneraron con las decisiones nuevas. El siguiente cuadro pendiente es el 4769, en la ventana 4769–4803.
+
+### Cierre de la auditoría de identidad del round 1
+
+Se completaron las 79 ventanas restantes. La cobertura final es **155/155 ventanas y 3.128/3.128 cuadros únicos de contexto**. Se guardaron 5.426 referencias verificadas y se excluyeron 522 detecciones de persona incorrecta, 155 ausencias y 153 casos sin identidad resoluble. Las detecciones del árbitro y del público quedaron excluidas. En el cierre del round, los cuadros con poses mezcladas se dejaron sin referencia cuando no se pudo separar a los atletas con claridad. La revisión RGB 874 conserva sus 51 pares de acciones positivas simultáneas.
+
+| Clase | Registros RGB | Pasan prueba técnica v4 |
+|---|---:|---:|
+| punch_head | 120 | 114 |
+| punch_body | 3 | 3 |
+| kick_leg | 14 | 14 |
+| kick_body | 2 | 2 |
+| kick_head | 1 | 1 |
+| other_strike | 2 | 2 |
+| ambiguous | 13 | 0 |
+| **Total** | **155** | **136** |
+
+Seis positivos `punch_head` quedaron fuera de la prueba por falta de una pose utilizable del atacante durante el golpe. Las máscaras geométricas dejan 112 positivos con cobertura articular del atacante de al menos 65 %. Se ejecutó `validate_refinement_v4.py 1` con el extractor de 32 pasos y un TCN sin entrenar. `render_refinement_masks.py 1` generó 503 hojas de evidencia en `round1_refinement/masked_overlays/<SHA-256 de geometry_masks.npz>/`. El SHA vigente y el resultado por acción están en `round1_refinement/v4_validation.json`.
+
+**Punto de continuación.** Falta la revisión visual de las articulaciones retenidas y la integración de los ejemplos aprobados al corpus v4. El estado permanece en `training_ready=false`.
+
+
+### Primera tanda de revisión visual de articulaciones del round 1
+
+Revisadas cuadro por cuadro cinco ventanas (18 hojas y 156 cuadros únicos de contexto). Se priorizaron las dos patadas al cuerpo y la patada a la cabeza, el golpe simultáneo de Volkanovski y el golpe siguiente en el clinch. Las ventanas del manifiesto son 119 (6712–6756), 152 (8856–8902), 153 (8926–8968), 154 (8937–8968) y 155 (8957–8989).
+
+`round1_refinement/joint_exclusions.json` registra las exclusiones por atleta, articulación y cuadro, con motivo y evidencia. Entre ellas están la rodilla y el tobillo de Holloway proyectados sobre Volkanovski en 8943–8945, y puntos del cuerpo de Volkanovski colapsados sobre su cabeza cuando el árbitro tapa el resto en 8878. Las exclusiones se aplican también cuando ese mismo cuadro aparece en otra ventana. El renderizador deja las leyendas fuera del cuadro para que los pies y los puntos de la parte inferior se puedan revisar.
+
+La prueba técnica de v4 tras regenerar las máscaras se mantiene en 136 acciones, seis positivos excluidos y 13 ambiguos. **Revisión visual en curso.** Retomar por la ventana 1 (600–636), con las hojas del manifiesto identificado por el SHA-256 vigente de `v4_validation.json`. Quedan 150 ventanas por pasar por esta revisión y la integración al corpus. `training_ready=false`.
+
+
+### Piloto del round 1 conectado al corpus de v4
+
+La configuración de v4 incorpora el JSON de anotación directa del round 1 con una fuente explícita para el manifiesto, los vínculos de pose y las máscaras. El constructor comprueba procedencia y cobertura, y el cargador de entrenamiento reconstruye la secuencia con las articulaciones retenidas y la continuidad auditada. La pelea queda solo en entrenamiento en los tres folds. Se generó un corpus piloto separado bajo `round1_refinement/v4_corpus_pilot/`.
+
+El cargador real recorrió **136 acciones en 5 lotes**, con 32 pasos y 206 características por ejemplo. Conteo por clase principal del evento: 114 `punch_head`, 3 `punch_body`, 14 `kick_leg`, 2 `kick_body`, 1 `kick_head` y 2 `other_strike`. Quedaron fuera 6 `punch_head` sin pose utilizable durante el golpe y 13 ambiguos. De los 51 pares simultáneos anotados, 48 conservan ambos ejemplos en el piloto. Los objetivos son positivos solamente. Los intervalos explícitos sin golpe requieren una auditoría de poses propia para ingresar como negativos.
+
+El informe `round1_loader_validation.json` distingue conteos por evento y por objetivo multietiqueta. Esta validación habilita el subconjunto piloto con el criterio de identidad auditada, geometría y pose del atacante durante la acción. La revisión visual exhaustiva de articulaciones sigue registrada por separado. Los rounds 2 a 5 todavía no se incorporaron al corpus. No se ejecutó entrenamiento.
+
+
+### Round 2 incorporado al corpus piloto de v4
+
+Se incorporó el round 2 de Volkanovski–Holloway I a la configuración de anotación directa. El corpus piloto bajo `round2_refinement/v4_corpus_pilot/` conserva los 136 ejemplos del round 1 e incorpora 140 del round 2. Los 276 ejemplos de la pelea quedaron exclusivamente en entrenamiento en los tres folds.
+
+El cargador de entrenamiento leyó los 140 ejemplos nuevos en cinco lotes, con 32 pasos y 206 características por ejemplo. Conteo por acción: 105 `punch_head`, 9 `punch_body`, 22 `kick_leg`, 3 `kick_body`, 0 `kick_head` y 1 `other_strike`. Quedaron fuera 14 ambiguos y nueve acciones sin pose utilizable del atacante (ocho `punch_head` y una `punch_body`). Se conservan ambos ejemplos en 54 de los 62 pares simultáneos del round. El informe reproducido con el cargador está en `round2_loader_validation.json`. El piloto incorpora objetivos positivos del round 2 y no se ejecutó entrenamiento.
+
+
+### Round 3 incorporado al corpus piloto de v4
+
+El corpus piloto de `round3_refinement/v4_corpus_pilot/` añade 159 ejemplos del round 3 y conserva los 276 de los rounds 1 y 2. Los 435 ejemplos de la pelea se seleccionan exclusivamente para entrenamiento en los tres folds.
+
+El cargador de entrenamiento leyó los 159 ejemplos nuevos en cinco lotes de secuencias de 32 pasos y 206 características. Conteo por acción: 123 `punch_head`, 6 `punch_body`, 21 `kick_leg`, 6 `kick_body`, 1 `kick_head` y 2 `other_strike`. Quedaron fuera 10 ambiguos y siete acciones sin pose utilizable del atacante (seis `punch_head` y una `kick_leg`). Se conservaron ambos ejemplos en 44 de los 49 pares simultáneos. `round3_loader_validation.json` contiene los identificadores de los pares conservados y los hashes de procedencia. El piloto añade solo positivos del round 3. No se ejecutó entrenamiento.
+
+
+### Round 4 incorporado al corpus piloto de v4
+
+El corpus piloto de `round4_refinement/v4_corpus_pilot/` añade 164 ejemplos positivos del round 4 y conserva los 435 de los rounds 1 a 3. Los 599 ejemplos de la pelea se seleccionan exclusivamente para entrenamiento en los tres folds.
+
+El cargador de entrenamiento leyó los 164 ejemplos nuevos en seis lotes de secuencias de 32 pasos y 206 características. Conteo por acción: 134 `punch_head`, 7 `punch_body`, 17 `kick_leg`, 5 `kick_body`, 1 `kick_head` y 0 `other_strike`. Quedaron fuera 10 ambiguos y tres `punch_head` sin pose utilizable del atacante. Se conservaron ambos ejemplos en los 53 pares simultáneos. `round4_loader_validation.json` contiene los identificadores de los pares y los hashes de procedencia. No se ejecutó entrenamiento.
+
+
+### Volkanovski–Holloway I completo en el corpus piloto de v4
+
+El corpus consolidado de `round5_refinement/v4_corpus_pilot/` conserva los 599 positivos de los rounds 1 a 4 y añade 171 del round 5. El cargador real recorrió los 770 ejemplos en 25 lotes de secuencias de 32 pasos y 206 características. Se verificó que los cinco rounds se seleccionan exclusivamente para entrenamiento en los tres folds.
+
+| Clase | Round 5 | Pelea completa |
+|---|---:|---:|
+| punch_head | 134 | 610 |
+| punch_body | 14 | 39 |
+| kick_leg | 14 | 88 |
+| kick_body | 5 | 21 |
+| kick_head | 1 | 4 |
+| other_strike | 3 | 8 |
+| **Total** | **171** | **770** |
+
+Se conservaron ambos ejemplos en 51 de los 57 pares simultáneos del round 5 y en 250 de 272 en toda la pelea. Se excluyeron diez ambiguos y siete acciones sin pose utilizable del atacante en el round 5. En total quedaron fuera 57 ambiguos y 32 acciones sin pose utilizable. El piloto incorpora únicamente positivos de esta pelea. `fight_loader_validation.json` contiene conteos por round, identificadores de pares y hashes de procedencia. No se ejecutó entrenamiento.
+
+
+### Corpus definitivo de v4 publicado con Volkanovski–Holloway I
+
+El comando `scripts/ml/run_action_recognition.py prepare --config configs/models/action_training_v4.yaml` publicó los cinco rounds en `data/processed/datasets/action_recognition_v4`. El corpus pasó de 43.417 a 44.187 ejemplos. Se comprobó la igualdad de los 43.417 ejemplos previos y que los archivos de muestras y auditoría publicados coinciden con los del piloto. El respaldo previo está en `round5_refinement/v4_previous_corpus_895b8225305b/`.
+
+Desde la ruta oficial, el selector de entrenamiento incluyó las 770 acciones de la pelea en los tres folds y las excluyó de validación y prueba. El cargador volvió a leer los 770 positivos en 25 lotes y se verificaron los 250 pares simultáneos conservados. `round5_refinement/v4_official_loader_validation.json` registra los hashes y el conteo. No se ejecutó entrenamiento.
+
+
+### Volkanovski–Holloway I aporta solo punch_head al corpus de v4
+
+Los cinco rounds configuran `supervised_classes: [punch_head]`. El corpus oficial contiene 44.027 ejemplos, incluidos 610 positivos de esta pelea con solo el objetivo `punch_head` activo. Los otros 160 ejemplos previamente utilizables se conservan en la auditoría con `excluded_by_class_scope` y el piloto completo preserva sus muestras. La publicación se verificó contra el corpus de prueba. Las 43.417 muestras de las demás peleas son idénticas a las de la versión anterior.
+
+El cargador oficial leyó los 610 positivos en 20 lotes. El fold 0 selecciona 6.295 muestras de entrenamiento y las mismas 1.149 muestras de validación de la referencia `tcn-women-v4-fold0-cachefix`. Nunes–Shevchenko II permanece fuera del corpus. El reporte está en `round5_refinement/v4_punch_head_only/official_loader_validation.json`. No se ejecutó entrenamiento.
+

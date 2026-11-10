@@ -52,3 +52,11 @@ fights-selection.md
 
 # Videos to test the model 
 tests/videos_tests/
+
+# Local scratch: review sheets, smoke tests, frames and clips
+tmp/
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.pdf

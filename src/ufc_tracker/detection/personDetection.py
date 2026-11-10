@@ -8,6 +8,7 @@ from ultralytics import YOLO
 from ufc_tracker.detection import project_root
 from ufc_tracker.ml.registry import resolve_person_detector_weight
 from ufc_tracker.tracking.contracts import TrackObservation
+from ufc_tracker.tracking.device import resolve_tracking_device
 
 # Person class id (COCO dataset)
 PERSON_CLASS_ID = 0
@@ -351,8 +352,10 @@ def track_video(
     conf=0.5,
     tracker=TRACKER_CFG,
     progress_callback: Callable[[int, int], None] | None = None,
+    device: str = "auto",
 ):
     """Pass 1: ByteTrack tracking and accumulate stats per track."""
+    inference_device = resolve_tracking_device(device)
     cap = cv2.VideoCapture(str(video_path))
     if not cap.isOpened():
         raise FileNotFoundError(f"Could not open video: {video_path}")
@@ -377,7 +380,7 @@ def track_video(
             persist=True,
             tracker=tracker,
             verbose=False,
-            device="cpu",
+            device=inference_device,
         )[0]
         frame_map = {}
         if res.boxes is not None and res.boxes.id is not None:

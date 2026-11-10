@@ -5,6 +5,7 @@ from __future__ import annotations
 import torch
 from torch import nn
 
+from ufc_tracker.action_recognition.contracts import ACTION_CLASSES
 from ufc_tracker.pose.estimator import KEYPOINT_NAMES
 
 
@@ -37,11 +38,13 @@ class PoseTCN(nn.Module):
         self.blocks = nn.Sequential(*(TemporalBlock(channels, dropout) for _ in range(blocks)))
         self.output = nn.Sequential(nn.LayerNorm(channels), nn.Linear(channels, class_count))
 
-    def forward(self, features: torch.Tensor, attacker_frame_mask: torch.Tensor) -> torch.Tensor:
+    def pooled_features(self, features: torch.Tensor, attacker_frame_mask: torch.Tensor) -> torch.Tensor:
         values = self.blocks(self.input(features.transpose(1, 2))).transpose(1, 2)
         mask = attacker_frame_mask.to(values.dtype).unsqueeze(-1)
-        pooled = (values * mask).sum(dim=1) / mask.sum(dim=1).clamp_min(1)
-        return self.output(pooled)
+        return (values * mask).sum(dim=1) / mask.sum(dim=1).clamp_min(1)
+
+    def forward(self, features: torch.Tensor, attacker_frame_mask: torch.Tensor) -> torch.Tensor:
+        return self.output(self.pooled_features(features, attacker_frame_mask))
 
 
 class AttentivePoseTCN(nn.Module):
@@ -117,9 +120,26 @@ class CompactSTGCN(nn.Module):
         return self.output(pooled)
 
 
+class PunchHeadHybridTCN(nn.Module):
+    """Keep the reference logits except for punch_head, which uses a second TCN."""
+
+    def __init__(self, feature_dim: int, class_count: int, *, reference_parameters: dict, donor_parameters: dict) -> None:
+        super().__init__()
+        self.reference = PoseTCN(feature_dim, class_count, **reference_parameters)
+        self.donor = PoseTCN(feature_dim, class_count, **donor_parameters)
+
+    def forward(self, features: torch.Tensor, attacker_frame_mask: torch.Tensor) -> torch.Tensor:
+        reference = self.reference(features, attacker_frame_mask)
+        donor = self.donor(features, attacker_frame_mask)
+        head = ACTION_CLASSES.index("punch_head")
+        return torch.cat((reference[:, :head], donor[:, head:head + 1], reference[:, head + 1:]), dim=1)
+
+
 def build_torch_model(name: str, feature_dim: int, class_count: int, **parameters: object) -> nn.Module:
     if name == "tcn":
         return PoseTCN(feature_dim, class_count, **parameters)
+    if name == "tcn_punch_head_hybrid":
+        return PunchHeadHybridTCN(feature_dim, class_count, **parameters)
     if name == "hierarchical_tcn":
         return AttentivePoseTCN(feature_dim, class_count, **parameters)
     if name == "stgcn_compact":

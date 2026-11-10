@@ -175,7 +175,11 @@ def test_pipeline_can_skip_preview_without_losing_pose_artifacts(tmp_path, monke
     assert result.pose_path.is_file()
     assert result.tracking_path.is_file()
     assert not (result.output_dir / "pose_preview.mp4").exists()
-    assert json.loads(result.metadata_path.read_text())["preview"]["generated"] is False
+    metadata = json.loads(result.metadata_path.read_text())
+    assert metadata["preview"]["generated"] is False
+    assert metadata["performance"]["preview_seconds"] == 0.0
+    assert metadata["performance"]["tracking_seconds"] >= 0.0
+    assert metadata["performance"]["pose_seconds"] >= 0.0
 
 
 def test_missing_numeric_preview_can_be_rendered_from_saved_pose(tmp_path):
